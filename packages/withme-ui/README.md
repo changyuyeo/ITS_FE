@@ -1,17 +1,17 @@
 <div align="middle">
 
 <a href="https://github.com/Team-WithMe" rel="noopener" target="_blank">
-	<img src="./../../.github/images/with-me.png" alt="with-me" width="100" />
+	<img src="./../../.github/images/with-me.png" alt="with-me" width="150" />
 </a>
 
 <h1>With Me UI</h1>
 
 A With ME React Design System, powered by <a href="https://github.com/changyuyeo" rel="noopener" target="_blank">changyu</a>.
 
-[![build CI](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml/badge.svg)](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml)
 ![npm](https://img.shields.io/npm/v/@with-me/design)
 ![NPM](https://img.shields.io/npm/l/@with-me/design)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@with-me/design)
+[![build CI](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml/badge.svg)](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml)
 
 </div>
 

@@ -1,131 +1,114 @@
-## With Me design-system
+# With Me 디자인 시스템 모노레포
 
-📚 with me 디자인 시스템 입니다.
+with me의 모든 디자인 요소를 작업하는 레포지토리 입니다.
 
-<br />
+- [withme-ui](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-ui) - 컴포넌트 패키지 with react
+- [withme-icon](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-icon) - 아이콘 패키지 with react
+- [withme-scss](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-scss) - 스타일 패키지 with scss
 
-[![build CI](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml/badge.svg)](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml)
-
-<br />
+> `packages`에 있는 라이브러리의 사용법들은 각 워크스페이스 README.md를 참고하면 됩니다!
 
 <details>
 <summary>Todo List</summary>
 <div markdown="1">
+<br />
 
 - [ ] scss 구조 다시잡기
-- [ ] 각 패키지 name 수정
-- [ ] rollup 설정 변경
+- [x] ~각 패키지 name 수정~
+- [x] ~rollup 설정 변경~
 - [ ] css var 사용
 - [ ] 색상팔레트 생성하기
-
----
-
-- [x] Card Title 추가
+- [x] ~Card Title 추가~
 - [ ] Loading Spinner 만들기
 - [ ] Button Loading 상태 추가
 
 </div>
 </details>
-
 <br />
 
-## 📕 Installation
-
-npm
-
-```
-npm i @with-me/design @with-me/styles
-```
-
-yarn
-
-```
-yarn add @with-me/design @with-me/styles
-```
-
-<br />
-
-## 📗 Usage
-
-최상단 파일에 해당 style 들을 import 해주세요! (ex: App.tsx, \_app.tsx)
-
-```tsx
-import '@with-me/styles/build/global.css'; // 기본 설정 style
-import '@with-me/styles/build/design.css'; // component의 style
-```
-
-<br />
-
-스토리북을 참고해서 사용하시면 됩니다!
-
-```tsx
-import { Button } from '@with-me/design';
-
-const App = () => <Button bgColor="primary">버튼</Button>;
-```
-
-<br />
-
-### Next.js 에서 사용 시
-
-next.config.js 에서 다음과 같이 설정해주세요!
-
-```js
-const withTM = require('next-transpile-modules')(['@with-me/design']);
-
-/** @type {import('next').NextConfig} */
-module.exports = withTM({ ... });
-```
-
-<br />
-
-## 📘 CSS variables
-
-- 실시간 커스텀마이징을 할 수 있도록 **css 사용자 정의 변수**를 제공합니다!
-- with-me 의 모든 변수는 **wm-** 으로 시작합니다!
-- `@with-me/styles/build/global.css` 가 적용된 곳이면 어디서나 접근하여 오버라이딩을 할 수 있습니다.
-
-<br />
-
-```css
-/* 최상위 변수 */
-:root {
-	--wm-primary: #6c5ce7;
-	--wm-primary-outline: #6c5ce727;
-	--wm-secondary: #a29bfe;
-
-	--wm-purple: #341f97;
-	--wm-bluebell: #5f27cd;
-
-	--wm-danger: #e74c3c;
-	--wm-danger-outline: #e74c3c77;
-	--wm-danger-bg: #fff8f6;
-	--wm-success: #008a05;
-	--wm-white: #fff;
-
-	--wm-error-bg: #fff8f6;
-	--wm-line-color: #f1f3f7;
-	--wm-body-color: #222;
-	--wm-body-bg: #f8f9fd;
-
-	--wm-gray-100: #222;
-	--wm-gray-200: #484848;
-	--wm-gray-300: #717171;
-	--wm-gray-400: #808080;
-	--wm-gray-500: #aaa;
-	--wm-gray-600: #b0b0b0;
-	--wm-gray-700: #c4c4c4;
-	--wm-gray-800: #ddd;
-	--wm-gray-900: #ededed;
-
-	--wm-body-font-family: 'Noto Sans KR', sans-serif;
-}
-```
-
-<br />
-
-## 📙 Links
+## Links
 
 - [npm](https://www.npmjs.com/package/@with-me/design)
 - [storybook](https://with-me-ui.netlify.app)
-- [github](https://github.com/Team-WithMe/WithMe_UI)
+
+<br />
+
+## Scripts
+
+### 기본적인 명령어
+
+```
+# 설치
+yarn
+
+# 패키지 추가
+yarn add <package-name>
+
+# 모든 의존성 삭제
+yarn clean
+
+# git 커밋
+yarn commit
+
+# 개발 시작
+yarn dev
+```
+
+### storybook 실행
+
+- 경로를 withme-ui 패키지로 이동하고 해당 터미널에서
+
+```
+# 스토리북 실행 (port 6006)
+yarn storybook
+```
+
+### 워크스페이스별 의존성 추가, 제거
+
+```
+# 추가
+yarn workspace <workspace-name> add <package-name>
+
+# 제거
+yarn workspace <workspace-name> remove <package-name>
+```
+
+### npm 배포
+
+```
+# npm login
+yarn npm login
+
+# 모든 패키지 npm 배포
+yarn publish
+```
+
+### 각 워크스페이스별 npm 배포
+
+```
+# 빌드
+yarn workspace <workspace-name> build
+# ex: yarn workspace @pickk/design-token build
+
+# 버전 업데이트 (strategy = 'major'|'minor'|'patch')
+yarn workspace <workspace-name> version <strategy>
+
+# 버전 업데이트 커밋 생성
+git commit -m "chore(<scope-name>): release <workspace-name> <version>"
+
+# 태그 부여
+git tag -a "<workspace-name>@<version>"
+
+# 배포
+yarn workspace <workspace-name> npm publish
+```
+
+<br />
+
+## Setting
+
+```
+# node version
+node -v
+# 16.15.1
+```
