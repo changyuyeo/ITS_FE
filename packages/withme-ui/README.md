@@ -1,14 +1,23 @@
-## @with-me/design
+<div align="middle">
 
-with me 디자인 시스템 입니다.
+<a href="https://github.com/Team-WithMe" rel="noopener" target="_blank">
+	<img src="./../../.github/images/with-me.png" alt="with-me" width="100" />
+</a>
 
-<br />
+<h1>With Me UI</h1>
+
+A With ME React Design System, powered by <a href="https://github.com/changyuyeo" rel="noopener" target="_blank">changyu</a>.
 
 [![build CI](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml/badge.svg)](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml)
+![npm](https://img.shields.io/npm/v/@with-me/design)
+![NPM](https://img.shields.io/npm/l/@with-me/design)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@with-me/design)
+
+</div>
 
 <br />
 
-## 📕 Installation
+## Installation
 
 npm
 
@@ -24,13 +33,13 @@ yarn add @with-me/design @with-me/styles
 
 <br />
 
-## 📗 Usage
+## Usage
 
 최상단 파일에 해당 style 들을 import 해주세요! (ex: App.tsx, \_app.tsx)
 
 ```tsx
-import '@with-me/styles/build/global.css' // 기본 설정 style
-import '@with-me/styles/build/design.css' // component의 style
+import '@with-me/styles/build/global.css'; // 기본 설정 style
+import '@with-me/styles/build/design.css'; // component의 style
 ```
 
 <br />
@@ -38,9 +47,9 @@ import '@with-me/styles/build/design.css' // component의 style
 스토리북을 참고해서 사용하시면 됩니다!
 
 ```tsx
-import { Button } from '@with-me/design'
+import { Button } from '@with-me/design';
 
-const App = () => <Button bgColor="primary">버튼</Button>
+const App = () => <Button bgColor="primary">버튼</Button>;
 ```
 
 <br />
@@ -58,7 +67,7 @@ module.exports = withTM({ ... });
 
 <br />
 
-## 📘 CSS variables
+## CSS variables
 
 - 실시간 커스텀마이징을 할 수 있도록 **css 사용자 정의 변수**를 제공합니다!
 - with-me 의 모든 변수는 **wm-** 으로 시작합니다!
@@ -103,7 +112,7 @@ module.exports = withTM({ ... });
 
 <br />
 
-## 📙 Links
+## Links
 
 - [github](https://github.com/Team-WithMe/WithMe_UI)
 - [storybook](https://with-me-ui.netlify.app)

@@ -2,10 +2,11 @@
 	"name": "@with-me/ui",
 	"description": "withme design-system ui package",
 	"version": "0.7.2",
-	"main": "build/index.js",
 	"license": "MIT",
+	"main": "build/index.js",
+	"module": "build/esm/index.js",
 	"files": [
-		"build"
+		"build/esm"
 	],
 	"engines": {
 		"node": ">=16"
