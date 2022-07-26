@@ -6,14 +6,29 @@
 	"extends": [
 		"prettier",
 		"eslint:recommended",
+		"airbnb-typescript",
+		"plugin:react/recommended",
+		"plugin:import/recommended",
 		"plugin:prettier/recommended",
+		"plugin:react-hooks/recommended",
 		"plugin:@typescript-eslint/recommended"
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
 		"ecmaVersion": "latest",
 		"sourceType": "module",
 		"project": "./tsconfig.json"
 	},
-	"plugins": ["@typescript-eslint"]
+	"plugins": ["@typescript-eslint", "react"],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"rules": {
+		"react/react-in-jsx-scope": "off"
+	}
 }

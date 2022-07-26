@@ -1,5 +1,5 @@
 {
-	"extends": ["../../.eslintrc", "../../.eslintrc.react.json"],
+	"extends": ["../../.eslintrc"],
 	"rules": {
 		"@typescript-eslint/comma-dangle": "off",
 		"@typescript-eslint/indent": "off",

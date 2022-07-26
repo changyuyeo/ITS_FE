@@ -5,6 +5,10 @@
 	"author": "여찬규 <wry5533@gmail.com>",
 	"license": "MIT",
 	"private": true,
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/Team-WithMe/WithMe_UI.git"
+  },
 	"workspaces": {
 		"packages": [
 			"packages/*",
@@ -37,8 +41,8 @@
 		"dev": "yarn lerna run dev",
 		"build": "yarn lerna run build",
 		"build:sb": "yarn lerna run build-storybook",
-		"clean": "bash ./scripts/clean-modules.sh",
 		"commit": "git add . && yarn git-cz",
+		"clean": "bash ./scripts/clean-modules.sh",
 		"prepare": "husky install",
 		"publish": "yarn lerna publish"
 	},

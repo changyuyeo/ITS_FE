@@ -1,13 +1,15 @@
+const autoprefixer = require('autoprefixer');
+const postcss = require('postcss');
 const fs = require('fs');
 const path = require('path');
 const sass = require('node-sass');
 
 //* build 폴더 생성
 try {
-	console.log('💾 build 폴더 생성합니다...');
 	fs.mkdirSync(path.join(__dirname, '..', 'build'));
+	console.log('💾 build 폴더 생성합니다...');
 } catch {
-	console.log('build 폴더가 존재합니다...');
+	console.log('💾 build 폴더가 존재합니다...');
 }
 
 //* scss compile func
@@ -19,8 +21,13 @@ const compile = (filePath, fileName) => {
 		includePaths: [path.resolve('src')]
 	});
 
-	fs.writeFileSync(path.resolve(fileName), result.css.toString());
+	//* add vendor prefix on compile
+	postcss([autoprefixer()])
+		.process(result.css.toString(), { from: undefined })
+		.then(value => {
+			fs.writeFileSync(path.resolve(fileName), value.toString());
+		});
 };
 
-//* scss build
+//* scss to css Compiler
 compile('src/global.scss', 'build/global.css');

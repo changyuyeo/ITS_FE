@@ -1,0 +1,25 @@
+//* Configuration
+@import 'foundation/all';
+@import 'base/all';
+
+body {
+	background-color: $wm-body-bg;
+	overflow-x: hidden;
+
+	* {
+		font-family: $wm-body-font-family;
+		font-size: $fs-base;
+		font-weight: $fw-regular;
+	}
+}
+
+//* component styles
+@import 'styles/avatar';
+@import 'styles/button';
+@import 'styles/card';
+@import 'styles/divider';
+@import 'styles/grid';
+@import 'styles/input';
+@import 'styles/text';
+@import 'styles/textarea';
+@import 'styles/title';

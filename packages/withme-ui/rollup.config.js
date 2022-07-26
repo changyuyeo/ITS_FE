@@ -7,21 +7,12 @@ export default [
 	{
 		input: 'src/index.ts',
 		output: [
-			{
-				dir: 'build',
-				format: 'cjs',
-				sourcemap: true,
-				exports: 'auto'
-			},
-			{
-				dir: 'build/esm',
-				format: 'esm',
-				sourcemap: true
-			}
+			{ dir: 'build', format: 'cjs', sourcemap: true, exports: 'auto' },
+			{ dir: 'build/esm', format: 'esm', sourcemap: true }
 		],
 		plugins: [commonjs(), typescript()],
 		preserveModules: true,
-		external: ['react', 'classnames']
+		external: ['react', 'classnames', 'react/jsx-runtime']
 	},
 	// d.ts (타입 정의 파일) 번들링
 	{
