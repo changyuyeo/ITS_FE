@@ -15,6 +15,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	Icon?: ReactNode;
 }
 
+const BASE = 'wm-btn' as const;
+
 const Button: FC<ButtonProps> = ({
 	children,
 	className,
@@ -26,25 +28,19 @@ const Button: FC<ButtonProps> = ({
 	Icon,
 	...props
 }) => {
-	const base = 'wm-btn';
 	const cx = classNames(
-		base,
-		`${base}--color-${bgColor}`,
-		{ [`${base}--fullSize`]: fullSize },
-		{ [`${base}--shadow`]: shadow }
+		BASE,
+		`${BASE}--color-${bgColor}`,
+		{ [`${BASE}--fullSize`]: fullSize },
+		{ [`${BASE}--shadow`]: shadow }
 	);
 
-	const paddingStyled: CSSProperties = useMemo(
-		() => ({
-			padding: `${px}px ${py}px`
-		}),
-		[px, py]
-	);
+	const paddingStyled: CSSProperties = useMemo(() => ({ padding: `${px}px ${py}px` }), [px, py]);
 
 	return (
 		<button className={`${cx} ${className}`} style={paddingStyled} {...props}>
 			{children}
-			{Icon && <div className={`${base}--icon`}>{Icon}</div>}
+			{Icon && <div className={`${BASE}--icon`}>{Icon}</div>}
 		</button>
 	);
 };

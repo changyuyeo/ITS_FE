@@ -1,34 +1,158 @@
+/* ----- CSS Varibale Prefix ----- */
+$varibale-prefix: wm- !default;
+$prefix: $varibale-prefix !default;
+/* ----- CSS Varibale Prefix End ----- */
+
 /* ----- Colors ----- */
-//* brand colors
-$primary: #6c5ce7;
-$primary-outline: #6c5ce727;
-$secondary: #a29bfe;
+/* --- gray colors --- */
+$white: #fff !default;
+$black: #000 !default;
 
-$purple: #341f97;
-$bluebell: #5f27cd;
+$gray-100: #fafafa !default;
+$gray-200: #f5f5f5 !default;
+$gray-300: #f0f0f0 !default;
+$gray-400: #d9d9d9 !default;
+$gray-500: #bfbfbf !default;
+$gray-600: #8c8c8c !default;
+$gray-700: #595959 !default;
+$gray-800: #434343 !default;
+$gray-900: #262626 !default;
+/* --- gray colors end --- */
 
-//* utility colors
-$danger: #e74c3c;
-$danger-outline: #e74c3c77;
-$danger-bg: #fff8f6;
-$success: #008a05;
-$white: #fff;
+/* --- basic colors --- */
+$red-100: #fff1f0 !default;
+$red-200: #ffccc7 !default;
+$red-300: #ffa39e !default;
+$red-400: #ff7875 !default;
+$red-500: #ff4d4f !default;
+$red-600: #f5222d !default;
+$red-700: #cf1322 !default;
+$red-800: #a8071a !default;
+$red-900: #820014 !default;
 
-//* sub colors
-$error-bg: #fff8f6;
-$line-color: #f1f3f7;
-$bg-color: #f8f9fd;
+$green-100: #f6ffed !default;
+$green-200: #d9f7be !default;
+$green-300: #b7eb8f !default;
+$green-400: #95de64 !default;
+$green-500: #73d13d !default;
+$green-600: #52c41a !default;
+$green-700: #389e0d !default;
+$green-800: #237804 !default;
+$green-900: #135200 !default;
 
-//* gray colors
-$gray-22: #222;
-$gray-48: #484848;
-$gray-71: #717171;
-$gray-80: #808080;
-$gray-aa: #aaa;
-$gray-b0: #b0b0b0;
-$gray-c4: #c4c4c4;
-$gray-dd: #ddd;
-$gray-ed: #ededed;
+$bule-100: #e6f7ff !default;
+$bule-200: #bae7ff !default;
+$bule-300: #91d5ff !default;
+$bule-400: #69c0ff !default;
+$bule-500: #40a9ff !default;
+$bule-600: #1890ff !default;
+$bule-700: #096dd9 !default;
+$bule-800: #0050b3 !default;
+$bule-900: #003a8c !default;
+
+$purple: #6c5ce7 !default;
+
+$purple-100: tint-color($purple, 80%) !default;
+$purple-200: tint-color($purple, 60%) !default;
+$purple-300: tint-color($purple, 40%) !default;
+$purple-400: tint-color($purple, 20%) !default;
+$purple-500: $purple !default;
+$purple-600: shade-color($purplem, 20%) !default;
+$purple-700: shade-color($purplem, 40%) !default;
+$purple-800: shade-color($purplem, 60%) !default;
+$purple-900: shade-color($purplem, 80%) !default;
+/* --- basic colors end --- */
+
+/* --- theme colors --- */
+$primary-100: var(--#{$prefix}primary-color, $purple-100) !default;
+$primary-200: var(--#{$prefix}primary-color, $purple-200) !default;
+$primary-300: var(--#{$prefix}primary-color, $purple-300) !default;
+$primary-400: var(--#{$prefix}primary-color, $purple-400) !default;
+$primary-500: var(--#{$prefix}primary-color, $purple-500) !default;
+$primary-600: var(--#{$prefix}primary-color, $purple-600) !default;
+$primary-700: var(--#{$prefix}primary-color, $purple-700) !default;
+$primary-800: var(--#{$prefix}primary-color, $purple-800) !default;
+$primary-900: var(--#{$prefix}primary-color, $purple-900) !default;
+
+$primary-colors: (
+	100: $primary-100,
+	200: $primary-200,
+	300: $primary-300,
+	400: $primary-400,
+	500: $primary-500,
+	600: $primary-600,
+	700: $primary-700,
+	800: $primary-800,
+	900: $primary-900
+) !default;
+
+$secondary-100: var(--#{$prefix}secondary-color, $bule-100) !default;
+$secondary-200: var(--#{$prefix}secondary-color, $bule-200) !default;
+$secondary-300: var(--#{$prefix}secondary-color, $bule-300) !default;
+$secondary-400: var(--#{$prefix}secondary-color, $bule-400) !default;
+$secondary-500: var(--#{$prefix}secondary-color, $bule-500) !default;
+$secondary-600: var(--#{$prefix}secondary-color, $bule-600) !default;
+$secondary-700: var(--#{$prefix}secondary-color, $bule-700) !default;
+$secondary-800: var(--#{$prefix}secondary-color, $bule-800) !default;
+$secondary-900: var(--#{$prefix}secondary-color, $bule-900) !default;
+
+$secondary-colors: (
+	100: $secondary-100,
+	200: $secondary-200,
+	300: $secondary-300,
+	400: $secondary-400,
+	500: $secondary-500,
+	600: $secondary-600,
+	700: $secondary-700,
+	800: $secondary-800,
+	900: $secondary-900
+) !default;
+
+$success-100: var(--#{$prefix}success-color, $green-100) !default;
+$success-200: var(--#{$prefix}success-color, $green-200) !default;
+$success-300: var(--#{$prefix}success-color, $green-300) !default;
+$success-400: var(--#{$prefix}success-color, $green-400) !default;
+$success-500: var(--#{$prefix}success-color, $green-500) !default;
+$success-600: var(--#{$prefix}success-color, $green-600) !default;
+$success-700: var(--#{$prefix}success-color, $green-700) !default;
+$success-800: var(--#{$prefix}success-color, $green-800) !default;
+$success-900: var(--#{$prefix}success-color, $green-900) !default;
+
+$success-colors: (
+	100: $success-100,
+	200: $success-200,
+	300: $success-300,
+	400: $success-400,
+	500: $success-500,
+	600: $success-600,
+	700: $success-700,
+	800: $success-800,
+	900: $success-900
+) !default;
+
+$error-100: var(--#{$prefix}error-color, $red-100) !default;
+$error-200: var(--#{$prefix}error-color, $red-200) !default;
+$error-300: var(--#{$prefix}error-color, $red-300) !default;
+$error-400: var(--#{$prefix}error-color, $red-400) !default;
+$error-500: var(--#{$prefix}error-color, $red-500) !default;
+$error-600: var(--#{$prefix}error-color, $red-600) !default;
+$error-700: var(--#{$prefix}error-color, $red-700) !default;
+$error-800: var(--#{$prefix}error-color, $red-800) !default;
+$error-900: var(--#{$prefix}error-color, $red-900) !default;
+
+$error-colors: (
+	100: $error-100,
+	200: $error-200,
+	300: $error-300,
+	400: $error-400,
+	500: $error-500,
+	600: $error-600,
+	700: $error-700,
+	800: $error-800,
+	900: $error-900
+) !default;
+/* --- theme colors end --- */
+/* ----- Colors End ----- */
 
 /* ----- Typoraphy ----- */
 /*
@@ -37,32 +161,81 @@ $gray-ed: #ededed;
  * 2. Noto Sans KR: https://fonts.googleapis.com/css?family=Noto+Sans+KR
 */
 $noto-sans: 'Noto Sans KR', sans-serif;
+$font-size: 1rem !default;
 
-//* font sizes
-$fs-sm: 0.875rem; //* 14px
-$fs-base: 1rem; //* 16px
-$fs-lg: 1.125rem; //* 18px
-$fs-xl: 1.25rem; //* 20px
-$fs-xxl: 1.375rem; //* 22x
-$fs-xxxl: 1.5rem; //* 24px
+$fs-xs: calc(#{$font-size} * 0.75) !default; //* 12px
+$fs-sm: calc(#{$font-size} * 0.875) !default; //* 14px
+$fs-base: calc(#{$font-size} * 1) !default; //* 16px
+$fs-lg: calc(#{$font-size} * 1.125) !default; //* 18px
+$fs-xl: calc(#{$font-size} * 1.25) !default; //* 20px
+$fs-xxl: calc(#{$font-size} * 1.375) !default; //* 22px
 
-//* title font sizes
-$h-1: 2.5rem; //* 40px
-$h-2: 2.1875rem; //* 35px
-$h-3: 1.875rem; //* 30px
+$fs-h-1: calc(#{$font-size} * 2.5) !default; //* 40px
+$fs-h-2: calc(#{$font-size} * 2) !default; //* 32px
+$fs-h-3: calc(#{$font-size} * 1.75) !default; //* 28px
+$fs-h-4: calc(#{$font-size} * 1.5) !default; //* 24px
+$fs-h-5: calc(#{$font-size} * 1.25) !default; //* 20px
+$fs-h-6: calc(#{$font-size} * 1) !default; //* 16px
 
-//* font height
-$fh-base: 1.5;
+$fw-thin: 100 !default;
+$fw-light: 300 !default;
+$fw-regular: 400 !default;
+$fw-medium: 500 !default;
+$fw-bold: 700 !default;
 
-//* font weights
-$fw-thin: 100;
-$fw-light: 300;
-$fw-regular: 400;
-$fw-medium: 500;
-$fw-bold: 700;
+$font-weights: (
+	thin: $fw-thin,
+	light: $fw-light,
+	regular: $fw-regular,
+	medium: $fw-medium,
+	bold: $fw-bold
+) !default;
 
-/* ----- Breakpoints ----- */
-//* 320px | 375px | 425px | 768px | 1024px | 1440px
+$lh-sm: 1.25 !default;
+$lh-base: 1.5 !default;
+$lh-lg: 2 !default;
+
+/* --- body typography --- */
+$body-font-family: var(--#{$prefix}body-font-family, $noto-sans) !default;
+$body-font-size: var(--#{$prefix}body-font-size, $fs-base) !default;
+$body-font-weight: var(--#{$prefix}body-font-weight, $fw-regular) !default;
+$body-line-height: var(--#{$prefix}body-line-height, $lh-base) !default;
+/* --- body typography end --- */
+
+/* --- text & title component typography --- */
+$font-size-xs: var(--#{$prefix}font-size-xs, $fs-xs) !default;
+$font-size-sm: var(--#{$prefix}font-size-sm, $fs-sm) !default;
+$font-size-base: var(--#{$prefix}font-size-base, $fs-base) !default;
+$font-size-lg: var(--#{$prefix}font-size-lg, $fs-lg) !default;
+$font-size-xl: var(--#{$prefix}font-size-xl, $fs-xl) !default;
+
+$font-sizes: (
+	xs: $font-size-xs,
+	sm: $font-size-sm,
+	base: $font-size-base,
+	lg: $font-size-lg,
+	xl: $font-size-xl
+) !default;
+
+$h-1-font-size: var(--#{$prefix}h-1-font-size, $h-1-fs) !default;
+$h-2-font-size: var(--#{$prefix}h-2-font-size, $h-2-fs) !default;
+$h-3-font-size: var(--#{$prefix}h-3-font-size, $h-3-fs) !default;
+$h-4-font-size: var(--#{$prefix}h-4-font-size, $h-4-fs) !default;
+$h-5-font-size: var(--#{$prefix}h-6-font-size, $h-5-fs) !default;
+$h-6-font-size: var(--#{$prefix}h-5-font-size, $h-6-fs) !default;
+
+$title-font-sizes: (
+	h-1: $h-1-font-size,
+	h-2: $h-2-font-size,
+	h-3: $h-3-font-size,
+	h-4: $h-4-font-size,
+	h-5: $h-5-font-size,
+	h-6: $h-6-font-size
+) !default;
+/* --- text & title component typography end --- */
+/* ----- Typoraphy End ----- */
+
+/* ----- Breakpoints & Spacing ----- */
 $breakpoints: (
 	xs: 320px,
 	sm: 375px,
@@ -70,24 +243,50 @@ $breakpoints: (
 	lg: 768px,
 	xl: 1024px,
 	xxl: 1440px
-);
-
-/* ----- Spacing ----- */
-//* 4px | 8px | 12px | 16px | 24px | 32px | 48px | 72px | 96px
-$spacing: (
-	none: 0,
-	xxxs: 0.25rem,
-	xxs: 0.5rem,
-	xs: 0.75rem,
-	sm: 1rem,
-	md: 1.5rem,
-	lg: 2rem,
-	xl: 3rem,
-	xxl: 4.5rem,
-	xxxl: 6rem
 ) !default;
 
-/* ----- Shadows ----- */
-$shadows: (
-	base: 0 4px 11px rgba(157, 157, 157, 0.21)
-);
+$spacing: (
+	xxxs: 4px,
+	xxs: 8px,
+	xs: 12px,
+	sm: 16px,
+	md: 24px,
+	lg: 32px,
+	xl: 48px,
+	xxl: 72px,
+	xxxl: 96px
+) !default;
+/* ----- Breakpoints & Spacing End ----- */
+
+/* ----- Border Variables ----- */
+$border-widths: (
+	1: 1px,
+	2: 2px,
+	3: 3px,
+	4: 4px,
+	5: 5px
+) !default;
+
+$border-radius-list: (
+	sm: 4px,
+	base: 6px,
+	lg: 8px,
+	xl: 16px,
+	xxl: 32px,
+	round: 50%
+) !default;
+
+$border-width: map-get($border-widths, 1) !default;
+$border-style: solid !default;
+$border-color: $cool-gray-700 !default;
+$border-radius: map-get($border-radius-list, 'sm') !default;
+/* ----- Border Variables End ----- */
+
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
+
+$transition-base: all 0.2s ease-in-out !default;
+$transition-fade: opacity 0.15s linear !default;
+
+$disabled-opacity: 0.58 !default;
