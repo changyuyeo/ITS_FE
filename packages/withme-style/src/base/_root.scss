@@ -1,37 +1,34 @@
 :root {
-	/* ---- colors ----- */
-	//* brand colors
-	--wm-primary: #{$primary};
-	--wm-primary-outline: #{$primary-outline};
-	--wm-secondary: #{$secondary};
+	@each $key, $value in $body-colors {
+		--#{$prefix}body-#{$key}: #{$value};
+	}
 
-	--wm-purple: #{$purple};
-	--wm-bluebell: #{$bluebell};
+	@each $key, $value in $primary-colors {
+		--#{$prefix}primary-color-#{$key}: #{$value};
+	}
 
-	//* utility colors
-	--wm-danger: #{$danger};
-	--wm-danger-outline: #{$danger-outline};
-	--wm-danger-bg: #{$danger-bg};
-	--wm-success: #{$success};
-	--wm-white: #{$white};
+	@each $key, $value in $secondary-colors {
+		--#{$prefix}secondary-color-#{$key}: #{$value};
+	}
 
-	//* sub colors
-	--wm-error-bg: #{$error-bg};
-	--wm-line-color: #{$line-color};
-	--wm-body-color: #{$gray-22};
-	--wm-body-bg: #{$bg-color};
+	@each $key, $value in $success-colors {
+		--#{$prefix}success-color-#{$key}: #{$value};
+	}
 
-	//* gray colors
-	--wm-gray-100: #{$gray-22};
-	--wm-gray-200: #{$gray-48};
-	--wm-gray-300: #{$gray-71};
-	--wm-gray-400: #{$gray-80};
-	--wm-gray-500: #{$gray-aa};
-	--wm-gray-600: #{$gray-b0};
-	--wm-gray-700: #{$gray-c4};
-	--wm-gray-800: #{$gray-dd};
-	--wm-gray-900: #{$gray-ed};
+	@each $key, $value in $error-colors {
+		--#{$prefix}error-color-#{$key}: #{$value};
+	}
 
-	//* font family
-	--wm-body-font-family: #{$noto-sans};
+	--#{$prefix}body-font-family: #{$body-font-family};
+	--#{$prefix}body-font-size: #{$body-font-size};
+	--#{$prefix}body-font-weight: #{$body-font-weight};
+	--#{$prefix}body-line-height: #{$body-line-height};
+
+	@each $key, $value in $font-sizes {
+		--#{$prefix}#{$key}-font-size: #{$value};
+	}
+
+	@each $key, $value in $title-font-sizes {
+		--#{$prefix}#{$key}-font-size: #{$value};
+	}
 }

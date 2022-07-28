@@ -8,7 +8,7 @@ $prefix: $varibale-prefix !default;
 $white: #fff !default;
 $black: #000 !default;
 
-$gray-100: #fafafa !default;
+$gray-100: #f8f9fd !default;
 $gray-200: #f5f5f5 !default;
 $gray-300: #f0f0f0 !default;
 $gray-400: #d9d9d9 !default;
@@ -62,6 +62,16 @@ $purple-700: shade-color($purplem, 40%) !default;
 $purple-800: shade-color($purplem, 60%) !default;
 $purple-900: shade-color($purplem, 80%) !default;
 /* --- basic colors end --- */
+
+/* --- body colors --- */
+$body-bg-color: var(--#{$prefix}body-bg-color, $gray-100) !default;
+$body-font-color: var(--#{$prefix}body-font-color, $text-gray-800) !default;
+
+$body-colors: (
+	bg-color: $body-bg-color,
+	font-color: $body-font-color
+) !default;
+/* --- body colors end --- */
 
 /* --- theme colors --- */
 $primary-100: var(--#{$prefix}primary-color, $purple-100) !default;
