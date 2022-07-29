@@ -51,21 +51,20 @@ $bule-800: #0050b3 !default;
 $bule-900: #003a8c !default;
 
 $purple: #6c5ce7 !default;
-
 $purple-100: tint-color($purple, 80%) !default;
 $purple-200: tint-color($purple, 60%) !default;
 $purple-300: tint-color($purple, 40%) !default;
 $purple-400: tint-color($purple, 20%) !default;
 $purple-500: $purple !default;
-$purple-600: shade-color($purplem, 20%) !default;
-$purple-700: shade-color($purplem, 40%) !default;
-$purple-800: shade-color($purplem, 60%) !default;
-$purple-900: shade-color($purplem, 80%) !default;
+$purple-600: shade-color($purple, 20%) !default;
+$purple-700: shade-color($purple, 40%) !default;
+$purple-800: shade-color($purple, 60%) !default;
+$purple-900: shade-color($purple, 80%) !default;
 /* --- basic colors end --- */
 
 /* --- body colors --- */
 $body-bg-color: var(--#{$prefix}body-bg-color, $gray-100) !default;
-$body-font-color: var(--#{$prefix}body-font-color, $text-gray-800) !default;
+$body-font-color: var(--#{$prefix}body-font-color, $gray-900) !default;
 
 $body-colors: (
 	bg-color: $body-bg-color,
@@ -74,15 +73,15 @@ $body-colors: (
 /* --- body colors end --- */
 
 /* --- theme colors --- */
-$primary-100: var(--#{$prefix}primary-color, $purple-100) !default;
-$primary-200: var(--#{$prefix}primary-color, $purple-200) !default;
-$primary-300: var(--#{$prefix}primary-color, $purple-300) !default;
-$primary-400: var(--#{$prefix}primary-color, $purple-400) !default;
-$primary-500: var(--#{$prefix}primary-color, $purple-500) !default;
-$primary-600: var(--#{$prefix}primary-color, $purple-600) !default;
-$primary-700: var(--#{$prefix}primary-color, $purple-700) !default;
-$primary-800: var(--#{$prefix}primary-color, $purple-800) !default;
-$primary-900: var(--#{$prefix}primary-color, $purple-900) !default;
+$primary-100: var(--#{$prefix}primary-color-100, $purple-100) !default;
+$primary-200: var(--#{$prefix}primary-color-200, $purple-200) !default;
+$primary-300: var(--#{$prefix}primary-color-300, $purple-300) !default;
+$primary-400: var(--#{$prefix}primary-color-400, $purple-400) !default;
+$primary-500: var(--#{$prefix}primary-color-500, $purple-500) !default;
+$primary-600: var(--#{$prefix}primary-color-600, $purple-600) !default;
+$primary-700: var(--#{$prefix}primary-color-700, $purple-700) !default;
+$primary-800: var(--#{$prefix}primary-color-800, $purple-800) !default;
+$primary-900: var(--#{$prefix}primary-color-900, $purple-900) !default;
 
 $primary-colors: (
 	100: $primary-100,
@@ -96,15 +95,15 @@ $primary-colors: (
 	900: $primary-900
 ) !default;
 
-$secondary-100: var(--#{$prefix}secondary-color, $bule-100) !default;
-$secondary-200: var(--#{$prefix}secondary-color, $bule-200) !default;
-$secondary-300: var(--#{$prefix}secondary-color, $bule-300) !default;
-$secondary-400: var(--#{$prefix}secondary-color, $bule-400) !default;
-$secondary-500: var(--#{$prefix}secondary-color, $bule-500) !default;
-$secondary-600: var(--#{$prefix}secondary-color, $bule-600) !default;
-$secondary-700: var(--#{$prefix}secondary-color, $bule-700) !default;
-$secondary-800: var(--#{$prefix}secondary-color, $bule-800) !default;
-$secondary-900: var(--#{$prefix}secondary-color, $bule-900) !default;
+$secondary-100: var(--#{$prefix}secondary-color-100, $bule-100) !default;
+$secondary-200: var(--#{$prefix}secondary-color-200, $bule-200) !default;
+$secondary-300: var(--#{$prefix}secondary-color-300, $bule-300) !default;
+$secondary-400: var(--#{$prefix}secondary-color-400, $bule-400) !default;
+$secondary-500: var(--#{$prefix}secondary-color-500, $bule-500) !default;
+$secondary-600: var(--#{$prefix}secondary-color-600, $bule-600) !default;
+$secondary-700: var(--#{$prefix}secondary-color-700, $bule-700) !default;
+$secondary-800: var(--#{$prefix}secondary-color-800, $bule-800) !default;
+$secondary-900: var(--#{$prefix}secondary-color-900, $bule-900) !default;
 
 $secondary-colors: (
 	100: $secondary-100,
@@ -118,15 +117,15 @@ $secondary-colors: (
 	900: $secondary-900
 ) !default;
 
-$success-100: var(--#{$prefix}success-color, $green-100) !default;
-$success-200: var(--#{$prefix}success-color, $green-200) !default;
-$success-300: var(--#{$prefix}success-color, $green-300) !default;
-$success-400: var(--#{$prefix}success-color, $green-400) !default;
-$success-500: var(--#{$prefix}success-color, $green-500) !default;
-$success-600: var(--#{$prefix}success-color, $green-600) !default;
-$success-700: var(--#{$prefix}success-color, $green-700) !default;
-$success-800: var(--#{$prefix}success-color, $green-800) !default;
-$success-900: var(--#{$prefix}success-color, $green-900) !default;
+$success-100: var(--#{$prefix}success-color-100, $green-100) !default;
+$success-200: var(--#{$prefix}success-color-200, $green-200) !default;
+$success-300: var(--#{$prefix}success-color-300, $green-300) !default;
+$success-400: var(--#{$prefix}success-color-400, $green-400) !default;
+$success-500: var(--#{$prefix}success-color-500, $green-500) !default;
+$success-600: var(--#{$prefix}success-color-600, $green-600) !default;
+$success-700: var(--#{$prefix}success-color-700, $green-700) !default;
+$success-800: var(--#{$prefix}success-color-800, $green-800) !default;
+$success-900: var(--#{$prefix}success-color-900, $green-900) !default;
 
 $success-colors: (
 	100: $success-100,
@@ -140,15 +139,15 @@ $success-colors: (
 	900: $success-900
 ) !default;
 
-$error-100: var(--#{$prefix}error-color, $red-100) !default;
-$error-200: var(--#{$prefix}error-color, $red-200) !default;
-$error-300: var(--#{$prefix}error-color, $red-300) !default;
-$error-400: var(--#{$prefix}error-color, $red-400) !default;
-$error-500: var(--#{$prefix}error-color, $red-500) !default;
-$error-600: var(--#{$prefix}error-color, $red-600) !default;
-$error-700: var(--#{$prefix}error-color, $red-700) !default;
-$error-800: var(--#{$prefix}error-color, $red-800) !default;
-$error-900: var(--#{$prefix}error-color, $red-900) !default;
+$error-100: var(--#{$prefix}error-color-100, $red-100) !default;
+$error-200: var(--#{$prefix}error-color-200, $red-200) !default;
+$error-300: var(--#{$prefix}error-color-300, $red-300) !default;
+$error-400: var(--#{$prefix}error-color-400, $red-400) !default;
+$error-500: var(--#{$prefix}error-color-500, $red-500) !default;
+$error-600: var(--#{$prefix}error-color-600, $red-600) !default;
+$error-700: var(--#{$prefix}error-color-700, $red-700) !default;
+$error-800: var(--#{$prefix}error-color-800, $red-800) !default;
+$error-900: var(--#{$prefix}error-color-900, $red-900) !default;
 
 $error-colors: (
 	100: $error-100,
@@ -227,12 +226,12 @@ $font-sizes: (
 	xl: $font-size-xl
 ) !default;
 
-$h-1-font-size: var(--#{$prefix}h-1-font-size, $h-1-fs) !default;
-$h-2-font-size: var(--#{$prefix}h-2-font-size, $h-2-fs) !default;
-$h-3-font-size: var(--#{$prefix}h-3-font-size, $h-3-fs) !default;
-$h-4-font-size: var(--#{$prefix}h-4-font-size, $h-4-fs) !default;
-$h-5-font-size: var(--#{$prefix}h-6-font-size, $h-5-fs) !default;
-$h-6-font-size: var(--#{$prefix}h-5-font-size, $h-6-fs) !default;
+$h-1-font-size: var(--#{$prefix}h-1-font-size, $fs-h-1) !default;
+$h-2-font-size: var(--#{$prefix}h-2-font-size, $fs-h-2) !default;
+$h-3-font-size: var(--#{$prefix}h-3-font-size, $fs-h-3) !default;
+$h-4-font-size: var(--#{$prefix}h-4-font-size, $fs-h-4) !default;
+$h-5-font-size: var(--#{$prefix}h-6-font-size, $fs-h-5) !default;
+$h-6-font-size: var(--#{$prefix}h-5-font-size, $fs-h-6) !default;
 
 $title-font-sizes: (
 	h-1: $h-1-font-size,
@@ -278,6 +277,7 @@ $border-widths: (
 ) !default;
 
 $border-radius-list: (
+	none: 0,
 	sm: 4px,
 	base: 6px,
 	lg: 8px,
@@ -288,7 +288,7 @@ $border-radius-list: (
 
 $border-width: map-get($border-widths, 1) !default;
 $border-style: solid !default;
-$border-color: $cool-gray-700 !default;
+$border-color: $gray-300 !default;
 $border-radius: map-get($border-radius-list, 'sm') !default;
 /* ----- Border Variables End ----- */
 
@@ -300,3 +300,29 @@ $transition-base: all 0.2s ease-in-out !default;
 $transition-fade: opacity 0.15s linear !default;
 
 $disabled-opacity: 0.58 !default;
+
+$cursor-list: (
+	// normal
+	'auto': auto,
+	'default': default,
+	'none': none,
+	// link and status
+	'context-menu': context-menu,
+	'help': help,
+	'pointer': pointer,
+	'wait': wait,
+	// select
+	'cell': cell,
+	'crosshair': crosshair,
+	'text': text,
+	'vertical-text': vertical-text,
+	'alias': alias,
+	// drag and drop
+	'copy': copy,
+	'move': move,
+	'no-drop': no-drop,
+	'not-allowed': not-allowed,
+	// zoom in and out
+	'zoom-in': zoom-in,
+	'zoom-out': zoom-out
+) !default;

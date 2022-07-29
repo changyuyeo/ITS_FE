@@ -1,46 +1,64 @@
 import { ButtonHTMLAttributes, CSSProperties, FC, ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
-import { ColorType } from '../../typings/props.types';
+import { SizeTypes } from '../../typings/props.types.d';
 
-type BgColorType = keyof Omit<ColorType, 'deep-gray' | 'light-gray' | 'white'> | 'default';
+type ButtonAttrType = ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonSizeType = keyof Pick<SizeTypes, 'sm' | 'base' | 'lg'>;
+type ButtonShapeType = 'default' | 'circle' | 'round';
+type ButtonThemeType = 'primary' | 'secondary' | 'success' | 'error' | 'gray' | 'dark';
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+// type -> shape -> size -> loading -> disabled
+export interface ButtonProps extends Omit<ButtonAttrType, 'type'> {
 	children: ReactNode;
 	className?: string;
-	bgColor?: BgColorType;
+	disabled?: boolean;
 	fullSize?: boolean;
-	px?: number;
-	py?: number;
-	shadow?: boolean;
-	Icon?: ReactNode;
+	href?: string;
+	htmlType?: ButtonAttrType['type'];
+	icon?: ReactNode;
+	loading?: boolean;
+	shape?: ButtonShapeType;
+	size?: ButtonSizeType;
+	style?: CSSProperties;
+	target?: string;
+	type?: ButtonThemeType;
 }
 
 const BASE = 'wm-btn' as const;
 
 const Button: FC<ButtonProps> = ({
 	children,
-	className,
-	bgColor = 'default',
+	className = '',
+	disabled = false,
 	fullSize = false,
-	px = 8,
-	py = 12,
-	shadow = false,
-	Icon,
+	htmlType = 'button',
+	icon,
+	loading = false,
+	shape = 'deafult',
+	size = 'base',
+	style,
+	type = 'default',
 	...props
 }) => {
 	const cx = classNames(
 		BASE,
-		`${BASE}--color-${bgColor}`,
-		{ [`${BASE}--fullSize`]: fullSize },
-		{ [`${BASE}--shadow`]: shadow }
+		{ [`${BASE}--disabled`]: disabled },
+		{ [`${BASE}--full-size`]: fullSize },
+		{ [`${BASE}--loading`]: loading },
+		`${BASE}--shape-${shape}`,
+		`${BASE}--size-${size}`,
+		`${BASE}--type-${type}`
 	);
 
-	const paddingStyled: CSSProperties = useMemo(() => ({ padding: `${px}px ${py}px` }), [px, py]);
+	const ButtonStyled: CSSProperties = useMemo(
+		() => ({ height: 'fit-content', position: 'relative' }),
+		[]
+	);
 
 	return (
-		<button className={`${cx} ${className}`} style={paddingStyled} {...props}>
+		<button className={`${cx} ${className}`} style={style} type={htmlType} {...props}>
+			{icon && <div className={`${BASE}--icon`}>{icon}</div>}
 			{children}
-			{Icon && <div className={`${BASE}--icon`}>{Icon}</div>}
 		</button>
 	);
 };

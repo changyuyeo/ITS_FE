@@ -3,23 +3,25 @@
 @import 'base/all';
 
 body {
-	background-color: $wm-body-bg;
+	background-color: var(--#{$prefix}body-bg-color);
 	overflow-x: hidden;
 
 	* {
-		font-family: $wm-body-font-family;
-		font-size: $fs-base;
-		font-weight: $fw-regular;
+		color: var(--#{$prefix}body-font-color);
+		font-family: var(--#{$prefix}body-font-family);
+		font-size: var(--#{$prefix}body-font-size);
+		font-weight: var(--#{$prefix}body-font-weight);
+		line-height: var(--#{$prefix}body-line-height);
 	}
 }
 
-//* component styles
-@import 'styles/avatar';
+//* Component Styles
+// @import 'styles/avatar';
 @import 'styles/button';
-@import 'styles/card';
-@import 'styles/divider';
-@import 'styles/grid';
-@import 'styles/input';
-@import 'styles/text';
-@import 'styles/textarea';
-@import 'styles/title';
+// @import 'styles/card';
+// @import 'styles/divider';
+// @import 'styles/grid';
+// @import 'styles/input';
+// @import 'styles/text';
+// @import 'styles/textarea';
+// @import 'styles/title';

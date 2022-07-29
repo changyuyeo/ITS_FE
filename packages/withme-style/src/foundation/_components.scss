@@ -1,0 +1,76 @@
+/* --- Button Variables --- */
+$btn-theme: (
+	'primary': $primary-500,
+	'secondary': $secondary-500,
+	'success': $success-500,
+	'error': $error-500,
+	'gray': $gray-400,
+	'dark': $gray-900
+) !default;
+
+$btn-theme-hover: (
+	'primary': $primary-700,
+	'secondary': $secondary-700,
+	'success': $success-700,
+	'error': $error-700,
+	'gray': $gray-600,
+	'dark': $black
+) !default;
+
+$btn-theme-outline-hover: (
+	'primary': $primary-200,
+	'secondary': $secondary-200,
+	'success': $success-200,
+	'error': $error-200,
+	'gray': $gray-100,
+	'dark': $gray-600
+) !default;
+
+$btn-theme-outline-active: (
+	'primary': $primary-300,
+	'secondary': $secondary-300,
+	'success': $success-300,
+	'error': $error-300,
+	'gray': $gray-100,
+	'dark': $gray-700
+) !default;
+
+$btn-paddings-x: (
+	'sm': map-get($spacing, xxs),
+	'base': map-get($spacing, xs),
+	'lg': map-get($spacing, sm)
+) !default;
+
+$btn-paddings-y: (
+	'sm': map-get($spacing, xxxs),
+	'base': map-get($spacing, xxs),
+	'lg': map-get($spacing, xs)
+) !default;
+
+$btn-font-size: (
+	'sm': $font-size-sm,
+	'base': $font-size-sm,
+	'lg': $font-size-base
+) !default;
+
+$btn-border-width: $border-width !default;
+$btn-border-style: $border-style !default;
+$btn-shape-list: (
+	'default': map-get($border-radius-list, none),
+	'circle': map-get($border-radius-list, sm),
+	'round': map-get($border-radius-list, round)
+) !default;
+
+$btn-cursor-list: (
+	'click': map-get($cursor-list, 'pointer'),
+	'disabled': map-get($cursor-list, 'not-allowed'),
+	'loading': map-get($cursor-list, 'progress')
+) !default;
+
+$btn-font-family: $noto-sans !default;
+$btn-font-weight: $fw-regular !default;
+$btn-line-height: $lh-base !default;
+$btn-box-shadow: $box-shadow !default;
+$btn-disabled-opacity: $disabled-opacity !default;
+$btn-transition: $transition-base !default;
+/* --- Button Variables End --- */

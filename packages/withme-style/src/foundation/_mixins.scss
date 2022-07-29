@@ -1,0 +1,23 @@
+@mixin media-query($size) {
+	@media (min-width: map-get($breakpoints, $size)) {
+		@content;
+	}
+}
+
+@mixin rem($key, $size) {
+	$value: ($size / 16) + rem;
+
+	@if $key == 'width' {
+		width: $value;
+	} @else if $key == 'height' {
+		height: $value;
+	} @else if $key == 'font-size' {
+		font-size: $value;
+	}
+}
+
+@mixin flex-center {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
