@@ -283,7 +283,7 @@ $border-radius-list: (
 	lg: 8px,
 	xl: 16px,
 	xxl: 32px,
-	round: 50%
+	circle: 50%
 ) !default;
 
 $border-width: map-get($border-widths, 1) !default;
@@ -310,6 +310,7 @@ $cursor-list: (
 	'context-menu': context-menu,
 	'help': help,
 	'pointer': pointer,
+	'progress': progress,
 	'wait': wait,
 	// select
 	'cell': cell,

@@ -1,26 +1,24 @@
 import { ButtonHTMLAttributes, CSSProperties, FC, ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
-import { SizeTypes } from '../../typings/props.types.d';
+import { SizeTypes, ThemeTypes } from '../../typings/props.types.d';
 
 type ButtonAttrType = ButtonHTMLAttributes<HTMLButtonElement>;
 type ButtonSizeType = keyof Pick<SizeTypes, 'sm' | 'base' | 'lg'>;
-type ButtonShapeType = 'default' | 'circle' | 'round';
-type ButtonThemeType = 'primary' | 'secondary' | 'success' | 'error' | 'gray' | 'dark';
+type ButtonShapeType = 'default' | 'circle';
+type ButtonThemeType = keyof ThemeTypes | 'gray' | 'dark';
 
-// type -> shape -> size -> loading -> disabled
 export interface ButtonProps extends Omit<ButtonAttrType, 'type'> {
 	children: ReactNode;
 	className?: string;
 	disabled?: boolean;
 	fullSize?: boolean;
-	href?: string;
 	htmlType?: ButtonAttrType['type'];
 	icon?: ReactNode;
 	loading?: boolean;
 	shape?: ButtonShapeType;
 	size?: ButtonSizeType;
+	outline?: boolean;
 	style?: CSSProperties;
-	target?: string;
 	type?: ButtonThemeType;
 }
 
@@ -34,10 +32,11 @@ const Button: FC<ButtonProps> = ({
 	htmlType = 'button',
 	icon,
 	loading = false,
-	shape = 'deafult',
+	outline = false,
+	shape = 'default',
 	size = 'base',
 	style,
-	type = 'default',
+	type = 'primary',
 	...props
 }) => {
 	const cx = classNames(
@@ -47,17 +46,24 @@ const Button: FC<ButtonProps> = ({
 		{ [`${BASE}--loading`]: loading },
 		`${BASE}--shape-${shape}`,
 		`${BASE}--size-${size}`,
-		`${BASE}--type-${type}`
+		`${BASE}--type-${type}-${outline ? 'outline' : 'fill'}`
 	);
 
 	const ButtonStyled: CSSProperties = useMemo(
-		() => ({ height: 'fit-content', position: 'relative' }),
-		[]
+		() => ({ height: 'fit-content', position: 'relative', ...style }),
+		[style]
 	);
 
 	return (
-		<button className={`${cx} ${className}`} style={style} type={htmlType} {...props}>
-			{icon && <div className={`${BASE}--icon`}>{icon}</div>}
+		<button
+			className={`${cx} ${className}`}
+			style={ButtonStyled}
+			type={htmlType}
+			disabled={disabled}
+			{...props}
+		>
+			{icon && <div className={`${BASE}--prefix`}>{icon}</div>}
+			{loading && <div className={`${BASE}--prefix`}>loading...</div>}
 			{children}
 		</button>
 	);

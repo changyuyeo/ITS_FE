@@ -10,3 +10,10 @@ export type SizeTypes = {
 	xxl: 'xxl';
 	xxxl: 'xxxl';
 };
+
+export type ThemeTypes = {
+	primary: 'primary';
+	secondary: 'secondary';
+	success: 'success';
+	error: 'error';
+};

@@ -9,30 +9,39 @@ $btn-theme: (
 ) !default;
 
 $btn-theme-hover: (
-	'primary': $primary-700,
-	'secondary': $secondary-700,
-	'success': $success-700,
-	'error': $error-700,
+	'primary': $primary-600,
+	'secondary': $secondary-600,
+	'success': $success-600,
+	'error': $error-600,
 	'gray': $gray-600,
 	'dark': $black
 ) !default;
 
+$btn-theme-active: (
+	'primary': $primary-700,
+	'secondary': $secondary-700,
+	'success': $success-700,
+	'error': $error-700,
+	'gray': $gray-700,
+	'dark': $black
+) !default;
+
 $btn-theme-outline-hover: (
+	'primary': $primary-100,
+	'secondary': $secondary-100,
+	'success': $success-100,
+	'error': $error-100,
+	'gray': $gray-200,
+	'dark': $gray-400
+) !default;
+
+$btn-theme-outline-active: (
 	'primary': $primary-200,
 	'secondary': $secondary-200,
 	'success': $success-200,
 	'error': $error-200,
-	'gray': $gray-100,
-	'dark': $gray-600
-) !default;
-
-$btn-theme-outline-active: (
-	'primary': $primary-300,
-	'secondary': $secondary-300,
-	'success': $success-300,
-	'error': $error-300,
-	'gray': $gray-100,
-	'dark': $gray-700
+	'gray': $gray-200,
+	'dark': $gray-500
 ) !default;
 
 $btn-paddings-x: (
@@ -56,9 +65,8 @@ $btn-font-size: (
 $btn-border-width: $border-width !default;
 $btn-border-style: $border-style !default;
 $btn-shape-list: (
-	'default': map-get($border-radius-list, none),
-	'circle': map-get($border-radius-list, sm),
-	'round': map-get($border-radius-list, round)
+	'default': map-get($border-radius-list, sm),
+	'circle': map-get($border-radius-list, circle)
 ) !default;
 
 $btn-cursor-list: (

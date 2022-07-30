@@ -3,6 +3,7 @@
 	"rules": {
 		"@typescript-eslint/comma-dangle": "off",
 		"@typescript-eslint/indent": "off",
+		"import/no-extraneous-dependencies": "off",
 		"react/react-in-jsx-scope": "off"
 	}
 }
