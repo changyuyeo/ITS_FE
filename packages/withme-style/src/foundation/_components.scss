@@ -82,3 +82,16 @@ $btn-box-shadow: $box-shadow !default;
 $btn-disabled-opacity: $disabled-opacity !default;
 $btn-transition: $transition-base !default;
 /* --- Button Variables End --- */
+
+/* --- Spinner Variables --- */
+$spinner-width: 2rem !default;
+$spinner-height: $spinner-width !default;
+$spinner-border-width: 0.25em !default;
+
+$spinner-width-sm: 1rem !default;
+$spinner-height-sm: $spinner-width-sm !default;
+$spinner-border-width-sm: 0.2em !default;
+
+$spinner-vertical-align: -0.125em !default;
+$spinner-animation-speed: 0.75s !default;
+/* --- Spinner Variables End --- */

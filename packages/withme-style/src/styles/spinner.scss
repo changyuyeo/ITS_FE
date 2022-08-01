@@ -1,0 +1,8 @@
+@import 'foundation/all';
+// @import '../mixins/button';
+
+@keyframes spinner-border {
+	to {
+		transform: rotate(360deg) #{'/* rtl:ignore */'};
+	}
+}
