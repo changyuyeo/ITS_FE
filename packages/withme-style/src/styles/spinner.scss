@@ -1,8 +1,38 @@
 @import 'foundation/all';
-// @import '../mixins/button';
+
+.#{$prefix}spinner {
+	--#{$prefix}spinner-width: #{$spinner-width};
+	--#{$prefix}spinner-height: #{$spinner-height};
+	--#{$prefix}spinner-vertical-align: #{$spinner-vertical-align};
+	--#{$prefix}spinner-border-width: #{$spinner-border-width};
+
+	--#{$prefix}spinner-animation-speed: #{$spinner-animation-speed};
+	--#{$prefix}spinner-animation-name: spinner-border;
+
+	@include flex-center();
+	left: 50%;
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	&--border {
+		animation: var(--#{$prefix}spinner-animation-speed) linear infinite
+			var(--#{$prefix}spinner-animation-name);
+		border: var(--#{$prefix}spinner-border-width) solid currentcolor;
+		border-radius: 50%;
+		border-right-color: transparent;
+		height: var(--#{$prefix}spinner-width);
+		vertical-align: var(--#{$prefix}spinner-vertical-align);
+		width: var(--#{$prefix}spinner-width);
+	}
+}
 
 @keyframes spinner-border {
+	from {
+		transform: rotate(0deg);
+	}
+
 	to {
-		transform: rotate(360deg) #{'/* rtl:ignore */'};
+		transform: rotate(360deg);
 	}
 }
