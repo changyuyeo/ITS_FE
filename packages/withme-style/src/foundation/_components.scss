@@ -84,14 +84,28 @@ $btn-transition: $transition-base !default;
 /* --- Button Variables End --- */
 
 /* --- Spinner Variables --- */
-$spinner-width: 2rem !default;
-$spinner-height: $spinner-width !default;
-$spinner-border-width: 0.25em !default;
+$spinner-sizes: 'sm', 'base', 'lg';
 
 $spinner-width-sm: 1rem !default;
 $spinner-height-sm: $spinner-width-sm !default;
 $spinner-border-width-sm: 0.2em !default;
 
+$spinner-width-base: 2rem !default;
+$spinner-height-base: $spinner-width-base !default;
+$spinner-border-width-base: 0.25em !default;
+
+$spinner-width-lg: 2.5rem !default;
+$spinner-height-lg: $spinner-width-lg !default;
+$spinner-border-width-lg: 0.3em !default;
+
 $spinner-vertical-align: -0.125em !default;
-$spinner-animation-speed: 0.75s !default;
+$spinner-animation-name: spinner-circle !default;
+
+$spinner-colors: (
+	'primary': $primary-500,
+	'secondary': $secondary-500,
+	'success': $success-500,
+	'error': $error-500,
+	'white': $white
+) !default;
 /* --- Spinner Variables End --- */

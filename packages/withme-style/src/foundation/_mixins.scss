@@ -21,3 +21,10 @@
 	display: flex;
 	justify-content: center;
 }
+
+@mixin fixed-center {
+	left: 50%;
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}

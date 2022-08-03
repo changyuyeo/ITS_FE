@@ -1,33 +1,62 @@
 @import 'foundation/all';
 
 .#{$prefix}spinner {
-	--#{$prefix}spinner-width: #{$spinner-width};
-	--#{$prefix}spinner-height: #{$spinner-height};
+	--#{$prefix}spinner-width: var(--#{$prefix}spinner-width);
+	--#{$prefix}spinner-height: var(--#{$prefix}spinner-height);
+	--#{$prefix}spinner-color: var(--#{$prefix}spinner-color);
 	--#{$prefix}spinner-vertical-align: #{$spinner-vertical-align};
-	--#{$prefix}spinner-border-width: #{$spinner-border-width};
-
-	--#{$prefix}spinner-animation-speed: #{$spinner-animation-speed};
-	--#{$prefix}spinner-animation-name: spinner-border;
 
 	@include flex-center();
-	left: 50%;
-	position: fixed;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	@include fixed-center();
 
-	&--border {
-		animation: var(--#{$prefix}spinner-animation-speed) linear infinite
-			var(--#{$prefix}spinner-animation-name);
-		border: var(--#{$prefix}spinner-border-width) solid currentcolor;
-		border-radius: 50%;
-		border-right-color: transparent;
+	> div {
+		animation-iteration-count: infinite;
+
+		animation-name: var(--#{$prefix}spinner-animation-name);
+		animation-timing-function: linear;
+		border: var(--#{$prefix}spinner-border-width) solid var(--#{$prefix}spinner-color); // currentcolor
 		height: var(--#{$prefix}spinner-width);
+
+		// 	animation: var(--#{$prefix}spinner-animation-speed) linear infinite
+		// var(--#{$prefix}spinner-animation-name);
+
 		vertical-align: var(--#{$prefix}spinner-vertical-align);
 		width: var(--#{$prefix}spinner-width);
 	}
+
+	&--circle {
+		--#{$prefix}spinner-animation-name: #{$spinner-animation-name};
+
+		border-radius: 50%;
+		border-right-color: transparent !important;
+	}
 }
 
-@keyframes spinner-border {
+@each $color, $value in $spinner-colors {
+	.#{$prefix}spinner--color-#{$color} {
+		--#{$prefix}spinner-color: #{$value};
+	}
+}
+
+@each $size in $spinner-sizes {
+	.#{$prefix}spinner--size-#{$size} {
+		@if $size == 'sm' {
+			--#{$prefix}spinner-width: #{$spinner-width-sm};
+			--#{$prefix}spinner-height: #{$spinner-height-sm};
+			--#{$prefix}spinner-border-width: #{$spinner-border-width-sm};
+		} @else if $size == 'base' {
+			--#{$prefix}spinner-width: #{$spinner-width-base};
+			--#{$prefix}spinner-height: #{$spinner-height-base};
+			--#{$prefix}spinner-border-width: #{$spinner-border-width-base};
+		} @else if $size == 'lg' {
+			--#{$prefix}spinner-width: #{$spinner-width-lg};
+			--#{$prefix}spinner-height: #{$spinner-height-lg};
+			--#{$prefix}spinner-border-width: #{$spinner-border-width-lg};
+		}
+	}
+}
+
+@keyframes spinner-circle {
 	from {
 		transform: rotate(0deg);
 	}
