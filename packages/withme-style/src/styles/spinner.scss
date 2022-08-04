@@ -7,21 +7,23 @@
 	--#{$prefix}spinner-vertical-align: #{$spinner-vertical-align};
 
 	@include flex-center();
-	@include fixed-center();
 
 	> div {
 		animation-iteration-count: infinite;
-
 		animation-name: var(--#{$prefix}spinner-animation-name);
 		animation-timing-function: linear;
-		border: var(--#{$prefix}spinner-border-width) solid var(--#{$prefix}spinner-color); // currentcolor
+		border: var(--#{$prefix}spinner-border-width) solid var(--#{$prefix}spinner-color);
 		height: var(--#{$prefix}spinner-width);
-
-		// 	animation: var(--#{$prefix}spinner-animation-speed) linear infinite
-		// var(--#{$prefix}spinner-animation-name);
-
 		vertical-align: var(--#{$prefix}spinner-vertical-align);
 		width: var(--#{$prefix}spinner-width);
+	}
+
+	&--fixed {
+		@include fixed-center();
+	}
+
+	&--absolute {
+		position: absolute;
 	}
 
 	&--circle {
