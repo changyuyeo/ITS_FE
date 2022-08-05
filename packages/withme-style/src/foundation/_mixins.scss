@@ -22,9 +22,9 @@
 	justify-content: center;
 }
 
-@mixin fixed-center {
+@mixin position-center($position) {
 	left: 50%;
-	position: fixed;
+	position: $position;
 	top: 50%;
 	transform: translate(-50%, -50%);
 }

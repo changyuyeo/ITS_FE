@@ -42,11 +42,11 @@
 	padding: var(--#{$prefix}btn-padding-y) var(--#{$prefix}btn-padding-x);
 	transition: var(--#{$prefix}btn-transition);
 
-	&:hover :not(.#{$prefix}btn--disabled) :not(.#{$prefix}btn--loading) {
+	&:hover:not(.#{$prefix}btn--disabled):not(.#{$prefix}btn--loading) {
 		background-color: var(--#{$prefix}btn-bg-hover);
 	}
 
-	&:active :not(.#{$prefix}btn--disabled) :not(.#{$prefix}btn--loading) {
+	&:active:not(.#{$prefix}btn--disabled):not(.#{$prefix}btn--loading) {
 		background-color: var(--#{$prefix}btn-bg-active);
 	}
 
@@ -66,6 +66,22 @@
 	&--loading {
 		opacity: var(--#{$prefix}btn-disabled-opacity);
 	}
+
+	&--prefix {
+		$size: 20px;
+		height: $size;
+		margin-right: 6px;
+
+		position: relative;
+		width: $size;
+	}
+
+	&--prefix-fullsize {
+		left: 20px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 }
 
 @each $theme, $value in $btn-theme {
@@ -77,6 +93,14 @@
 			map-get($btn-theme-active, $theme),
 			$value
 		);
+
+		&:hover:not(.#{$prefix}btn--disabled):not(.#{$prefix}btn--loading) {
+			border-color: var(--#{$prefix}btn-bg-hover);
+		}
+
+		&:active:not(.#{$prefix}btn--disabled):not(.#{$prefix}btn--loading) {
+			border-color: var(--#{$prefix}btn-bg-active);
+		}
 	}
 
 	.#{$prefix}btn--type-#{$theme}-outline {

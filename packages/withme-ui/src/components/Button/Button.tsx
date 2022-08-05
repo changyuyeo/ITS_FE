@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, CSSProperties, FC, ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
 import { SizeTypes, ThemeTypes } from '../../typings/props.types.d';
+import Spinner from '../Spinner';
 
 type ButtonAttrType = ButtonHTMLAttributes<HTMLButtonElement>;
 type ButtonSizeType = keyof Pick<SizeTypes, 'sm' | 'base' | 'lg'>;
@@ -48,6 +49,7 @@ const Button: FC<ButtonProps> = ({
 		`${BASE}--size-${size}`,
 		`${BASE}--type-${type}-${outline ? 'outline' : 'fill'}`
 	);
+	const prefixClassNames = classNames(fullSize ? `${BASE}--prefix-fullsize` : `${BASE}--prefix`);
 
 	const ButtonStyled: CSSProperties = useMemo(
 		() => ({ height: 'fit-content', position: 'relative', ...style }),
@@ -62,8 +64,12 @@ const Button: FC<ButtonProps> = ({
 			disabled={disabled}
 			{...props}
 		>
-			{icon && <div className={`${BASE}--prefix`}>{icon}</div>}
-			{loading && <div className={`${BASE}--prefix`}>loading...</div>}
+			{icon && <div className={prefixClassNames}>{icon}</div>}
+			{loading && (
+				<div className={prefixClassNames}>
+					<Spinner color="white" isAbsolute size="sm" duration={1000} />
+				</div>
+			)}
 			{children}
 		</button>
 	);

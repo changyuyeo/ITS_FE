@@ -1,12 +1,5 @@
-import styled from 'styled-components';
 import { Button } from '@with-me/ui';
-
-const Wrapper = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-`;
+import { Wrapper } from './styled';
 
 const ButtonTest = () => (
 	<>
@@ -38,7 +31,9 @@ const ButtonTest = () => (
 				test
 			</Button>
 		</Wrapper>
-		<Button fullSize>test</Button>
+		<Button fullSize loading>
+			test
+		</Button>
 		<Wrapper>
 			<Button size="sm">test</Button>
 			<Button size="base">test</Button>

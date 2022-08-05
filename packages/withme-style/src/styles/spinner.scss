@@ -19,11 +19,11 @@
 	}
 
 	&--fixed {
-		@include fixed-center();
+		@include position-center(fixed);
 	}
 
 	&--absolute {
-		position: absolute;
+		@include position-center(absolute);
 	}
 
 	&--circle {
