@@ -3,8 +3,8 @@
 with me의 모든 디자인 요소를 작업하는 레포지토리 입니다.
 
 - [withme-ui](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-ui) - 컴포넌트 패키지 with react
-- [withme-icon](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-style) - 아이콘 패키지 with react
-- [withme-scss](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-scss) - 스타일 패키지 with scss
+- [withme-icon](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-icon) - 아이콘 패키지 with react
+- [withme-style](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-style) - 스타일 패키지 with scss
 
 > `packages`에 있는 라이브러리의 사용법들은 각 워크스페이스 README.md를 참고하면 됩니다!
 
@@ -16,10 +16,10 @@ with me의 모든 디자인 요소를 작업하는 레포지토리 입니다.
 - [x] ~scss 패키지 기본구조 리팩토링~
 - [x] ~각 패키지 name 수정~
 - [x] ~rollup 설정 변경~
-- [ ] Loading Spinner 만들기
+- [x] Loading Spinner 만들기
 - [x] ~Button Loading 상태 추가~
-- [ ] Button prefix styling (icon, loading)
-- [ ] Button hover, active 수정 (loading, disabled 상태일 땐 제외)
+- [x] Button prefix styling (icon, loading)
+- [x] Button hover, active 수정 (loading, disabled 상태일 땐 제외)
 - [ ] Typography Component 리팩토링
 - [ ] readme image 경로 수정
 
