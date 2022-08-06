@@ -1,33 +1,42 @@
-import { FC, ReactNode } from 'react';
+import { CSSProperties, FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
-import { BreakpointType, ColorType, WeightType } from '../../typings/props.types';
+import { FontWeightTypes, SizeTypes, ThemeTypes } from '../../typings/props.types.d';
 
-type TextColorType = keyof Omit<ColorType, 'dark'>;
+type TextColorType = keyof ThemeTypes | 'defalut' | 'description' | 'guide' | 'white';
+type TextSizeType = keyof Omit<SizeTypes, 'xxxs' | 'xxs' | 'md' | 'xxxl'>;
 
-export interface TextProps {
-	children: ReactNode;
+interface TextProps extends HTMLAttributes<HTMLSpanElement> {
 	className?: string;
+	children: string;
 	color?: TextColorType;
-	weight?: keyof WeightType;
-	size?: keyof BreakpointType;
+	size?: TextSizeType;
+	style?: CSSProperties;
+	weight?: FontWeightTypes;
 }
 
+const BASE = 'wm-text' as const;
+
 const Text: FC<TextProps> = ({
-	color = 'deep-gray',
-	className,
+	children,
+	className = '',
+	color = 'default',
 	size = 'base',
+	style,
 	weight = 'regular',
-	children
+	...props
 }) => {
-	const base = 'wm-text';
 	const cx = classNames(
-		base,
-		`${base}--color-${color}`,
-		`${base}--size-${size}`,
-		`${base}--weight-${weight}`
+		BASE,
+		`${BASE}--color-${color}`,
+		`${BASE}--size-${size}`,
+		`${BASE}--weight-${weight}`
 	);
 
-	return <span className={`${cx} ${className}`}>{children}</span>;
+	return (
+		<span className={`${cx} ${className}`} style={style} {...props}>
+			{children}
+		</span>
+	);
 };
 
 export default Text;

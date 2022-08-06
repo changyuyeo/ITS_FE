@@ -1,48 +1,23 @@
-@import 'foundation/all';
-
-$sizes: (
-	large: $h-1,
-	middle: $h-2,
-	small: $h-3
-);
-
-$weights: (
-	thin: $fw-thin,
-	light: $fw-light,
-	regular: $fw-regular,
-	medium: $fw-medium,
-	bold: $fw-bold
-);
-
-$colors: (
-	primary: $wm-primary,
-	secondary: $wm-secondary,
-	danger: $wm-danger,
-	success: $wm-success,
-	deep-gray: $wm-gray-100,
-	greyish: $wm-gray-300,
-	light-gray: $wm-gray-600,
-	white: $wm-white
-);
-
-.wm-title {
-	margin: 0;
+.#{$prefix}title {
+	color: var(--#{$prefix}title-color);
+	font-size: var(--#{$prefix}title-size);
+	font-weight: var(--#{$prefix}title-weight);
 }
 
-@each $size, $value in $sizes {
-	.wm-title--size-#{$size} {
-		font-size: $value;
+@each $color, $value in $text-themes {
+	.#{$prefix}title--color-#{$color} {
+		--#{$prefix}title-color: #{$value};
 	}
 }
 
-@each $weight, $value in $weights {
-	.wm-title--weight-#{$weight} {
-		font-weight: $value;
+@each $size, $value in $title-sizes {
+	.#{$prefix}title--size-#{$size} {
+		--#{$prefix}title-size: #{$value};
 	}
 }
 
-@each $color, $value in $colors {
-	.wm-title--color-#{$color} {
-		color: $value;
+@each $weight, $value in $text-weights {
+	.#{$prefix}title--weight-#{$weight} {
+		--#{$prefix}title-weight: #{$value};
 	}
 }

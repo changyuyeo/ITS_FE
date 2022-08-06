@@ -16,10 +16,10 @@ with me의 모든 디자인 요소를 작업하는 레포지토리 입니다.
 - [x] ~scss 패키지 기본구조 리팩토링~
 - [x] ~각 패키지 name 수정~
 - [x] ~rollup 설정 변경~
-- [x] Loading Spinner 만들기
+- [x] ~Loading Spinner 만들기~
 - [x] ~Button Loading 상태 추가~
-- [x] Button prefix styling (icon, loading)
-- [x] Button hover, active 수정 (loading, disabled 상태일 땐 제외)
+- [x] ~Button prefix styling (icon, loading)~
+- [x] ~Button hover, active 수정 (loading, disabled 상태일 땐 제외)~
 - [ ] Typography Component 리팩토링
 - [ ] readme image 경로 수정
 

@@ -1,3 +1,4 @@
+/* ----- Commom Mixin ----- */
 @mixin media-query($size) {
 	@media (min-width: map-get($breakpoints, $size)) {
 		@content;
@@ -28,3 +29,24 @@
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
+/* ----- Commom Mixin End ----- */
+
+/* ----- Button Mixin ----- */
+@mixin button-theme($color, $bg-color, $bg-color-hover, $bg-color-active, $border-color) {
+	--#{$prefix}btn-color: #{$color};
+	--#{$prefix}btn-bg: #{$bg-color};
+	--#{$prefix}btn-bg-hover: #{$bg-color-hover};
+	--#{$prefix}btn-bg-active: #{$bg-color-active};
+	--#{$prefix}btn-border-color: #{$border-color};
+}
+
+@mixin button-size($font-size, $padding-x, $padding-y) {
+	--#{$prefix}btn-font-size: #{$font-size};
+	--#{$prefix}btn-padding-x: #{$padding-x};
+	--#{$prefix}btn-padding-y: #{$padding-y};
+}
+
+@mixin button-shape($radius) {
+	--#{$prefix}btn-border-radius: #{$radius};
+}
+/* ----- Button Mixin End ----- */

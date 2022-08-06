@@ -17,3 +17,5 @@ export type ThemeTypes = {
 	success: 'success';
 	error: 'error';
 };
+
+export type FontWeightTypes = 'thin' | 'light' | 'regular' | 'medium' | 'bold';

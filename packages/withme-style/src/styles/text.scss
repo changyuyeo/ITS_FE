@@ -1,51 +1,23 @@
-@import 'foundation/all';
-
-$sizes: (
-	sm: $fs-sm,
-	base: $fs-base,
-	lg: $fs-lg,
-	xl: $fs-xl,
-	xxl: $fs-xxl,
-	xxxl: $fs-xxxl
-);
-
-$weights: (
-	thin: $fw-thin,
-	light: $fw-light,
-	regular: $fw-regular,
-	medium: $fw-medium,
-	bold: $fw-bold
-);
-
-$colors: (
-	primary: $wm-primary,
-	secondary: $wm-secondary,
-	danger: $wm-danger,
-	success: $wm-success,
-	deep-gray: $wm-gray-100,
-	greyish: $wm-gray-300,
-	light-gray: $wm-gray-600,
-	white: $wm-white
-);
-
-.wm-text {
-	margin: 0;
+.#{$prefix}text {
+	color: var(--#{$prefix}text-color);
+	font-size: var(--#{$prefix}text-size);
+	font-weight: var(--#{$prefix}text-weight);
 }
 
-@each $size, $value in $sizes {
-	.wm-text--size-#{$size} {
-		font-size: $value;
+@each $color, $value in $text-themes {
+	.#{$prefix}text--color-#{$color} {
+		--#{$prefix}text-color: #{$value};
 	}
 }
 
-@each $weight, $value in $weights {
-	.wm-text--weight-#{$weight} {
-		font-weight: $value;
+@each $size, $value in $text-sizes {
+	.#{$prefix}text--size-#{$size} {
+		--#{$prefix}text-size: #{$value};
 	}
 }
 
-@each $color, $value in $colors {
-	.wm-text--color-#{$color} {
-		color: $value;
+@each $weight, $value in $text-weights {
+	.#{$prefix}text--weight-#{$weight} {
+		--#{$prefix}text-weight: #{$value};
 	}
 }

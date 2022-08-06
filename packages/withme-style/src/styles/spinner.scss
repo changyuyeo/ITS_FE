@@ -1,9 +1,4 @@
-@import 'foundation/all';
-
 .#{$prefix}spinner {
-	--#{$prefix}spinner-width: var(--#{$prefix}spinner-width);
-	--#{$prefix}spinner-height: var(--#{$prefix}spinner-height);
-	--#{$prefix}spinner-color: var(--#{$prefix}spinner-color);
 	--#{$prefix}spinner-vertical-align: #{$spinner-vertical-align};
 
 	@include flex-center();

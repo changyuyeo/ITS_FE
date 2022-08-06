@@ -1,41 +1,56 @@
-import { FC, ReactNode } from 'react';
 import classNames from 'classnames';
-import { ColorType, WeightType, SizeType } from '../../typings/props.types';
+import { CSSProperties, DetailedHTMLProps, FC, HTMLAttributes, useMemo } from 'react';
+import { FontWeightTypes, ThemeTypes } from '../../typings/props.types';
 
-type TextColorType = keyof Omit<ColorType, 'dark'>;
+type TitleSizeType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type TitleColorType = keyof ThemeTypes | 'defalut' | 'description' | 'guide' | 'white';
+type HeadingPropsType = DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
 
-interface TitleProps {
-	color?: TextColorType;
-	children: ReactNode;
+interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
+	children: string;
 	className?: string;
-	weight?: keyof WeightType;
-	size?: keyof SizeType;
+	style?: CSSProperties;
+	size?: TitleSizeType;
+	weight?: FontWeightTypes;
+	color?: TitleColorType;
 }
 
+const BASE = 'wm-title' as const;
+
 const Title: FC<TitleProps> = ({
-	color = 'deep-gray',
-	className,
-	size = 'middle',
-	weight = 'regular',
-	children
+	children,
+	className = '',
+	color = 'defalut',
+	size = 'h2',
+	style,
+	weight = 'medium',
+	...props
 }) => {
-	const base = 'wm-title';
 	const cx = classNames(
-		base,
-		`${base}--color-${color}`,
-		`${base}--size-${size}`,
-		`${base}--weight-${weight}`
+		BASE,
+		`${BASE}--color-${color}`,
+		`${BASE}--size-${size}`,
+		`${BASE}--weight-${weight}`
+	);
+
+	const headingProps: HeadingPropsType = useMemo(
+		() => ({ className: `${cx} ${className}`, style, ...props }),
+		[className, cx, props, style]
 	);
 
 	switch (size) {
-		case 'large':
-			return <h1 className={`${cx} ${className}`}>{children}</h1>;
-		case 'middle':
-			return <h2 className={`${cx} ${className}`}>{children}</h2>;
-		case 'small':
-			return <h3 className={`${cx} ${className}`}>{children}</h3>;
-		default:
-			return null;
+		case 'h1':
+			return <h1 {...headingProps}>{children}</h1>;
+		case 'h2':
+			return <h2 {...headingProps}>{children}</h2>;
+		case 'h3':
+			return <h3 {...headingProps}>{children}</h3>;
+		case 'h4':
+			return <h4 {...headingProps}>{children}</h4>;
+		case 'h5':
+			return <h5 {...headingProps}>{children}</h5>;
+		case 'h6':
+			return <h6 {...headingProps}>{children}</h6>;
 	}
 };
 

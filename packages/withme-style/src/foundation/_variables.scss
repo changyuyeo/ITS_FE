@@ -192,14 +192,6 @@ $fw-regular: 400 !default;
 $fw-medium: 500 !default;
 $fw-bold: 700 !default;
 
-$font-weights: (
-	thin: $fw-thin,
-	light: $fw-light,
-	regular: $fw-regular,
-	medium: $fw-medium,
-	bold: $fw-bold
-) !default;
-
 $lh-sm: 1.25 !default;
 $lh-base: 1.5 !default;
 $lh-lg: 2 !default;
@@ -327,3 +319,156 @@ $cursor-list: (
 	'zoom-in': zoom-in,
 	'zoom-out': zoom-out
 ) !default;
+
+/* ----- Component Styles ----- */
+/* --- button variables --- */
+$btn-theme: (
+	'primary': $primary-500,
+	'secondary': $secondary-500,
+	'success': $success-500,
+	'error': $error-500,
+	'gray': $gray-400,
+	'dark': $gray-900
+) !default;
+
+$btn-theme-hover: (
+	'primary': $primary-600,
+	'secondary': $secondary-600,
+	'success': $success-600,
+	'error': $error-600,
+	'gray': $gray-600,
+	'dark': $black
+) !default;
+
+$btn-theme-active: (
+	'primary': $primary-700,
+	'secondary': $secondary-700,
+	'success': $success-700,
+	'error': $error-700,
+	'gray': $gray-700,
+	'dark': $black
+) !default;
+
+$btn-theme-outline-hover: (
+	'primary': $primary-100,
+	'secondary': $secondary-100,
+	'success': $success-100,
+	'error': $error-100,
+	'gray': $gray-200,
+	'dark': $gray-400
+) !default;
+
+$btn-theme-outline-active: (
+	'primary': $primary-200,
+	'secondary': $secondary-200,
+	'success': $success-200,
+	'error': $error-200,
+	'gray': $gray-200,
+	'dark': $gray-500
+) !default;
+
+$btn-paddings-x: (
+	'sm': map-get($spacing, xxs),
+	'base': map-get($spacing, xs),
+	'lg': map-get($spacing, sm)
+) !default;
+
+$btn-paddings-y: (
+	'sm': map-get($spacing, xxxs),
+	'base': map-get($spacing, xxs),
+	'lg': map-get($spacing, xs)
+) !default;
+
+$btn-font-size: (
+	'sm': $font-size-sm,
+	'base': $font-size-sm,
+	'lg': $font-size-base
+) !default;
+
+$btn-border-width: $border-width !default;
+$btn-border-style: $border-style !default;
+$btn-shape-list: (
+	'default': map-get($border-radius-list, sm),
+	'circle': map-get($border-radius-list, circle)
+) !default;
+
+$btn-cursor-list: (
+	'click': map-get($cursor-list, 'pointer'),
+	'disabled': map-get($cursor-list, 'not-allowed'),
+	'loading': map-get($cursor-list, 'progress')
+) !default;
+
+$btn-font-family: $noto-sans !default;
+$btn-font-weight: $fw-regular !default;
+$btn-line-height: $lh-base !default;
+$btn-box-shadow: $box-shadow !default;
+$btn-disabled-opacity: $disabled-opacity !default;
+$btn-transition: $transition-base !default;
+/* --- button variables End --- */
+
+/* --- spinner variables --- */
+$spinner-sizes: 'sm', 'base', 'lg';
+
+$spinner-width-sm: 0.8rem !default;
+$spinner-height-sm: $spinner-width-sm !default;
+$spinner-border-width-sm: 0.125em !default;
+
+$spinner-width-base: 2rem !default;
+$spinner-height-base: $spinner-width-base !default;
+$spinner-border-width-base: 0.25em !default;
+
+$spinner-width-lg: 2.5rem !default;
+$spinner-height-lg: $spinner-width-lg !default;
+$spinner-border-width-lg: 0.3em !default;
+
+$spinner-vertical-align: -0.125em !default;
+$spinner-animation-name: spinner-circle !default;
+
+$spinner-colors: (
+	'primary': $primary-500,
+	'secondary': $secondary-500,
+	'success': $success-500,
+	'error': $error-500,
+	'white': $white
+) !default;
+/* --- spinner variables End --- */
+
+/* --- text & title variables --- */
+$text-sizes: (
+	xs: $fs-xs,
+	sm: $fs-sm,
+	base: $fs-base,
+	lg: $fs-lg,
+	xl: $fs-xl,
+	xxl: $fs-xxl
+) !default;
+
+$title-sizes: (
+	h1: $fs-h-1,
+	h3: $fs-h-3,
+	h2: $fs-h-2,
+	h4: $fs-h-4,
+	h5: $fs-h-5,
+	h6: $fs-h-6
+) !default;
+
+$text-weights: (
+	thin: $fw-thin,
+	light: $fw-light,
+	regular: $fw-regular,
+	medium: $fw-medium,
+	bold: $fw-bold
+) !default;
+
+$text-themes: (
+	'primary': $primary-500,
+	'secondary': $secondary-500,
+	'success': $success-500,
+	'error': $error-500,
+	'default': $gray-900,
+	'description': $gray-700,
+	'guide': $gray-500,
+	'white': $white
+) !default;
+/* --- text & title variables End --- */
+/* ----- Component Styles End ----- */
