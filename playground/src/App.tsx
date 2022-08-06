@@ -1,5 +1,5 @@
 import { Container, Wrapper } from './components/styled';
-import { Text, Title } from '@with-me/ui';
+import { Divider, Text, Title } from '@with-me/ui';
 // import ButtonTest from './components/ButtonTest';
 // import SpinnerTest from './components/SpinnerTest';
 
@@ -8,33 +8,25 @@ const App = () => {
 		<Container>
 			{/* <ButtonTest /> */}
 			{/* <SpinnerTest /> */}
-			<Wrapper>
-				<Title color="primary">title</Title>
-				<Title color="secondary">title</Title>
-				<Title color="success">title</Title>
-				<Title color="error">title</Title>
-				<Title color="defalut">title</Title>
-				<Title color="description">title</Title>
-				<Title color="guide">title</Title>
-				<div style={{ background: '#333' }}>
-					<Title color="white">title</Title>
-				</div>
-			</Wrapper>
-			<Wrapper>
-				<Title size="h1">title</Title>
-				<Title size="h2">title</Title>
-				<Title size="h3">title</Title>
-				<Title size="h4">title</Title>
-				<Title size="h5">title</Title>
-				<Title size="h6">title</Title>
-			</Wrapper>
-			<Wrapper>
-				<Title weight="thin">title</Title>
-				<Title weight="light">title</Title>
-				<Title weight="regular">title</Title>
-				<Title weight="medium">title</Title>
-				<Title weight="bold">title</Title>
-			</Wrapper>
+			<Divider color="default" width={300} borderWidth={2} />
+			<Divider color="description" width={300} />
+			<Divider color="error" width={300} />
+			<Divider color="guide" width={300} />
+			<Divider color="primary" width={300} />
+			<Divider color="secondary" width={300} />
+			<Divider color="success" width={300} />
+			<div
+				style={{
+					background: '#333',
+					width: '100%',
+					height: '10px',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center'
+				}}
+			>
+				<Divider color="white" width={300} />
+			</div>
 		</Container>
 	);
 };

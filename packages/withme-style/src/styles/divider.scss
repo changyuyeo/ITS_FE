@@ -1,21 +1,13 @@
-$colors: (
-	primary: $wm-primary,
-	secondary: $wm-secondary,
-	danger: $wm-danger,
-	success: $wm-success,
-	deep-gray: $wm-gray-600,
-	greyish: $wm-gray-700,
-	light-gray: $wm-gray-900
-);
-
-.wm-divider {
+.#{$prefix}divider {
 	border: 0;
+	border-bottom-color: var(--#{$prefix}divider-color);
+	border-bottom-style: solid;
 	margin: 0;
 	width: 100%;
+}
 
-	@each $color, $value in $colors {
-		&--color-#{$color} {
-			border-bottom: 1px solid $value;
-		}
+@each $color, $value in $divider-themes {
+	.#{$prefix}divider--color-#{$color} {
+		--#{$prefix}divider-color: #{$value};
 	}
 }

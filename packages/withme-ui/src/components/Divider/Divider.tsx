@@ -1,19 +1,39 @@
-import { FC } from 'react';
+import { CSSProperties, FC, HTMLAttributes, useMemo } from 'react';
 import classNames from 'classnames';
-import { ColorType } from '../../typings/props.types';
+import { ThemeTypes } from '../../typings/props.types.d';
 
-type DividerColorType = keyof Omit<ColorType, 'dark' | 'white'> | 'success';
+type DividerColorType = keyof ThemeTypes | 'default' | 'description' | 'guide' | 'white';
 
-interface DividerProps {
-	color?: DividerColorType;
+interface DividerProps extends HTMLAttributes<HTMLHRElement> {
+	borderWidth?: number;
 	className?: string;
+	color?: DividerColorType;
+	style?: CSSProperties;
+	width?: number;
 }
 
-const Divider: FC<DividerProps> = ({ color = 'greyish', className }) => {
-	const base = 'wm-divider';
-	const cx = classNames(base, `${base}--color-${color}`);
+const BASE = 'wm-divider' as const;
 
-	return <hr className={`${cx} ${className}`} />;
+const Divider: FC<DividerProps> = ({
+	borderWidth = 1,
+	className = '',
+	color = 'default',
+	style,
+	width,
+	...props
+}) => {
+	const cx = classNames(BASE, `${BASE}--color-${color}`);
+
+	const DividerStyled: CSSProperties = useMemo(
+		() => ({
+			borderBottomWidth: `${String(borderWidth)}px`,
+			width: `${String(width)}px`,
+			...style
+		}),
+		[borderWidth, style, width]
+	);
+
+	return <hr className={`${cx} ${className}`} style={DividerStyled} {...props} />;
 };
 
 export default Divider;

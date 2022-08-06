@@ -406,6 +406,19 @@ $btn-disabled-opacity: $disabled-opacity !default;
 $btn-transition: $transition-base !default;
 /* --- button variables End --- */
 
+/* --- divider variables --- */
+$divider-themes: (
+	'primary': $primary-500,
+	'secondary': $secondary-500,
+	'success': $success-500,
+	'error': $error-500,
+	'default': $gray-900,
+	'description': $gray-700,
+	'guide': $gray-500,
+	'white': $white
+) !default;
+/* --- divider variables End --- */
+
 /* --- spinner variables --- */
 $spinner-sizes: 'sm', 'base', 'lg';
 
