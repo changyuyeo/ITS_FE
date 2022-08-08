@@ -66,6 +66,14 @@
 	}
 }
 
+@mixin button-theme($color, $bg-color, $bg-color-hover, $bg-color-active, $border-color) {
+	--#{$prefix}btn-color: #{$color};
+	--#{$prefix}btn-bg: #{$bg-color};
+	--#{$prefix}btn-bg-hover: #{$bg-color-hover};
+	--#{$prefix}btn-bg-active: #{$bg-color-active};
+	--#{$prefix}btn-border-color: #{$border-color};
+}
+
 @each $theme, $value in $btn-theme {
 	.#{$prefix}btn--type-#{$theme}-fill {
 		@include button-theme(
@@ -98,12 +106,17 @@
 
 @each $size, $value in $btn-font-size {
 	.#{$prefix}btn--size-#{$size} {
-		@include button-size($value, map-get($btn-paddings-x, $size), map-get($btn-paddings-y, $size));
+		--#{$prefix}btn-font-size: #{$value};
+		--#{$prefix}btn-padding-x: #{$btn-padding-x};
+		--#{$prefix}btn-padding-y: #{$btn-padding-y};
+		$btn-font-size: $value;
+		$btn-padding-x: map-get($btn-paddings-x, $size);
+		$btn-padding-y: map-get($btn-paddings-y, $size);
 	}
 }
 
 @each $shape, $value in $btn-shape-list {
 	.#{$prefix}btn--shape-#{$shape} {
-		@include button-shape($value);
+		--#{$prefix}btn-border-radius: #{$value};
 	}
 }

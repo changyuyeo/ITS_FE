@@ -1,32 +1,17 @@
 import { Container, Wrapper } from './components/styled';
-import { Divider, Text, Title } from '@with-me/ui';
+import { Divider, Input, Text, Title } from '@with-me/ui';
+import { ChangeEvent, useState } from 'react';
 // import ButtonTest from './components/ButtonTest';
 // import SpinnerTest from './components/SpinnerTest';
 
 const App = () => {
+	const [value, setValue] = useState('');
+	const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value);
+
 	return (
 		<Container>
-			{/* <ButtonTest /> */}
-			{/* <SpinnerTest /> */}
-			<Divider color="default" width={300} borderWidth={2} />
-			<Divider color="description" width={300} />
-			<Divider color="error" width={300} />
-			<Divider color="guide" width={300} />
-			<Divider color="primary" width={300} />
-			<Divider color="secondary" width={300} />
-			<Divider color="success" width={300} />
-			<div
-				style={{
-					background: '#333',
-					width: '100%',
-					height: '10px',
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center'
-				}}
-			>
-				<Divider color="white" width={300} />
-			</div>
+			<Input size="base" value={value} onChange={onChangeValue} />
+			<Input placeholder="입력해주세요" value={value} onChange={onChangeValue} />
 		</Container>
 	);
 };

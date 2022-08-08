@@ -1,6 +1,5 @@
 .#{$prefix}spinner {
 	--#{$prefix}spinner-vertical-align: #{$spinner-vertical-align};
-
 	@include flex-center();
 
 	> div {
@@ -29,27 +28,31 @@
 	}
 }
 
-@each $color, $value in $spinner-colors {
-	.#{$prefix}spinner--color-#{$color} {
-		--#{$prefix}spinner-color: #{$value};
+@mixin spinner-size($size) {
+	@if $size == 'sm' {
+		--#{$prefix}spinner-width: #{$spinner-width-sm};
+		--#{$prefix}spinner-height: #{$spinner-height-sm};
+		--#{$prefix}spinner-border-width: #{$spinner-border-width-sm};
+	} @else if $size == 'base' {
+		--#{$prefix}spinner-width: #{$spinner-width-base};
+		--#{$prefix}spinner-height: #{$spinner-height-base};
+		--#{$prefix}spinner-border-width: #{$spinner-border-width-base};
+	} @else if $size == 'lg' {
+		--#{$prefix}spinner-width: #{$spinner-width-lg};
+		--#{$prefix}spinner-height: #{$spinner-height-lg};
+		--#{$prefix}spinner-border-width: #{$spinner-border-width-lg};
 	}
 }
 
 @each $size in $spinner-sizes {
 	.#{$prefix}spinner--size-#{$size} {
-		@if $size == 'sm' {
-			--#{$prefix}spinner-width: #{$spinner-width-sm};
-			--#{$prefix}spinner-height: #{$spinner-height-sm};
-			--#{$prefix}spinner-border-width: #{$spinner-border-width-sm};
-		} @else if $size == 'base' {
-			--#{$prefix}spinner-width: #{$spinner-width-base};
-			--#{$prefix}spinner-height: #{$spinner-height-base};
-			--#{$prefix}spinner-border-width: #{$spinner-border-width-base};
-		} @else if $size == 'lg' {
-			--#{$prefix}spinner-width: #{$spinner-width-lg};
-			--#{$prefix}spinner-height: #{$spinner-height-lg};
-			--#{$prefix}spinner-border-width: #{$spinner-border-width-lg};
-		}
+		@include spinner-size($size);
+	}
+}
+
+@each $color, $value in $spinner-colors {
+	.#{$prefix}spinner--color-#{$color} {
+		--#{$prefix}spinner-color: #{$value};
 	}
 }
 

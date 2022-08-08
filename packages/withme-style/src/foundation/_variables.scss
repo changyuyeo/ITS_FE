@@ -419,6 +419,30 @@ $divider-themes: (
 ) !default;
 /* --- divider variables End --- */
 
+/* --- input variables --- */
+$input-sizes: (
+	sm: 24px,
+	base: 32px,
+	lg: 40px
+) !default;
+
+$input-bg-color: $white !default;
+$input-error-bg-color: $error-200 !default;
+
+$input-border-color: $gray-500 !default;
+$input-error-border-color: $error-700 !default;
+$input-error-outline-color: $error-300 !default;
+
+$input-primary-color: $primary-500 !default;
+$input-primary-outline-color: $primary-300 !default;
+
+$input-svg-fill-color: $gray-500 !default;
+
+$input-border-radius: 3px !default;
+$input-font-size: $fs-base !default;
+
+/* --- input variables End --- */
+
 /* --- spinner variables --- */
 $spinner-sizes: 'sm', 'base', 'lg';
 

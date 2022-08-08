@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import { CSSProperties, DetailedHTMLProps, FC, HTMLAttributes, useMemo } from 'react';
+import classNames from 'classnames';
 import { FontWeightTypes, ThemeTypes } from '../../typings/props.types';
 
 type TitleSizeType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
