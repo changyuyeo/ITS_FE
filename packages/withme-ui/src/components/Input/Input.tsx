@@ -26,6 +26,8 @@ interface InputProps extends InputAttributesType {
 	value?: string;
 }
 
+const BASE = 'wm-input' as const;
+
 const Input: FC<InputProps> = ({
 	className = '',
 	error = false,
@@ -42,19 +44,18 @@ const Input: FC<InputProps> = ({
 
 	const onToggleHidePassword = useCallback(() => setHidePassword(prev => !prev), []);
 
-	const base = 'wm-input';
-	const cx = classNames(base, `${base}--size-${size}`, { [`${base}--error`]: error });
+	const cx = classNames(BASE, `${BASE}--size-${size}`, { [`${BASE}--error`]: error });
 
 	return (
 		<div className={`${cx} ${className}`} style={style}>
-			{prefix && <div className={`${base}__prefix`}>{prefix}</div>}
+			{prefix && <div className={`${BASE}__prefix`}>{prefix}</div>}
 			<input value={value} type={password && hidePassword ? 'password' : type} {...props} />
 			{password && (
-				<button type="button" className={`${base}__password-icon`} onClick={onToggleHidePassword}>
+				<button type="button" className={`${BASE}__password-icon`} onClick={onToggleHidePassword}>
 					{hidePassword ? <OpenedEye /> : <ClosedEye />}
 				</button>
 			)}
-			{suffix && <div className={`${base}__suffix`}>{suffix}</div>}
+			{suffix && <div className={`${BASE}__suffix`}>{suffix}</div>}
 		</div>
 	);
 };
