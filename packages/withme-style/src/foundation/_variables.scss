@@ -379,7 +379,7 @@ $btn-paddings-y: (
 	'lg': map-get($spacing, xs)
 ) !default;
 
-$btn-font-size: (
+$btn-font-sizes: (
 	'sm': $font-size-sm,
 	'base': $font-size-sm,
 	'lg': $font-size-base

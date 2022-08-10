@@ -104,9 +104,10 @@
 	}
 }
 
-@each $size, $value in $btn-font-size {
+@each $size, $value in $btn-font-sizes {
 	.#{$prefix}btn--size-#{$size} {
-		--#{$prefix}btn-font-size: #{$value};
+
+		--#{$prefix}btn-font-size: #{$btn-font-size};
 		--#{$prefix}btn-padding-x: #{$btn-padding-x};
 		--#{$prefix}btn-padding-y: #{$btn-padding-y};
 		$btn-font-size: $value;
