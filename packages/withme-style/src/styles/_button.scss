@@ -106,13 +106,9 @@
 
 @each $size, $value in $btn-font-sizes {
 	.#{$prefix}btn--size-#{$size} {
-
-		--#{$prefix}btn-font-size: #{$btn-font-size};
-		--#{$prefix}btn-padding-x: #{$btn-padding-x};
-		--#{$prefix}btn-padding-y: #{$btn-padding-y};
-		$btn-font-size: $value;
-		$btn-padding-x: map-get($btn-paddings-x, $size);
-		$btn-padding-y: map-get($btn-paddings-y, $size);
+		--#{$prefix}btn-font-size: #{$value};
+		--#{$prefix}btn-padding-x: #{map-get($btn-paddings-x, $size)};
+		--#{$prefix}btn-padding-y: #{map-get($btn-paddings-y, $size)};
 	}
 }
 

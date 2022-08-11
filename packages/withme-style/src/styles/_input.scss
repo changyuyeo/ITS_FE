@@ -12,7 +12,7 @@
 	border: 1px solid var(--#{$prefix}input-border-color);
 	border-radius: var(--#{$prefix}input-border-radius);
 	display: flex;
-	transition: border 250ms ease;
+	transition: $transition-base;
 	width: 100%;
 
 	> input {
@@ -22,17 +22,27 @@
 		height: var(--#{$prefix}input-height);
 		outline: none;
 		padding: var(--#{$prefix}input-padding-x) var(--#{$prefix}input-padding-y);
-		transition: all 300ms ease;
+		transition: $transition-base;
 		width: 100%;
 
-		&:focus {
-			--#{$prefix}input-outline-color: #{$input-primary-outline-color};
+		&::placeholder {
+			color: var(--#{$prefix}input-border-color);
+			font-size: var(--#{$prefix}input-font-size);
 		}
 	}
 
-	&:hover,
-	&:focus {
-		border: 1px solid var(--#{$prefix}input-primary-color);
+	&:hover:not(&--error),
+	&--focus:not(&--error) {
+		border-color: var(--#{$prefix}input-primary-color);
+	}
+
+	&--focus,
+	&--error {
+		box-shadow: 0 0 0 1px var(--#{$prefix}input-outline-color);
+	}
+
+	&--focus {
+		--#{$prefix}input-outline-color: #{$input-primary-outline-color};
 	}
 
 	&--error {
@@ -43,11 +53,6 @@
 		animation-delay: 0.25s;
 		animation-duration: 0.5s;
 		animation-name: error-bounce;
-	}
-
-	&:focus,
-	&--error {
-		box-shadow: 0 0 0 1px var(--#{$prefix}input-outline-color);
 	}
 
 	&__prefix,
@@ -62,37 +67,57 @@
 	&__suffix {
 		margin-left: 5px;
 	}
-}
 
-.#{$prefix}__password-icon {
-	align-items: center;
-	display: flex;
+	&__password-icon {
+		align-items: center;
+		background-color: transparent;
+		border: 0;
+		display: flex;
 
-	> svg {
-		cursor: pointer;
-		fill: var(--#{$prefix}input-svg-fill-color);
-		transition: all 200ms ease;
+		> svg {
+			cursor: pointer;
+			fill: var(--#{$prefix}input-svg-fill-color);
+			transition: all 200ms ease;
+		}
 
-		&:hover {
+		> svg:hover {
 			--#{$prefix}input-svg-fill-color: #{$input-primary-color};
 		}
+	}
+
+	&__message {
+		animation-duration: 0.5s;
+		animation-name: message-fade-in-out;
+		bottom: -20px;
+		left: 0;
+		position: absolute;
 	}
 }
 
 @each $size, $value in $input-sizes {
-	.wm-input--size-#{$size} {
+	.#{$prefix}input-#{$size} {
 		--#{$prefix}input-height: #{$value};
+		--#{$prefix}input-padding-x: 0;
 
 		@if $size == 'lg' {
-			--#{$prefix}input-padding-x: 6.5px;
 			--#{$prefix}input-padding-y: 12px;
 		} @else if $size == 'base' {
-			--#{$prefix}input-padding-x: 4px;
 			--#{$prefix}input-padding-y: 11px;
 		} @else if $size == 'sm' {
-			--#{$prefix}input-padding-x: 0;
 			--#{$prefix}input-padding-y: 7px;
 		}
+	}
+}
+
+@keyframes message-fade-in-out {
+	from {
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
