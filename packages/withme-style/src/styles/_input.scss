@@ -3,16 +3,16 @@
 	--#{$prefix}input-border-color: #{$input-border-color};
 	--#{$prefix}input-primary-color: #{$input-primary-color};
 	--#{$prefix}input-svg-fill-color: #{$input-svg-fill-color};
-
 	--#{$prefix}input-border-radius: #{$input-border-radius};
 	--#{$prefix}input-font-size: #{$input-font-size};
+	--#{$prefix}input-transition: #{$transition-base};
 
-	align-items: center;
+	@include flex-center();
+
 	background-color: var(--#{$prefix}input-bg-color);
 	border: 1px solid var(--#{$prefix}input-border-color);
 	border-radius: var(--#{$prefix}input-border-radius);
-	display: flex;
-	transition: $transition-base;
+	transition: var(--#{$prefix}input-transition);
 	width: 100%;
 
 	> input {
@@ -22,7 +22,7 @@
 		height: var(--#{$prefix}input-height);
 		outline: none;
 		padding: var(--#{$prefix}input-padding-x) var(--#{$prefix}input-padding-y);
-		transition: $transition-base;
+		transition: var(--#{$prefix}input-transition);
 		width: 100%;
 
 		&::placeholder {
@@ -77,7 +77,7 @@
 		> svg {
 			cursor: pointer;
 			fill: var(--#{$prefix}input-svg-fill-color);
-			transition: all 200ms ease;
+			transition: var(--#{$prefix}input-transition);
 		}
 
 		> svg:hover {

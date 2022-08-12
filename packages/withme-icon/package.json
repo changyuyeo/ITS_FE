@@ -2,7 +2,7 @@
 	"name": "@with-me/icons",
 	"description": "withme design-system icons package",
 	"author": "여찬규 <wry5533@gmail.com>",
-	"version": "0.7.2",
+	"version": "0.0.0",
 	"license": "MIT",
 	"main": "build/index.js",
 	"module": "build/esm/index.js",
@@ -15,6 +15,10 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/Team-WithMe/WithMe_UI.git"
+  },
 	"keywords": [
 		"with-me",
 		"design-system",

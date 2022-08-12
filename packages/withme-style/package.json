@@ -2,7 +2,7 @@
 	"name": "@with-me/style",
 	"description": "withme design-system style package",
 	"author": "여찬규 <wry5533@gmail.com>",
-	"version": "0.7.2",
+	"version": "0.0.0",
 	"main": "index.js",
 	"license": "MIT",
 	"files": [
@@ -14,14 +14,18 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions"
+	],
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/Team-WithMe/WithMe_UI.git"
+  },
 	"keywords": [
 		"with-me",
 		"design-system",
 		"scss"
-	],
-	"browserslist": [
-		"> 1%",
-		"last 2 versions"
 	],
 	"scripts": {
 		"build": "node ./scripts/build.js",
@@ -32,6 +36,5 @@
 		"node-sass": "^7.0.1",
 		"nodemon": "^2.0.16",
 		"postcss": "^8.4.14"
-	},
-	"gitHead": "7a64d6b79e367ae4707f02f24197ab1b14a84e17"
+	}
 }

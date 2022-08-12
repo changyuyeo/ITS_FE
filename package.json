@@ -1,14 +1,11 @@
 {
 	"name": "@with-me/design-system",
-	"version": "1.0.0",
-	"main": "index.js",
+	"description": "withme design-system monorepo",
 	"author": "여찬규 <wry5533@gmail.com>",
+	"version": "0.0.0",
 	"license": "MIT",
+	"main": "index.js",
 	"private": true,
-	"repository": {
-    "type": "git",
-    "url": "https://github.com/Team-WithMe/WithMe_UI.git"
-  },
 	"workspaces": {
 		"packages": [
 			"packages/*",
