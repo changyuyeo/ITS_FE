@@ -2,9 +2,9 @@
 
 with me의 모든 디자인 요소를 작업하는 레포지토리 입니다.
 
-- [withme-ui](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-ui) - 컴포넌트 패키지 with react
-- [withme-icon](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-icon) - 아이콘 패키지 with react
-- [withme-style](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-style) - 스타일 패키지 with scss
+- [withme-ui](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-ui) - 컴포넌트 패키지 with react (<a href="https://www.npmjs.com/package/@with-me/ui">npm</a>)
+- [withme-icon](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-icon) - 아이콘 패키지 with react (<a href="https://www.npmjs.com/package/@with-me/icons">npm</a>)
+- [withme-style](https://github.com/Team-WithMe/WithMe_UI/tree/master/packages/withme-style) - 스타일 패키지 with scss (<a href="https://www.npmjs.com/package/@with-me/style">npm</a>)
 
 > `packages`에 있는 라이브러리의 사용법들은 각 워크스페이스 README.md를 참고하면 됩니다!
 
@@ -20,17 +20,18 @@ with me의 모든 디자인 요소를 작업하는 레포지토리 입니다.
 - [x] ~Button Loading 상태 추가~
 - [x] ~Button prefix styling (icon, loading)~
 - [x] ~Button hover, active 수정 (loading, disabled 상태일 땐 제외)~
-- [ ] Typography Component 리팩토링
+- [x] ~Typography Component 리팩토링~
 - [ ] readme image 경로 수정
 
 </div>
 </details>
 <br />
 
-## Links
+## 디자인 시스템 문서
 
-- [npm](https://www.npmjs.com/package/@with-me/design)
-- [storybook](https://with-me-ui.netlify.app)
+스토리북을 이용해 디자인 시스템 문서를 구축했습니다.
+<br />
+[[storybook](https://with-me-ui.netlify.app)] 바로가기
 
 <br />
 
