@@ -1,6 +1,10 @@
-**/build
-**/build.js
 **/dist
+**/build
 **/node_modules
 **/.storybook
 **/*.d.ts
+
+**/build.js
+**/build.ts
+**/*.config.js
+**/*.config.ts

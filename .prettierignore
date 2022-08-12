@@ -1,8 +1,12 @@
 **/node_modules
 **/dist
-**/package.json
-**/yarn.lock
-**/package-lock.json
-**/.eslintrc.js
-**/tsconfig.json
+**/.eslintrc
 **/*.mdx
+**/yarn.lock
+**/package.json
+**/package-lock.json
+**/tsconfig.json
+**/build.js
+**/build.ts
+**/*.config.js
+**/*.config.ts
