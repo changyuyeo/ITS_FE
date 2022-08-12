@@ -8,9 +8,8 @@
 
 A With ME React Design System, powered by <a href="https://github.com/changyuyeo" rel="noopener" target="_blank">changyu</a>.
 
-![npm](https://img.shields.io/npm/v/@with-me/design)
-![NPM](https://img.shields.io/npm/l/@with-me/design)
-![npm bundle size](https://img.shields.io/bundlephobia/min/@with-me/design)
+![npm](https://img.shields.io/npm/v/@with-me/style)
+![npm](https://img.shields.io/npm/l/@with-me/style)
 [![build CI](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml/badge.svg)](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml)
 
 </div>
@@ -33,23 +32,18 @@ yarn add @with-me/ui @with-me/style
 
 <br />
 
-## Usage
+## @with-me/style
 
-최상단 파일에 해당 style 들을 import 해주세요! (ex: App.tsx, \_app.tsx)
-
-```tsx
-import '@with-me/styles/build/global.css'; // 기본 설정 style
-import '@with-me/styles/build/design.css'; // component의 style
-```
+[@with-me/ui](https://www.npmjs.com/package/@with-me/ui) 의 컴포넌트 라이브러리를 사용하기 위해서는 `@with-me/style` 의 style이 필요합니다.
 
 <br />
 
-[스토리북](https://with-me-ui.netlify.app)을 참고해서 사용하시면 됩니다!
+## Usage
+
+최상단 파일에 해당 style를 import 해주세요!
 
 ```tsx
-import { Button } from '@with-me/design';
-
-const App = () => <Button bgColor="primary">버튼</Button>;
+import '@with-me/style/build/global.css';
 ```
 
 <br />

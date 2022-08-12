@@ -8,9 +8,9 @@
 
 A With ME React Design System, powered by <a href="https://github.com/changyuyeo" rel="noopener" target="_blank">changyu</a>.
 
-![npm](https://img.shields.io/npm/v/@with-me/design)
-![NPM](https://img.shields.io/npm/l/@with-me/design)
-![npm bundle size](https://img.shields.io/bundlephobia/min/@with-me/design)
+![npm](https://img.shields.io/npm/v/@with-me/ui)
+![npm](https://img.shields.io/npm/l/@with-me/ui)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@with-me/ui)
 [![build CI](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml/badge.svg)](https://github.com/Team-WithMe/WithMe_UI/actions/workflows/ci.yml)
 
 </div>
@@ -35,11 +35,10 @@ yarn add @with-me/ui @with-me/style
 
 ## Usage
 
-최상단 파일에 해당 style 들을 import 해주세요! (ex: App.tsx, \_app.tsx)
+최상단 파일에 해당 style를 import 해주세요! (ex: App.tsx, \_app.tsx)
 
 ```tsx
-import '@with-me/styles/build/global.css'; // 기본 설정 style
-import '@with-me/styles/build/design.css'; // component의 style
+import '@with-me/style/build/global.css';
 ```
 
 <br />
@@ -49,7 +48,7 @@ import '@with-me/styles/build/design.css'; // component의 style
 ```tsx
 import { Button } from '@with-me/design';
 
-const App = () => <Button bgColor="primary">버튼</Button>;
+export default () => <Button type="primary">Normal</Button>;
 ```
 
 <br />

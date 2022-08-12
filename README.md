@@ -8,23 +8,6 @@ with me의 모든 디자인 요소를 작업하는 레포지토리 입니다.
 
 > `packages`에 있는 라이브러리의 사용법들은 각 워크스페이스 README.md를 참고하면 됩니다!
 
-<details>
-<summary>Todo List</summary>
-<div markdown="1">
-<br />
-
-- [x] ~scss 패키지 기본구조 리팩토링~
-- [x] ~각 패키지 name 수정~
-- [x] ~rollup 설정 변경~
-- [x] ~Loading Spinner 만들기~
-- [x] ~Button Loading 상태 추가~
-- [x] ~Button prefix styling (icon, loading)~
-- [x] ~Button hover, active 수정 (loading, disabled 상태일 땐 제외)~
-- [x] ~Typography Component 리팩토링~
-- [ ] readme image 경로 수정
-
-</div>
-</details>
 <br />
 
 ## 디자인 시스템 문서
