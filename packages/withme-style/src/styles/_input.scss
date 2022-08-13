@@ -23,7 +23,7 @@
 		outline: none;
 		padding: var(--#{$prefix}input-padding-x) var(--#{$prefix}input-padding-y);
 		transition: var(--#{$prefix}input-transition);
-		width: 100%;
+		width: inherit;
 
 		&:disabled {
 			cursor: map-get($cursor-list, 'not-allowed');

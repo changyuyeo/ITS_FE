@@ -10,6 +10,7 @@
 	--#{$prefix}textarea-guide-font-color: #{$textarea-guide-font-color};
 	--#{$prefix}textarea-transition: #{$transition-base};
 	--#{$prefix}textarea-outline-color: #{$textarea-primary-outline-color};
+
 	border: 1px solid var(--#{$prefix}textarea-border-color);
 	border-radius: 4px;
 	box-sizing: border-box;
@@ -17,8 +18,7 @@
 	font-size: var(--#{$prefix}textarea-font-size);
 	padding: 12px;
 	transition: var(--#{$prefix}textarea-transition);
-
-	width: 100%;
+	width: inherit;
 
 	&:disabled {
 		cursor: map-get($cursor-list, 'not-allowed');
@@ -39,8 +39,10 @@
 	}
 
 	&__suffix {
+		$coordinate: 12px;
+
 		position: absolute;
-		right: 12px;
-		top: 12px;
+		right: $coordinate;
+		top: $coordinate;
 	}
 }

@@ -134,7 +134,16 @@ table {
 	border-spacing: 0;
 }
 
-// 추가입력
+//* 추가입력
 html {
 	font-size: 100%;
+}
+
+//* 크롬브라우저 focus시 CSS 검은색 라인 제거
+input:focus,
+select:focus,
+option:focus,
+textarea:focus,
+button:focus {
+	outline: none;
 }
