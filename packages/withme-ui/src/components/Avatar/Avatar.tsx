@@ -1,48 +1,53 @@
 import { CSSProperties, FC, HTMLAttributes, useMemo } from 'react';
 import classNames from 'classnames';
-import { SizeType } from '../../typings/props.types';
+import { SizeTypes } from '../../typings/props.types';
 
-type AvatarSizeType = keyof Omit<SizeType, 'middle'> | number;
+type AvatarSizeType = keyof Pick<SizeTypes, 'sm' | 'lg'> | number;
 
 interface AvatarProps extends HTMLAttributes<HTMLDivElement> {
 	alt?: string;
-	cursor?: boolean;
-	children: string;
 	className?: string;
-	src?: string | null;
+	clickable?: boolean;
+	nickname: string;
 	shape?: 'circle' | 'square';
 	size?: AvatarSizeType;
+	src?: string | null;
+	style?: CSSProperties;
 }
+
+const BASE = 'wm-avatar' as const;
 
 const Avatar: FC<AvatarProps> = ({
 	alt = '',
-	cursor = false,
-	children,
-	className,
-	src = null,
+	className = '',
+	clickable = false,
+	nickname,
 	shape = 'circle',
-	size = 'large',
+	size = 'lg',
+	src = null,
+	style,
 	...props
 }) => {
-	const base = 'wm-avatar';
 	const cx = classNames(
-		`${base}--shape-${shape}`,
-		{ [`${base}--cursor-point`]: cursor },
-		{ [`${base}--size-${size}`]: typeof size !== 'number' }
+		`${BASE}--${shape}`,
+		{ [`${BASE}--cursor-point`]: clickable },
+		{ [`${BASE}--${size}`]: typeof size !== 'number' }
 	);
 
-	const sizeStyled: CSSProperties = useMemo(() => {
-		const styled = { width: `${size}px`, height: `${size}px` };
-		return typeof size === 'number' ? styled : {};
-	}, [size]);
+	const avatarStyled: CSSProperties = useMemo(() => {
+		const sizeStyled: CSSProperties =
+			typeof size === 'number' ? { width: `${size}px`, height: `${size}px` } : {};
+
+		return { ...sizeStyled, style };
+	}, [size, style]);
 
 	return (
-		<div className={`${base} ${className}`} {...props}>
+		<div className={`${BASE} ${className}`} {...props}>
 			{src ? (
-				<img src={src} alt={alt} className={cx} style={sizeStyled} />
+				<img src={src} alt={alt} className={cx} style={avatarStyled} />
 			) : (
-				<div className={`${cx} ${base}--default`} style={sizeStyled}>
-					{children[0]}
+				<div className={`${cx} ${BASE}--default`} style={avatarStyled}>
+					{nickname[0]}
 				</div>
 			)}
 		</div>

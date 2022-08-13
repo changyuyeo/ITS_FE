@@ -1,4 +1,4 @@
-// import Avatar from './components/Avatar';
+export { default as Avatar } from './components/Avatar';
 export { default as Button } from './components/Button';
 // import Card from './components/Card';
 export { default as Divider } from './components/Divider';

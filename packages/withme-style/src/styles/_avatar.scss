@@ -1,40 +1,46 @@
-$sizes: (
-	large: 40,
-	small: 32
-);
+.#{$prefix}avatar {
+	--#{$prefix}avatar-cursor: #{$avatar-cursor-default};
+	--#{$prefix}avatar-border-radius: #{$avatar-border-radius};
+	--#{$prefix}avatar-transition: #{$avatar-transition};
 
-.wm-avatar {
 	@include flex-center;
+
+	> div,
+	> img {
+		border-radius: var(--#{$prefix}avatar-border-radius);
+		cursor: var(--#{$prefix}avatar-cursor);
+	}
 
 	&--default {
 		@include flex-center;
+
 		animation: gradient-animation 10s ease infinite;
-		background: linear-gradient(-45deg, $wm-purple, $wm-primary, $wm-secondary);
+		background: linear-gradient(-45deg, $primary-300, $primary-500, $primary-800);
 		background-size: 200% 200%;
-		cursor: default;
 	}
 
 	&--cursor-point {
-		cursor: pointer;
-		transition: 350ms;
+		--#{$prefix}avatar-cursor: #{$avatar-cursor-click};
+
+		transition: var(--#{$prefix}avatar-transition);
+
+		&:hover {
+			filter: brightness(70%);
+			transform: scale(1.1);
+		}
 	}
 
-	&--cursor-point:hover {
-		filter: brightness(70%);
-		transform: scale(1.1);
+	&--circle {
+		--#{$prefix}avatar-border-radius: #{$avatar-border-radius-circle};
 	}
 
-	&--shape-circle {
-		border-radius: 50%;
-	}
-
-	&--shape-square {
-		border-radius: 4px;
+	&--square {
+		--#{$prefix}avatar-border-radius: #{$avatar-border-radius-square};
 	}
 }
 
-@each $size, $value in $sizes {
-	.wm-avatar--size-#{$size} {
+@each $size, $value in $avatar-sizes {
+	.#{$prefix}avatar--#{$size} {
 		@include rem('width', $value);
 		@include rem('height', $value);
 	}

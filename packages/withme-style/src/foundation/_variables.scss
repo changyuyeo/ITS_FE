@@ -321,6 +321,21 @@ $cursor-list: (
 ) !default;
 
 /* ----- Component Styles ----- */
+/* --- avatar variables --- */
+$avatar-sizes: (
+	'lg': 40,
+	'sm': 32
+) !default;
+
+$avatar-cursor-default: map-get($cursor-list, 'default') !default;
+$avatar-cursor-click: map-get($cursor-list, 'pointer') !default;
+$avatar-transition: $transition-base !default;
+
+$avatar-border-radius: 4px !default;
+$avatar-border-radius-square: map-get($border-radius-list, 'sm') !default;
+$avatar-border-radius-circle: map-get($border-radius-list, 'circle') !default;
+/* --- avatar variables end --- */
+
 /* --- button variables --- */
 $btn-theme: (
 	'primary': $primary-500,
