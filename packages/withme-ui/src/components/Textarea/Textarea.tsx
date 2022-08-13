@@ -1,78 +1,62 @@
 import {
+	CSSProperties,
 	FC,
 	ReactNode,
 	TextareaHTMLAttributes,
 	useCallback,
 	useEffect,
-	useRef,
-	useState
+	useMemo,
+	useRef
 } from 'react';
-import classNames from 'classnames';
 
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 	autoSize?: boolean;
 	className?: string;
-	error?: boolean;
-	row?: number;
 	resize?: boolean;
+	style?: CSSProperties;
 	suffix?: ReactNode;
-	value: string;
-	maxLength?: number;
-	maxHeight?: number;
 }
+
+const BASE = 'wm-textarea' as const;
 
 const Textarea: FC<TextareaProps> = ({
 	autoSize = false,
-	className,
-	error = false,
-	row = 3,
+	className = '',
 	resize = false,
+	style,
 	suffix,
-	value,
-	maxLength,
-	maxHeight,
 	...props
 }) => {
-	const [isFocus, setIsFocus] = useState(false);
-
 	const textareaRef = useRef<HTMLTextAreaElement>(null);
-	const { current: textRefCurrent } = textareaRef;
 
-	const onFocus = useCallback(() => setIsFocus(true), []);
-	const onBlur = useCallback(() => setIsFocus(false), []);
-
-	const base = 'wm-textarea';
-	const cx = classNames(
-		base,
-		{ [`${base}--resize`]: resize },
-		{ [`${base}--focus`]: isFocus },
-		{ [`${base}--error`]: error }
-	);
+	const textResize = useCallback(() => {
+		if (textareaRef.current && autoSize) {
+			textareaRef.current.style.height = 'auto';
+			textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
+		}
+	}, [autoSize]);
 
 	useEffect(() => {
-		//* auto resize
-		if (textRefCurrent && autoSize !== false) {
-			if (maxHeight && maxHeight <= textRefCurrent.scrollHeight) {
-				// 설정한 최대 높이보다 값이 높으면 auto resize를 멈춘다.
-			} else {
-				textRefCurrent.style.height = 'auto';
-				textRefCurrent.style.height = textRefCurrent.scrollHeight + 'px';
-			}
-		}
-	}, [autoSize, maxHeight, textRefCurrent, value]);
+		textResize();
+	}, [autoSize, textResize]);
+
+	const textareaStyled: CSSProperties = useMemo(() => {
+		const isResize: CSSProperties = !resize ? { resize: 'none', overflow: 'hidden' } : {};
+		const isSuffix: CSSProperties = suffix ? { padding: '12px 24px 12px 12px' } : {};
+		return { ...isResize, ...isSuffix, ...style };
+	}, [resize, style, suffix]);
 
 	return (
-		<div className={`${cx} ${className || ''}`}>
+		<div className={`${BASE}__wrapper`}>
 			<textarea
 				ref={textareaRef}
-				value={value}
-				maxLength={maxLength}
-				onFocus={onFocus}
-				onBlur={onBlur}
-				rows={row}
+				className={`${BASE} ${className}`}
+				style={textareaStyled}
+				onKeyUp={textResize}
+				onKeyDown={textResize}
 				{...props}
 			/>
-			{suffix && <div className={`${base}__suffix`}>{suffix}</div>}
+			{suffix && <div className={`${BASE}__suffix`}>{suffix}</div>}
 		</div>
 	);
 };

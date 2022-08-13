@@ -25,6 +25,10 @@
 		transition: var(--#{$prefix}input-transition);
 		width: 100%;
 
+		&:disabled {
+			cursor: map-get($cursor-list, 'not-allowed');
+		}
+
 		&::placeholder {
 			color: var(--#{$prefix}input-border-color);
 			font-size: var(--#{$prefix}input-font-size);

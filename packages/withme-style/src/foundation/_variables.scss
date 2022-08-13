@@ -404,7 +404,7 @@ $btn-line-height: $lh-base !default;
 $btn-box-shadow: $box-shadow !default;
 $btn-disabled-opacity: $disabled-opacity !default;
 $btn-transition: $transition-base !default;
-/* --- button variables End --- */
+/* --- button variables end --- */
 
 /* --- divider variables --- */
 $divider-themes: (
@@ -417,7 +417,7 @@ $divider-themes: (
 	'guide': $gray-500,
 	'white': $white
 ) !default;
-/* --- divider variables End --- */
+/* --- divider variables end --- */
 
 /* --- input variables --- */
 $input-sizes: (
@@ -428,20 +428,15 @@ $input-sizes: (
 
 $input-bg-color: $white !default;
 $input-error-bg-color: $error-200 !default;
-
 $input-border-color: $gray-500 !default;
 $input-error-border-color: $error-700 !default;
 $input-error-outline-color: $error-300 !default;
-
 $input-primary-color: $primary-500 !default;
 $input-primary-outline-color: $primary-300 !default;
-
 $input-svg-fill-color: $gray-500 !default;
-
 $input-border-radius: 3px !default;
 $input-font-size: $fs-sm !default; // 14px
-
-/* --- input variables End --- */
+/* --- input variables end --- */
 
 /* --- spinner variables --- */
 $spinner-sizes: 'sm', 'base', 'lg';
@@ -468,7 +463,7 @@ $spinner-colors: (
 	'error': $error-500,
 	'white': $white
 ) !default;
-/* --- spinner variables End --- */
+/* --- spinner variables end --- */
 
 /* --- text & title variables --- */
 $text-sizes: (
@@ -507,5 +502,15 @@ $text-themes: (
 	'guide': $gray-500,
 	'white': $white
 ) !default;
-/* --- text & title variables End --- */
+/* --- text & title variables end --- */
+
+/* --- textarea variables --- */
+$textarea-font-size: $fs-sm !default;
+$textarea-border-color: $gray-500 !default;
+$textarea-primary-color: $primary-500 !default;
+$textarea-primary-outline-color: $primary-300 !default;
+
+$textarea-font-color: $body-font-color !default;
+$textarea-guide-font-color: $gray-500 !default;
+/* --- textarea variables end --- */
 /* ----- Component Styles End ----- */
