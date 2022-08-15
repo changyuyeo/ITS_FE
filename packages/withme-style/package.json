@@ -3,10 +3,9 @@
 	"description": "withme design-system style package",
 	"author": "여찬규 <wry5533@gmail.com>",
 	"version": "0.2.0",
-	"main": "index.js",
 	"license": "MIT",
 	"files": [
-		"build"
+		"dist"
 	],
 	"engines": {
 		"node": ">=16"

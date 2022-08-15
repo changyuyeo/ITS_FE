@@ -5,12 +5,12 @@ import commonjs from '@rollup/plugin-commonjs';
 
 
 export default [
-	  // tree shaking 을 위해 esm 파일들을 code splitting 하여 빌드
+	// tree shaking 을 위해 esm 파일들을 code splitting 하여 빌드
 	{
-		input: ['src/**/index.ts', 'src/**/index.tsx'],
+		input: 'src/index.ts',
 		output: [
-			{ dir: './build', format: 'cjs', sourcemap: true, exports: 'auto' },
-			{ dir: './build/esm', format: 'esm', sourcemap: true }
+			{ dir: './dist', format: 'cjs', sourcemap: true, exports: 'auto' },
+			{ dir: './dist/esm', format: 'esm', sourcemap: true }
 		],
 		plugins: [commonjs(), multiInput(), typescript()],
 		preserveModules: true,
@@ -20,8 +20,8 @@ export default [
 	{
 		input: 'src/typings/props.types.d.ts',
 		output: [
-			{ file: 'build/typings/props.types.d.ts', format: 'cjs', sourcemap: true },
-			{ file: 'build/esm/typings/props.types.d.ts', format: 'esm', sourcemap: true }
+			{ file: 'dist/typings/props.types.d.ts', format: 'cjs', sourcemap: true },
+			{ file: 'dist/esm/typings/props.types.d.ts', format: 'esm', sourcemap: true }
 		],
 		plugins: [dts()]
 	}

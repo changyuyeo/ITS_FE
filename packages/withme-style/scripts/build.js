@@ -4,12 +4,12 @@ const fs = require('fs');
 const path = require('path');
 const sass = require('node-sass');
 
-//* build 폴더 생성
+//* dist 폴더 생성
 try {
-	fs.mkdirSync(path.join(__dirname, '..', 'build'));
-	console.log('💾 build 폴더 생성합니다...');
+	fs.mkdirSync(path.join(__dirname, '..', 'dist'));
+	console.log('💾 dist 폴더 생성합니다...');
 } catch {
-	console.log('💾 build 폴더가 존재합니다...');
+	console.log('💾 dist 폴더가 존재합니다...');
 }
 
 //* scss compile func
@@ -30,4 +30,4 @@ const compile = (filePath, fileName) => {
 };
 
 //* scss to css Compiler
-compile('src/global.scss', 'build/global.css');
+compile('src/global.scss', 'dist/global.css');
