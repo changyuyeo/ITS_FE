@@ -1,52 +1,26 @@
-$types: (
-	primary: $wm-primary,
-	deep-gray: $wm-gray-500,
-	greyish: $wm-gray-700,
-	light-gray: $wm-gray-900,
-	no-border: 0
-);
+.#{$prefix}card {
+	--#{$prefix}card-bg-color: #{$card-bg-color};
+	--#{$prefix}card-shadow: #{$card-shadow};
+	--#{$prefix}card-border-color: #{$primary-500};
+	--#{$prefix}card-transition: #{$card-transition};
 
-.wm-card {
-	background-color: $wm-white;
-	position: relative;
+	background-color: var(--#{$prefix}card-bg-color);
+	transition: var(--#{$prefix}card-transition);
 
-	&__title {
-		border-bottom: 1px solid $wm-gray-700;
-		box-sizing: border-box;
-		padding: 8px 12px;
-		width: 100%;
-	}
-
-	&__content {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-		padding: 8px 12px;
-	}
-
-	&--hover {
+	&:hover,
+	&--shadow &:hover {
 		cursor: pointer;
-		transition: all 250ms ease;
+	}
 
-		&:hover {
-			border: 1px solid $wm-primary;
-			box-shadow: 0 0 0 1px $wm-primary-outline;
-		}
+	&:hover {
+		border-color: var(--#{$prefix}card-border-color) !important;
 	}
 
 	&--shadow {
-		box-shadow: 3px 3px 6px 0 $wm-gray-800;
-	}
-}
+		box-shadow: var(--#{$prefix}card-shadow);
 
-@each $type, $value in $types {
-	.wm-card--border-#{$type} {
-		@if ($type == 'no-border') {
-			border: $value;
-			box-shadow: 3px 3px 6px 0 $wm-gray-800;
-		} @else {
-			border: 1px solid $value;
+		&:hover {
+			--#{$prefix}card-bg-color: #{$card-bg-color-hover};
 		}
 	}
 }

@@ -1,60 +1,56 @@
 import { CSSProperties, FC, HTMLAttributes, ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
-import { ColorType } from '../../typings/props.types';
-
-type BorderType =
-	| keyof Pick<ColorType, 'primary' | 'deep-gray' | 'greyish' | 'light-gray'>
-	| 'no-border';
+import type { ColorTypes } from '../../typings/props.types';
 
 interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
-	border?: BorderType;
+	borderColor?: ColorTypes;
 	borderRadius?: number;
 	children: ReactNode;
 	className?: string;
-	hover?: boolean;
-	title?: ReactNode;
-	shadow?: boolean;
+	htmlTitle?: string;
+	isBorder?: boolean;
+	isShadow?: boolean;
 	px?: number;
 	py?: number;
+	style?: CSSProperties;
+	title?: ReactNode;
 }
 
+const BASE = 'wm-card' as const;
+
 const Card: FC<CardProps> = ({
-	border = 'greyish',
+	borderColor = '#dddddd',
 	borderRadius = 5,
 	children,
-	className,
-	hover = false,
+	className = '',
+	htmlTitle,
+	isBorder = true,
+	isShadow = false,
+	px = 20,
+	py = 20,
+	style,
 	title,
-	shadow = false,
-	px = 8,
-	py = 12,
 	...props
 }) => {
-	const base = 'wm-card';
-	const cx = classNames(
-		base,
-		`${base}--border-${border}`,
-		{ [`${base}--hover`]: hover },
-		{ [`${base}--shadow`]: shadow }
-	);
+	const cx = classNames(BASE, { [`${BASE}--shadow`]: isShadow });
 
 	const paddingStyled: CSSProperties = useMemo(() => ({ padding: `${px}px ${py}px` }), [px, py]);
-
-	const borderRadiusStyled: CSSProperties = useMemo(
-		() => ({ borderRadius: `${borderRadius}px` }),
-		[borderRadius]
+	const cardTitleSted: CSSProperties = useMemo(
+		() => ({ borderBottom: isBorder ? `1px solid ${borderColor}` : 0, ...paddingStyled }),
+		[borderColor, isBorder, paddingStyled]
 	);
+	const cardStyled: CSSProperties = useMemo(() => {
+		const borderStyled: CSSProperties = isBorder
+			? { borderColor, borderRadius, borderStyle: 'solid', borderWidth: '1px' }
+			: { borderRadius };
+
+		return { ...borderStyled, ...style };
+	}, [borderColor, borderRadius, isBorder, style]);
 
 	return (
-		<div className={`${cx} ${className}`} style={borderRadiusStyled} {...props}>
-			{title && (
-				<div className={`${base}__title`} style={paddingStyled}>
-					{title}
-				</div>
-			)}
-			<div className={`${base}__content`} style={paddingStyled}>
-				{children}
-			</div>
+		<div className={`${cx} ${className}`} style={cardStyled} title={htmlTitle} {...props}>
+			{title && <div style={cardTitleSted}>{title}</div>}
+			<div style={paddingStyled}>{children}</div>
 		</div>
 	);
 };

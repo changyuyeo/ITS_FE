@@ -421,6 +421,13 @@ $btn-disabled-opacity: $disabled-opacity !default;
 $btn-transition: $transition-base !default;
 /* --- button variables end --- */
 
+/* --- card variables --- */
+$card-bg-color: $white !default;
+$card-bg-color-hover: $gray-100 !default;
+$card-shadow: $box-shadow !default;
+$card-transition: $transition-base !default;
+/* --- card variables end --- */
+
 /* --- divider variables --- */
 $divider-themes: (
 	'primary': $primary-500,
