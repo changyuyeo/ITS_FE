@@ -43,7 +43,7 @@ yarn add @with-me/ui @with-me/style
 최상단 파일에 해당 style를 import 해주세요!
 
 ```tsx
-import '@with-me/style/build/global.css';
+import '@with-me/style/dist/global.css';
 ```
 
 <br />
