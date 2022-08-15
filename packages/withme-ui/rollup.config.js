@@ -18,7 +18,7 @@ export default [
 	{
 		input: 'src/typings/props.types.d.ts',
 		output: [
-			{ file: 'build/typings/props.types.d.ts', format: 'cjs', sourcemap: true },
+			{ file: 'build/typings/props.types.d.ts', format: 'cjs', sourcemap: true, exports: 'auto' },
 			{ file: 'build/esm/typings/props.types.d.ts', format: 'esm', sourcemap: true }
 		],
 		plugins: [dts()]
