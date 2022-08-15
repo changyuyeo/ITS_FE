@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/Team-WithMe/WithMe_UI/compare/v0.2.0...v0.2.1) (2022-08-15)
+
+
+### Bug Fixes
+
+* icon 패키지 타입에러 해결 ([35851dc](https://github.com/Team-WithMe/WithMe_UI/commit/35851dce2bb1f4d72fad7c0ce6333541d7b0117c))
+
+
+
+
+
 # [0.2.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.1.4...v0.2.0) (2022-08-15)
 
 
