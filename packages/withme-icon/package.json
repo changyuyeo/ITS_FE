@@ -3,11 +3,14 @@
 	"description": "withme design-system icons package",
 	"author": "여찬규 <wry5533@gmail.com>",
 	"version": "0.1.0",
+	"sideEffects": false,
 	"main": "build/index.js",
 	"module": "build/esm/index.js",
+	"types": "index.d.ts",
 	"license": "MIT",
 	"files": [
-		"build"
+		"build",
+		"build/esm"
 	],
 	"engines": {
 		"node": ">=16"

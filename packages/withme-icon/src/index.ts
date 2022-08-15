@@ -1,4 +1,2 @@
-// commons
-import LogoIcon from './icons/common/LogoIcon';
-
-export { LogoIcon };
+export * from './common';
+// export * from './skills';
