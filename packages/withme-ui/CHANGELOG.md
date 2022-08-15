@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/Team-WithMe/WithMe_UI/compare/v0.1.3...v0.1.4) (2022-08-15)
+
+
+### Bug Fixes
+
+* cjs 누락된 정보 추가 ([f4f001a](https://github.com/Team-WithMe/WithMe_UI/commit/f4f001a9cb7125d32708d2a73c6d7c4a337ee63e))
+
+
+
+
+
 ## [0.1.3](https://github.com/Team-WithMe/WithMe_UI/compare/v0.1.2...v0.1.3) (2022-08-15)
 
 
