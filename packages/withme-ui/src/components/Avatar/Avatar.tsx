@@ -1,6 +1,6 @@
 import { CSSProperties, FC, HTMLAttributes, useMemo } from 'react';
 import classNames from 'classnames';
-import { SizeTypes } from '../../typings/props.types';
+import type { SizeTypes } from '../../typings/props.types';
 
 type AvatarSizeType = keyof Pick<SizeTypes, 'sm' | 'lg'> | number;
 

@@ -1,6 +1,6 @@
 import { CSSProperties, FC, HTMLAttributes, useMemo } from 'react';
 import classNames from 'classnames';
-import { SizeTypes, ThemeTypes } from '../../typings/props.types';
+import type { SizeTypes, ThemeTypes } from '../../typings/props.types';
 
 type SpinnerColorType = keyof ThemeTypes | 'white';
 type SpinnerSizeType = keyof Pick<SizeTypes, 'sm' | 'base' | 'lg'>;

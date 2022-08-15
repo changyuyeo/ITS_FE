@@ -1,6 +1,6 @@
 import { CSSProperties, FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
-import { FontWeightTypes, SizeTypes, ThemeTypes } from '../../typings/props.types.d';
+import type { FontWeightTypes, SizeTypes, ThemeTypes } from '../../typings/props.types.d';
 
 type TextColorType = keyof ThemeTypes | 'defalut' | 'description' | 'guide' | 'white';
 type TextSizeType = keyof Omit<SizeTypes, 'xxxs' | 'xxs' | 'md' | 'xxxl'>;

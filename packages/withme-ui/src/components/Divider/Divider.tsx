@@ -1,6 +1,6 @@
 import { CSSProperties, FC, HTMLAttributes, useMemo } from 'react';
 import classNames from 'classnames';
-import { ThemeTypes } from '../../typings/props.types.d';
+import type { ThemeTypes } from '../../typings/props.types.d';
 
 type DividerColorType = keyof ThemeTypes | 'default' | 'description' | 'guide' | 'white';
 

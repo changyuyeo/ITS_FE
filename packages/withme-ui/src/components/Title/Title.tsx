@@ -1,6 +1,6 @@
 import { CSSProperties, DetailedHTMLProps, FC, HTMLAttributes, useMemo } from 'react';
 import classNames from 'classnames';
-import { FontWeightTypes, ThemeTypes } from '../../typings/props.types';
+import type { FontWeightTypes, ThemeTypes } from '../../typings/props.types';
 
 type TitleSizeType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type TitleColorType = keyof ThemeTypes | 'defalut' | 'description' | 'guide' | 'white';

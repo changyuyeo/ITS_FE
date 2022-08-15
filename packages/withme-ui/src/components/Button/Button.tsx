@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, CSSProperties, FC, ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
-import { SizeTypes, ThemeTypes } from '../../typings/props.types.d';
+import type { SizeTypes, ThemeTypes } from '../../typings/props.types.d';
 import Spinner from '../Spinner';
 
 type ButtonAttrType = ButtonHTMLAttributes<HTMLButtonElement>;
