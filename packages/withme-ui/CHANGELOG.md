@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/Team-WithMe/WithMe_UI/compare/v0.1.2...v0.1.3) (2022-08-15)
+
+
+### Bug Fixes
+
+* 모듈 경로 문제 해결 ([27851b0](https://github.com/Team-WithMe/WithMe_UI/commit/27851b0fb1bc562912e301476e53ba946815a2b8))
+
+
+
+
+
 ## [0.1.2](https://github.com/Team-WithMe/WithMe_UI/compare/v0.1.1...v0.1.2) (2022-08-15)
 
 **Note:** Version bump only for package @with-me/ui
