@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/Team-WithMe/WithMe_UI/compare/v0.1.0...v0.1.1) (2022-08-15)
+
+
+### Bug Fixes
+
+* change rollup config ([7eecdec](https://github.com/Team-WithMe/WithMe_UI/commit/7eecdec4fdb59fda13b8a43198bac885d6fec3b0))
+
+
+
+
+
 # 0.1.0 (2022-08-12)
 
 
