@@ -2,7 +2,7 @@
 	"name": "@with-me/ui",
 	"description": "withme design-system ui package",
 	"author": "여찬규 <wry5533@gmail.com>",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"main": "index.js",
 	"module": "esm/index.js",
 	"types": "index.d.ts",
