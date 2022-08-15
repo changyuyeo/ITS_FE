@@ -2,7 +2,7 @@
 	"name": "@with-me/icons",
 	"description": "withme design-system icons package",
 	"author": "여찬규 <wry5533@gmail.com>",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"sideEffects": false,
 	"main": "build/index.js",
 	"module": "build/esm/index.js",

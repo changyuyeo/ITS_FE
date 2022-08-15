@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.1.4...v0.2.0) (2022-08-15)
+
+
+### Features
+
+* 공통 아이콘 패키지 추가 ([282fd38](https://github.com/Team-WithMe/WithMe_UI/commit/282fd386d699ca612a1f0f24d59c0f089614118a))
+
+
+
+
+
 # 0.1.0 (2022-08-12)
 
 
