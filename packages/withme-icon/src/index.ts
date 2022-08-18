@@ -8,4 +8,7 @@ export { default as Close } from './common/Close';
 export { default as Code } from './common/Code';
 export { default as Github } from './common/Github';
 export { default as Heart } from './common/Heart';
+export { default as Like } from './common/Like';
+export { default as Member } from './common/Member';
+export { default as Members } from './common/Members';
 export { default as Sharing } from './common/Sharing';
