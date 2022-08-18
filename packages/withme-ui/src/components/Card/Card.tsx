@@ -43,7 +43,7 @@ const Card: FC<CardProps> = ({
 		{ [`${BASE}--shadow-hover`]: isHover && isShadow }
 	);
 
-	const paddingStyled: CSSProperties = useMemo(() => ({ padding: `${px}px ${py}px` }), [px, py]);
+	const paddingStyled: CSSProperties = useMemo(() => ({ padding: `${py}px ${px}px` }), [px, py]);
 
 	const cardTitleSted: CSSProperties = useMemo(
 		() => ({ borderBottom: isBorder ? `1px solid ${borderColor}` : 0, ...paddingStyled }),
