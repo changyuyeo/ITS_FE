@@ -6,7 +6,7 @@
 
 <h1>With Me UI</h1>
 
-A With ME React Design System, powered by <a href="https://github.com/changyuyeo" rel="noopener" target="_blank">changyu</a>.
+A With ME React Design System, powered by <a href="https://github.com/chchgyu" rel="noopener" target="_blank">changyu</a>.
 
 ![npm](https://img.shields.io/npm/v/@with-me/ui)
 ![npm](https://img.shields.io/npm/l/@with-me/ui)
