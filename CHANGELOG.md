@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.2.3...v0.3.0) (2022-08-18)
+
+
+### Features
+
+* 메인 아이콘 추가 ([f0b0abf](https://github.com/Team-WithMe/WithMe_UI/commit/f0b0abf433a7bd3a1e4a7c1347a545fa1877bdcb))
+
+
+
+
+
 ## [0.2.3](https://github.com/Team-WithMe/WithMe_UI/compare/v0.2.2...v0.2.3) (2022-08-15)
 
 **Note:** Version bump only for package @with-me/design-system
