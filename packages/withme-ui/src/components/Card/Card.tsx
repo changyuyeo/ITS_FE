@@ -10,6 +10,7 @@ interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
 	fullSize?: boolean;
 	htmlTitle?: string;
 	isBorder?: boolean;
+	isHover?: boolean;
 	isShadow?: boolean;
 	px?: number;
 	py?: number;
@@ -27,6 +28,7 @@ const Card: FC<CardProps> = ({
 	fullSize = false,
 	htmlTitle,
 	isBorder = true,
+	isHover = false,
 	isShadow = false,
 	px = 20,
 	py = 20,
@@ -34,7 +36,12 @@ const Card: FC<CardProps> = ({
 	title,
 	...props
 }) => {
-	const cx = classNames(BASE, { [`${BASE}--shadow`]: isShadow });
+	const cx = classNames(
+		BASE,
+		{ [`${BASE}--hover`]: isHover && !isShadow },
+		{ [`${BASE}--shadow`]: isShadow },
+		{ [`${BASE}--shadow-hover`]: isHover && isShadow }
+	);
 
 	const paddingStyled: CSSProperties = useMemo(() => ({ padding: `${px}px ${py}px` }), [px, py]);
 

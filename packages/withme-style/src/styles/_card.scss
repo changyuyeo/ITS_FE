@@ -7,18 +7,20 @@
 	background-color: var(--#{$prefix}card-bg-color);
 	transition: var(--#{$prefix}card-transition);
 
-	&:hover,
-	&--shadow &:hover {
+	&--hover:hover,
+	&--shadow-hover:hover {
 		cursor: pointer;
 	}
 
-	&:hover {
+	&--hover:hover {
 		border-color: var(--#{$prefix}card-border-color) !important;
 	}
 
 	&--shadow {
 		box-shadow: var(--#{$prefix}card-shadow);
+	}
 
+	&--shadow-hover {
 		&:hover {
 			--#{$prefix}card-bg-color: #{$card-bg-color-hover};
 		}

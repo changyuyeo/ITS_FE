@@ -9,6 +9,10 @@ const App = () => {
 			<Card title={<span>title</span>} isShadow isBorder={false}>
 				test
 			</Card>
+			<Card title={<span>title</span>} isShadow isHover isBorder={false}>
+				test
+			</Card>
+			<Card isHover>hover</Card>
 		</Container>
 	);
 };
