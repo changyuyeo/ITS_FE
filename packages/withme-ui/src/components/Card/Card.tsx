@@ -7,6 +7,7 @@ interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
 	borderRadius?: number;
 	children: ReactNode;
 	className?: string;
+	fullSize?: boolean;
 	htmlTitle?: string;
 	isBorder?: boolean;
 	isShadow?: boolean;
@@ -23,6 +24,7 @@ const Card: FC<CardProps> = ({
 	borderRadius = 5,
 	children,
 	className = '',
+	fullSize = false,
 	htmlTitle,
 	isBorder = true,
 	isShadow = false,
@@ -35,17 +37,21 @@ const Card: FC<CardProps> = ({
 	const cx = classNames(BASE, { [`${BASE}--shadow`]: isShadow });
 
 	const paddingStyled: CSSProperties = useMemo(() => ({ padding: `${px}px ${py}px` }), [px, py]);
+
 	const cardTitleSted: CSSProperties = useMemo(
 		() => ({ borderBottom: isBorder ? `1px solid ${borderColor}` : 0, ...paddingStyled }),
 		[borderColor, isBorder, paddingStyled]
 	);
+
 	const cardStyled: CSSProperties = useMemo(() => {
 		const borderStyled: CSSProperties = isBorder
 			? { borderColor, borderRadius, borderStyle: 'solid', borderWidth: '1px' }
 			: { borderRadius };
 
-		return { ...borderStyled, ...style };
-	}, [borderColor, borderRadius, isBorder, style]);
+		const fullSizing: CSSProperties = fullSize ? { width: '100%' } : {};
+
+		return { ...borderStyled, ...fullSizing, ...style };
+	}, [borderColor, borderRadius, fullSize, isBorder, style]);
 
 	return (
 		<div className={`${cx} ${className}`} style={cardStyled} title={htmlTitle} {...props}>
