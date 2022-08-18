@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/Team-WithMe/WithMe_UI/compare/v0.4.0...v0.4.1) (2022-08-18)
+
+
+### Bug Fixes
+
+* card padding style 오타 수정 ([60a52b8](https://github.com/Team-WithMe/WithMe_UI/commit/60a52b8bd1fcbac9bbec808f7ec3254e79fa0e23))
+
+
+
+
+
 # [0.4.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.3.2...v0.4.0) (2022-08-18)
 
 
