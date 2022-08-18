@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/Team-WithMe/WithMe_UI/compare/v0.3.1...v0.3.2) (2022-08-18)
+
+
+### Bug Fixes
+
+* card 컴포넌트 누락된 props 속성 추가 ([bf76f2e](https://github.com/Team-WithMe/WithMe_UI/commit/bf76f2ebdd19b54afa009743024c657651006f9f))
+
+
+
+
+
 ## [0.3.1](https://github.com/Team-WithMe/WithMe_UI/compare/v0.3.0...v0.3.1) (2022-08-18)
 
 **Note:** Version bump only for package @with-me/design-system
