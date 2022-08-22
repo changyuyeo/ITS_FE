@@ -36,7 +36,7 @@
 		"lint:scss-fix": "yarn lint:scss --fix",
 		"dev": "yarn lerna run dev",
 		"build": "yarn lerna run build",
-		"build:sb": "yarn lerna run build-storybook",
+		"build:sb": "yarn lerna run build:storybook",
 		"commit": "git add . && yarn git-cz",
 		"clean": "bash ./scripts/clean-modules.sh",
 		"prepare": "husky install",

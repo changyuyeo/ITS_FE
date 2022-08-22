@@ -32,7 +32,7 @@
 		"dev": "yarn build --watch",
 		"build": "rollup -c",
 		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook",
+		"build:storybook": "build-storybook",
 		"lint": "eslint './src/**/*.{ts,tsx}'",
 		"lint:fix": "eslint --fix './src/**/*.{ts,tsx}'"
 	},
