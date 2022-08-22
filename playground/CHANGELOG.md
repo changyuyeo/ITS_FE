@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.4.1...v0.5.0) (2022-08-22)
+
+
+### Features
+
+* skill icon 31개 추가 ([9231c20](https://github.com/Team-WithMe/WithMe_UI/commit/9231c209c2a9452e2e5f19664bdadf695c873034))
+
+
+
+
+
 # [0.4.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.3.2...v0.4.0) (2022-08-18)
 
 
