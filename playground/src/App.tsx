@@ -1,85 +1,45 @@
 import { Container, Wrapper } from './styled';
 import {
-	Android,
-	Angular,
-	Aws,
-	C,
-	Cpp,
-	Cs,
-	Css,
-	Deno,
-	Django,
-	Docker,
-	Flutter,
-	Go,
-	Html,
-	Java,
-	Javascript,
-	Kotlin,
-	Kubernetes,
-	Linux,
-	Nodejs,
-	Python,
-	R,
-	React,
-	Ruby,
-	Sass,
-	Spring,
-	Sql,
-	Svelte,
-	Swift,
-	Typescript,
-	Ubuntu,
-	Vue
+	ArrowDown,
+	ArrowLeft,
+	ArrowRight,
+	ArrowUp,
+	BackSpace,
+	Close,
+	Code,
+	Github,
+	Heart,
+	Like,
+	Member,
+	Members,
+	Sharing,
+	XCircle
 } from '@with-me/icons';
 
 const App = () => {
 	return (
 		<Container>
 			<Wrapper>
-				<Android />
-				<Angular />
-				<Aws />
-				<C />
-				<Cpp />
-				<Cs />
+				<ArrowDown />
+				<ArrowLeft />
+				<ArrowRight />
+				<ArrowUp />
 			</Wrapper>
-			<br />
 			<Wrapper>
-				<Css />
-				<Deno />
-				<Django />
-				<Docker />
-				<Flutter />
-				<Go />
+				<BackSpace />
+				<Close />
+				<Code />
+				<Github />
+				<Heart />
 			</Wrapper>
-			<br />
 			<Wrapper>
-				<Html />
-				<Java />
-				<Javascript />
-				<Kotlin />
-				<Kubernetes />
-				<Linux />
+				<Like />
+				<Member />
+				<Members />
 			</Wrapper>
-			<br />
 			<Wrapper>
-				<Nodejs />
-				<Python />
-				<R />
-				<React />
-				<Ruby />
-				<Sass />
-			</Wrapper>
-			<br />
-			<Wrapper>
-				<Spring />
-				<Sql />
-				<Svelte />
-				<Swift />
-				<Typescript />
-				<Ubuntu />
-				<Vue />
+				<Sharing />
+				<XCircle />
 			</Wrapper>
 		</Container>
 	);

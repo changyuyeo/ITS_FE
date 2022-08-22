@@ -1,23 +1,18 @@
 import { FC, SVGProps } from 'react';
 
 const Github: FC<SVGProps<SVGSVGElement>> = ({
-	width = '32',
-	height = '32',
+	fill = '#333',
+	width = '20',
+	height = '20',
 	viewBox = '0 0 32 32',
-	fill = '#181616',
-	enableBackground = 'new 0 0 32 32',
+
 	...props
 }) => (
 	<svg
-		id="Layer_1"
-		version="1.0"
+		xmlns="http://www.w3.org/2000/svg"
 		width={width}
 		height={height}
 		viewBox={viewBox}
-		enableBackground={enableBackground}
-		xmlSpace="preserve"
-		xmlns="http://www.w3.org/2000/svg"
-		xmlnsXlink="http://www.w3.org/1999/xlink"
 		{...props}
 	>
 		<path
@@ -26,12 +21,6 @@ const Github: FC<SVGProps<SVGSVGElement>> = ({
 			fill={fill}
 			fillRule="evenodd"
 		/>
-		<g />
-		<g />
-		<g />
-		<g />
-		<g />
-		<g />
 	</svg>
 );
 

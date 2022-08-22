@@ -1,18 +1,18 @@
 import { FC, SVGProps } from 'react';
 
 const Heart: FC<SVGProps<SVGSVGElement>> = ({
+	fill = '#333',
 	width = '20',
 	height = '20',
 	viewBox = '0 0 20 20',
-	fill = '#777',
 	...props
 }) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
+		fill={fill}
 		width={width}
 		height={height}
 		viewBox={viewBox}
-		fill={fill}
 		{...props}
 	>
 		<path

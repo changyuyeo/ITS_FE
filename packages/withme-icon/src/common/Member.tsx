@@ -1,20 +1,18 @@
 import { FC, SVGProps } from 'react';
 
 const Member: FC<SVGProps<SVGSVGElement>> = ({
-	width = '96',
-	height = '96',
-	viewBox = '0 0 96 96',
 	fill = '#333',
+	width = '20',
+	height = '20',
+	viewBox = '0 0 96 96',
 	...props
 }) => (
 	<svg
-		overflow="hidden"
+		xmlns="http://www.w3.org/2000/svg"
+		fill={fill}
 		width={width}
 		height={height}
 		viewBox={viewBox}
-		fill={fill}
-		xmlns="http://www.w3.org/2000/svg"
-		xmlnsXlink="http://www.w3.org/1999/xlink"
 		{...props}
 	>
 		<g>
