@@ -404,7 +404,7 @@ $btn-border-width: $border-width !default;
 $btn-border-style: $border-style !default;
 $btn-shape-list: (
 	'default': map-get($border-radius-list, sm),
-	'circle': map-get($border-radius-list, circle)
+	'circle': '9999px'
 ) !default;
 
 $btn-cursor-list: (

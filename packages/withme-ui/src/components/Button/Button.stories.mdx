@@ -1,160 +1,201 @@
 import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs'
-import GithubIcon from '../../assets/GithubIcon'
-import Button, { ButtonProps } from './Button'
-import '@with-me/styles/build/design.css'
+import Button from './Button'
+import { Github } from '@with-me/icons'
+import '@with-me/style/dist/global.css'
 
 <Meta title="components/Button" component={Button} />
 
 export const Template = args => (
-	<Button {...args}>{args.children || 'Normal'}</Button>
+	<Button {...args}>{args.children || 'Button'}</Button>
 )
 
-# 버튼
+# Button
 
 &lt;Button /&gt; 컴포넌트 사용법 정리
 
-<br />
+```ts
+// Button 타입 정의
+interface ButtonProps {
+	children: ReactNode; // required value
+	disabled?: boolean; // default: false
+	fullSize?: boolean; // default: false
+	htmlType?: "button" | "reset" | "submit"; // default: "button"
+	icon?: ReactNode;
+	loading?: boolean; // default: false
+	outline?: boolean; // default: false
+	shape?: "circle" | "default"; // default: 'default'
+	size?: "sm" | "base" | "lg"; // default: 'base'
+	type?: 'primary' | 'secondary' | 'success' | 'error' | 'gray' | 'dark'; // default: 'primary'
+}
+```
 <br />
 
-## 형태 (color)
+## 기본 사용법
 
-- 버튼의 형태를 `bgColor` 으로 지정해 줄 수 있습니다.
-- bgColor = `primary` | `secondary` | `danger` | `default` | `greyish` | `dark`
+- `Button`컴포넌트는 기본적으로 **children**을 받습니다.
 
 <Canvas>
-	<Story name="BgColor">
-		<Button bgColor="primary">Normal</Button>
-		<Button bgColor="secondary">Normal</Button>
-		<Button bgColor="danger">Normal</Button>
-		<Button bgColor="default">Normal</Button>
-		<Button bgColor="greyish">Normal</Button>
-		<Button bgColor="dark">Normal</Button>
+	<Story name="basic">
+		<Button>Button</Button>
 	</Story>
 </Canvas>
 
 <br />
 
-## 위아래 패딩 (px)
+## type
 
-- 버튼의 패딩을 자유롭게 조절할 수 있습니다.
-- px단위로 계산됩니다.
-- 위아래 패딩은 `px`, 양쪽 패딩은 `py`, 에서 원하는 값을 넣어주면 됩니다.
-- px = `8` (default value)
+- `type` 속성을 이용해서 Button의 색상을 변경할 수 있습니다.
 
 <Canvas>
-	<Story name="PaddingX" >
-		<Button px={10} bgColor="primary">Normal</Button>
-		<Button px={15} bgColor="primary">Normal</Button>
-		<Button px={20} bgColor="primary">Normal</Button>
-		<Button px={25} bgColor="primary">Normal</Button>
-		<Button px={30} bgColor="primary">Normal</Button>
+	<Story name="type">
+		<Button type="primary">Button</Button>
+		<Button type="secondary">Button</Button>
+		<Button type="success">Button</Button>
+		<Button type="error">Button</Button>
+		<Button type="gray">Button</Button>
+		<Button type="dark">Button</Button>
+	</Story>
+</Canvas>
+
+### 참고!
+
+- 기본 html 에서 제공하는 type prop은 `htmlType` 이라는 속성으로 대체하게 됩니다. 
+
+<Canvas>
+	<Story name="htmlType">
+		<Button htmlType="button">Button</Button>
+		<Button htmlType="reset">Button</Button>
+		<Button htmlType="submit">Button</Button>
 	</Story>
 </Canvas>
 
 <br />
 
-## 양쪽 패딩 (py)
+## outline
 
-- 버튼의 패딩을 자유롭게 조절할 수 있습니다.
-- px단위로 계산됩니다.
-- 양쪽 패딩은 `py`, 에서 원하는 값을 넣어주면 됩니다.
-- py = `12` (default value)
+- `outline` 속성을 이용하면 해당 색상의 테투리를 가지게되며 색상은 하얀색으로 변경됩니다.
 
 <Canvas>
-	<Story name="PaddingY">
-		<Button py={20} bgColor="primary">Normal</Button>
-		<Button py={20} bgColor="primary">Normal</Button>
-		<Button py={20} bgColor="primary">Normal</Button>
-		<Button py={35} bgColor="primary">Normal</Button>
+	<Story name="outline">
+		<Button outline type="primary">Button</Button>
+		<Button outline type="secondary">Button</Button>
+		<Button outline type="success">Button</Button>
+		<Button outline type="error">Button</Button>
+		<Button outline type="gray">Button</Button>
+		<Button outline type="dark">Button</Button>
 	</Story>
 </Canvas>
 
 <br />
 
-## 그림자
+## size
 
-- 버튼의 그림자를 설정할 수 있습니다.
-- `shadow`가 true 일 때,
+- `size` 속성을 이용해서 Button의 크기로 설정할 수 있습니다.
 
 <Canvas>
-	<Story name="Shadow">
-		<Button shadow bgColor="primary">Normal</Button>
+	<Story 
+		name="size"
+		decorators={
+      [storyFn => 
+        <div style={{
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px'
+        }}>
+          {storyFn()}
+        </div>
+      ]
+    }>
+		<Button size="sm">Button</Button>
+		<Button size="base">Button</Button>
+		<Button size="lg">Button</Button>
 	</Story>
 </Canvas>
 
 <br />
 
-## 풀사이즈
+## shape
 
-- 너비 100%를 갖는 버튼을 만들 수 있습니다.
-- `fullSize`가 true 일 때,
+- `shape` 속성을 이용해서 Button의 형태를 설정할 수 있습니다.
 
 <Canvas>
-	<Story name="FullSize">
-		<Button fullSize bgColor="primary">로그인</Button>
+	<Story name="shape">
+		<Button shape="circle">Button</Button>
+		<Button shape="default">Button</Button>
 	</Story>
 </Canvas>
 
 <br />
 
+## disabled
 
-
-## 아이콘
-
-- 버튼의 아이콘을 넣을 수 있습니다.
-- `Icon` = &lt;SVGIcon /&gt;
+- disabled 속성으로 Button을 비활성화 할 수 있습니다.
 
 <Canvas>
-	<Story name="Icon">
-		<Button Icon={<GithubIcon />} fullSize bgColor="dark">Github 로그인</Button>
+	<Story name="disabled">
+		<Button disabled>Button</Button>
 	</Story>
 </Canvas>
 
 <br />
 
-## Playground
+## fullSize
 
-자유롭게 컨트롤 해보세요!
+- fullSize 속성을 이용하면 부모너비 기준으로 너비가 100%로 설정됩니다.
+
+<Canvas>
+	<Story name="fullSize">
+		<Button fullSize>Button</Button>
+	</Story>
+</Canvas>
+
+<br />
+
+## icon
+
+- icon 속성으로 Button 컨텐츠 앞에 원하는 아이콘을 넣을 수 있습니다.
+
+<Canvas>
+	<Story name="icon">
+		<Button icon={<Github fill="#fff" />} fullSize type="dark">Github 로그인</Button>
+	</Story>
+</Canvas>
+
+<br />
+
+## loading
+
+- loading 속성은 Button의 로딩상태를 알려줄 때 유용합니다.
+
+<Canvas>
+	<Story name="loading">
+		<Button loading>Button</Button>
+	</Story>
+</Canvas>
+
+<br />
+
+## playground
+
+&lt;Button /&gt; 컴포넌트를 자유롭게 컨트롤 해보세요!
 
 <Canvas>
 	<Story
-		name="Playground"
+		name="playground"
 		argTypes={{
-			onClick: {
-				table: {
-					disable: true
-				}
-			},
 			className: {
 				table: {
 					disable: true
 				}
 			},
-			type: {
+			style: {
 				table: {
 					disable: true
 				}
 			},
-			bgColor: {
-				description: '버튼 타입 (색상)'
-			},
-			fullSize: {
-				description: '크기 100% 여부'
-			},
-			px: {
-				description: 'padding-x 값'
-			},
-			py: {
-				description: 'padding-y 값'
-			},
-			shadow: {
-				description: '그림자 여부'
-			},
-			Icon: {
-				description: '버튼 아이콘'
-			},
 			children: {
-				description: '버튼 텍스트',
+				description: 'Button 컨텐츠',
 				control: 'text'
 			}
 		}}
@@ -163,4 +204,4 @@ export const Template = args => (
 	</Story>
 </Canvas>
 
-<ArgsTable story="Playground" />
+<ArgsTable story="playground" />

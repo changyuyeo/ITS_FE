@@ -16,9 +16,9 @@ export interface ButtonProps extends Omit<ButtonAttrType, 'type'> {
 	htmlType?: ButtonAttrType['type'];
 	icon?: ReactNode;
 	loading?: boolean;
+	outline?: boolean;
 	shape?: ButtonShapeType;
 	size?: ButtonSizeType;
-	outline?: boolean;
 	style?: CSSProperties;
 	type?: ButtonThemeType;
 }

@@ -49,11 +49,15 @@
 		opacity: var(--#{$prefix}btn-disabled-opacity);
 	}
 
+	&--prefix,
+	&--prefix-fullsize {
+		transition: var(--#{$prefix}btn-transition);
+	}
+
 	&--prefix {
 		$size: 20px;
 		height: $size;
 		margin-right: 6px;
-
 		position: relative;
 		width: $size;
 	}
