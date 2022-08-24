@@ -1,82 +1,116 @@
 import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs'
-import Card, { CardProps } from './Card'
-import Text from '../Text'
-import MacIcon from '../../assets/MacIcon'
-import WinIcon from '../../assets/WinIcon'
-import '@with-me/styles/build/design.css'
+import Title from '../Title/Title'
+import Card from './Card'
+import '@with-me/style/dist/global.css'
 
 <Meta title="components/Card" component={Card} />
 
-export const Template = args => (
-	<Card {...args}>{args.children || 'Normal'}</Card>
-)
+export const Template = args => <Card {...args}>{args.children || 'card content'}</Card>
 
 # Card
 
 &lt;Card /&gt; 컴포넌트 사용법 정리
 
+```ts
+// Avatar 타입 정의
+interface AvatarProps {
+	borderColor?: string; // default: #dddddd
+	borderRadius?: number; // default: 5
+	children: ReactNode; // required value
+	fullSize?: boolean; // default: false
+	htmlTitle?: string;
+	isBorder?: boolean; // default: false
+	isHover?: boolean; // default: false
+	isShadow?: boolean; // default: false
+	px?: number; // default: 20
+	py?: number; // default: 20
+	title?: ReactNode;
+}
+```
+<br />
+
+## 기본 사용법
+
+- `Card`컴포넌트는 기본적으로 **children**을 받습니다.
+
+<Canvas>
+	<Story name="basic">
+		<Card>card content</Card>
+	</Story>
+</Canvas>
+
 <br />
 
 ## border
 
-- 카드의 형태를 `border`로 지정할 수 있습니다.
-- default 값은 greyish (#c4c4c4) 입니다.
-- `no-border`은 태두리가 없어지며 그림자가 생기게 됩니다.
-- border = `primary` | `deep-gray` | `greyish` | `light-gray` | `no-border` 
+- `borderColor` 속성을 이용하면 Card의 **테두리 색상**을 변경할 수 있습니다.
+- `borderRadius` 속성으로 테두리의 **둥글기 정도**를 변경할 수 있습니다.
 
 <Canvas>
-	<Story name="Border">
-		<Card border="primary">primary</Card>
-		<Card border="deep-gray">deep-gray</Card>
-		<Card border="greyish">greyish</Card>
-		<Card border="light-gray">light-gray</Card>
-		<Card border="no-border">no-border</Card>
+	<Story name="borderColor">
+		<Card borderColor="#fc5c65">card</Card>
+		<Card borderColor="#fd9644">card</Card>
+		<Card borderColor="#fed330">card</Card>
+		<Card borderColor="#26de81">card</Card>
+		<Card borderColor="#45aaf2">card</Card>
+		<Card borderColor="#4b7bec">card</Card>
+		<Card borderColor="#a55eea">card</Card>
+	</Story>
+</Canvas>
+
+<Canvas>
+	<Story name="borderRadius">
+		<Card borderRadius={0}>card</Card>
+		<Card borderRadius={5}>card</Card>
+		<Card borderRadius={20}>card</Card>
+		<Card borderRadius={50}>card</Card>
+		<Card borderRadius={999}>card</Card>
 	</Story>
 </Canvas>
 
 <br />
 
-## borderRadius
+## fullSize
 
-- 카드 테두리의 둥글기 정도를 설정할 수 있습니다.
-- default 값은 5 (px 단위) 입니다.
-- borderRadius: `number`
+- `fullSize` 속성을 이용하면 부모너비 기준으로 너비가 100%로 설정됩니다.
 
 <Canvas>
-	<Story name="BorderRadius">
-		<Card borderRadius="0">Normal</Card>
-		<Card borderRadius="10">Normal</Card>
-		<Card borderRadius="20">Normal</Card>
-		<Card borderRadius="30">Normal</Card>
-		<Card borderRadius="40">Normal</Card>
-		<Card borderRadius="50">Normal</Card>
+	<Story name="fullSize">
+		<Card fullSize>card content</Card>
 	</Story>
 </Canvas>
 
 <br />
 
-## hover
+## isBorder
 
-- 카드의 `hover`를 설정할 수 있습니다.
-- `cursor: pointer;`가 자동으로 설정됩니다.
-- `hover`가 true 일 때,
+- `isBorder` 속성을 기준으로 Card 컴포넌트의 테두리의 유무를 설정할 수 있습니다.
+- `isShadow` 속성으로 Card 컴포넌트의 그림자 효과를 설정할 수 있습니다.
 
 <Canvas>
-	<Story name="Hover">
-		<Card hover>Normal</Card>
+	<Story name="isBorder">
+		<Card isBorder={true}>card with border</Card>
+		<Card isBorder={false}>borderless card</Card>
+	</Story>
+</Canvas>
+
+<Canvas>
+	<Story name="isShadow">
+		<Card isShadow={true}>card with shadow</Card>
+		<Card isShadow={false}>shadowless card</Card>
+		<Card isShadow={true} isBorder={false}>borderless card with shadow</Card>
 	</Story>
 </Canvas>
 
 <br />
 
-## shadow
+## px, py
 
-- 카드의 `shadow`를 설정할 수 있습니다.
-- `shadow`가 true 일 때,
+- `px, py` 속성으로 위아래 혹은 양옆의 패딩을 설정하여 정밀한 크기조정이 가능합니다. (px 단위)
 
 <Canvas>
-	<Story name="Shadow">
-		<Card shadow>Normal</Card>
+	<Story name="padding">
+		<Card px={100} py={100}>card content (padding 100px)</Card>
 	</Story>
 </Canvas>
 
@@ -84,94 +118,37 @@ export const Template = args => (
 
 ## title
 
-- 카드의 `title`를 설정할 수 있습니다.
-- `title`: ReactNode
+- `title` 속성은 Card 컴포넌트의 제목을 입력할 수 있는 공간을 제공합니다.
 
 <Canvas>
-	<Story name="Title">
-		<Card title={<h1>Card Title</h1>} >Card Contents</Card>
+	<Story name="title">
+		<Card title={<Title size="h5">card title</Title>}>card content (padding 100px)</Card>
 	</Story>
 </Canvas>
 
 <br />
 
-## 위아래 패딩 (px)
+## playground
 
-- 카드의 패딩을 자유롭게 조절할 수 있습니다.
-- px단위로 계산됩니다.
-- 위아래 패딩은 `px`, 양쪽 패딩은 `py`, 에서 원하는 값을 넣어주면 됩니다.
-- px = `8` (default value)
-
-<Canvas>
-	<Story name="PaddingX">
-		<Card px={20}>Normal</Card>
-	</Story>
-</Canvas>
-
-<br />
-
-## 양쪽 패딩 (py)
-
-- 카드의 패딩을 자유롭게 조절할 수 있습니다.
-- px단위로 계산됩니다.
-- 양쪽 패딩은 `py`, 에서 원하는 값을 넣어주면 됩니다.
-- py = `12` (default value)
-
-<Canvas>
-	<Story name="PaddingY">
-		<Card py={15}>Normal</Card>
-		<Card py={20}>Normal</Card>
-		<Card py={25}>Normal</Card>
-		<Card py={35}>Normal</Card>
-	</Story>
-</Canvas>
-
-<br />
-
-## 사용 예시
-
-<Canvas>
-	<Story name="Example">
-		<Card px={25} py={20} hover>
-			<WinIcon />
-			<Text size="xxxl" weight="bold">Window</Text>
-			<Text size="lg" weight="light">윈도우</Text>
-		</Card>
-		<Card px={25} py={20} hover>
-			<MacIcon />
-			<Text size="xxxl" weight="bold">Mac</Text>
-			<Text size="lg" weight="light">맥</Text>
-		</Card>
-	</Story>
-</Canvas>
-
-<br />
-
-## Playground
-
-자유롭게 컨트롤 해보세요!
+&lt;Card /&gt; 컴포넌트를 자유롭게 컨트롤 해보세요!
 
 <Canvas>
 	<Story
-		name="Playground"
+		name="playground"
 		argTypes={{
-			onClick: {
-				table: {
-					disable: true
-				}
-			},
 			className: {
 				table: {
 					disable: true
 				}
 			},
-			type: {
+			style: {
 				table: {
 					disable: true
 				}
 			},
 			children: {
-				description: 'ReactNode',
+				description: 'Card 컨텐츠',
+				control: 'text'
 			}
 		}}
 	>
@@ -179,4 +156,4 @@ export const Template = args => (
 	</Story>
 </Canvas>
 
-<ArgsTable story="Playground" />
+<ArgsTable story="playground" />
