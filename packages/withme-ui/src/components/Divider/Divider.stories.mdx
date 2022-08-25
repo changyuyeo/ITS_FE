@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs'
-import Divider, { DividerProps } from './Divider'
-import '@with-me/styles/build/design.css'
+import Divider from './Divider'
+import '@with-me/style/dist/global.css'
 
 <Meta
 	title="components/Divider"
@@ -23,57 +23,89 @@ export const Template = args => <Divider {...args} />
 
 # Divider
 
-- &lt;Divider /&gt; 컴포넌트 사용법 정리
-- 일직선을 그어주며, 섹션을 나눌 때 유용합니다.
+&lt;Divider /&gt; 컴포넌트 사용법 정리
+일직선을 그어주며, 섹션을 나눌 때 유용합니다.
 
+```ts
+// Divider 타입 정의
+interface DividerProps {
+	borderWidth?: number; // default: 1
+	color?: 'primary'| 'secondary' | 'success' | 'error' | 'default' | 'description' | 'guide' | 'white'; // default: default
+	width?: number;
+}
+```
 <br />
-<br />
 
-## color
+## borderWidth
 
-- `Divider`의 색상을 color 속성으로 지정할 수 있습니다. 
-- 기본적으로 color값은 `greyish` 입니다.
-- color: 'primary' | 'secondary' | 'danger' | 'success' | 'deep-gray' | 'greyish' | 'light-gray'
+- `borderWidth` 속성으로 `Divider`컴포넌트의 크기를 변경할 수 있습니다.
 
 <Canvas>
-	<Story name="Basic">
-		<Divider color='primary' />
-		<Divider color='secondary' />
-		<Divider color='danger' />
-		<Divider color='success' />
-		<Divider color='deep-gray' />
-		<Divider color='greyish' />
-		<Divider color='light-gray' />
+	<Story name="borderWidth">
+		<Divider borderWidth={1} />
+		<Divider borderWidth={2} />
+		<Divider borderWidth={3} />
+		<Divider borderWidth={4} />
+		<Divider borderWidth={5} />
 	</Story>
 </Canvas>
 
 <br />
 
-## Playground
+## color
 
-자유롭게 컨트롤 해보세요!
+- `color` 속성으로 `Divider`컴포넌트의 색상을 변경할 수 있습니다.
+
+<Canvas>
+	<Story name="color">
+		<Divider color="primary" />
+		<Divider color="secondary" />
+		<Divider color="success" />
+		<Divider color="error" />
+		<Divider color="default" />
+		<Divider color="description" />
+		<Divider color="guide" />
+		<Divider color="white" />
+	</Story>
+</Canvas>
+
+<br />
+
+## width
+
+- `width` 속성으로 `Divider`컴포넌트의 너비을 지정할 수 있습니다.
+
+<Canvas>
+	<Story name="width">
+		<Divider width={100} />
+		<Divider width={200} />
+		<Divider width={300} />
+		<Divider width={500} />
+	</Story>
+</Canvas>
+
+<br />
+
+## playground
+
+&lt;Divider /&gt; 컴포넌트를 자유롭게 컨트롤 해보세요!
 
 <Canvas>
 	<Story
-		name="Playground"
+		name="playground"
 		argTypes={{
-			onClick: {
-				table: {
-					disable: true
-				}
-			},
 			className: {
 				table: {
 					disable: true
 				}
 			},
-			type: {
+			style: {
 				table: {
 					disable: true
 				}
 			},
 			children: {
-				description: 'name',
+				description: 'Divider 컨텐츠',
 				control: 'text'
 			}
 		}}
@@ -82,4 +114,4 @@ export const Template = args => <Divider {...args} />
 	</Story>
 </Canvas>
 
-<ArgsTable story="Playground" />
+<ArgsTable story="playground" />

@@ -4,6 +4,7 @@ module.exports = {
 		'../src/components/Avatar/Avatar.stories.mdx',
 		'../src/components/Button/Button.stories.mdx',
 		'../src/components/Card/Card.stories.mdx',
+		'../src/components/Divider/Divider.stories.mdx',
 		'../src/components/Icons/Icons.stories.mdx'
 	],
 	addons: [
