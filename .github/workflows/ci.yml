@@ -18,3 +18,5 @@ jobs:
         run: yarn
       - name: 모든 패키지 빌드
         run: yarn build
+      - name: 스토리북 빌드
+        run: yarn build:storybook
