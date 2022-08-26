@@ -1,113 +1,138 @@
 import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs'
-import Text, { TextProps } from './Text'
-import '@with-me/styles/build/design.css'
+import Text from './Text'
+import '@with-me/style/dist/global.css'
 
 <Meta title="components/Text" component={Text} />
 
-export const Template = args => (
-	<Text {...args}>{args.children || 'Text'}</Text>
-)
+export const Template = args => <Text {...args}>{args.children || 'Text'}</Text>
 
-# 텍스트
+# Text
 
 &lt;Text /&gt; 컴포넌트 사용법 정리
 
+```ts
+// Text 타입 정의
+interface TextProps {
+	color?: 'primary' | 'secondary' | 'success' | 'error' | 'defalut' | 'description' | 'guide' | 'white'; // default: 'default' 
+	size?: 'xs' | 'sm' | 'md' | 'base' | 'lg' | 'xl' | 'xxl'; // default: 'base'
+	weight?: "medium" | "thin" | "light" | "bold" | "regular"; // default: 'regular'
+}
+```
 <br />
 
-## 색상
+## 기본 사용법
 
-- 텍스트의 색상을 **color** 값으로 지정할 수 있습니다.
-- default 값은 deep-gray (#222) 입니다.
-- color = `primary` | `secondary` | `danger` | `success` | `deep-gray` | `greyish` | `light-gray` | `white` 
+- `Text`컴포넌트는 기본적으로 **children**을 받습니다.
 
 <Canvas>
-	<Story name="Color">
-		<Text color="primary">primary</Text>
-		<Text color="secondary">secondary</Text>
-		<Text color="danger">danger</Text>
-		<Text color="success">success</Text>
-		<Text color="deep-gray">deepGray</Text>
-		<Text color="greyish">greyish</Text>
-		<Text color="light-gray">lightGray</Text>
-		<Text color="white">white</Text>
+	<Story name="basic">
+		<Text>Text</Text>
 	</Story>
 </Canvas>
 
 <br />
 
-## 사이즈
+## color
 
-- 텍스트의 사이즈를 **size** 값으로 지정할 수 있습니다.
-- default 값은 base (1rem = 16px) 입니다.
-- size = `sm` | `base` | `lg` | `xl` | `xxl` | `xxxl`
-	- sm: **0.875rem = 14px**
-	- base: **1rem = 16px**
-	- lg: **1.125rem = 18px**
-	- xl: **1.25rem = 20px**
-	- xxl: **1.375rem = 22px**
-	- xxxl: **1.5rem = 24px**
+- `color` 속성을 이용해서 Text 컴포넌트의 색상을 변경할 수 있습니다.
 
 <Canvas>
-	<Story name="Size">
-		<Text size="sm">14 글씨 / sm</Text>
-		<Text size="base">16 글씨 / base</Text>
-		<Text size="lg">18 글씨 / lg</Text>
-		<Text size="xl">20 글씨 / xl</Text>
-		<Text size="xxl">22 글씨 / xxl</Text>
-		<Text size="xxxl">24 글씨 / xxxl</Text>
+	<Story 
+		name="color"
+		decorators={
+      [storyFn => 
+        <div style={{
+          width: '100%',
+          display: 'flex',
+					alignItems: 'center',
+          gap: '10px'
+        }}>
+          {storyFn()}
+        </div>
+      ]
+    }>
+		<Text color="primary">Text</Text>
+		<Text color="secondary">Text</Text>
+		<Text color="success">Text</Text>
+		<Text color="error">Text</Text>
+		<Text color="defalut">Text</Text>
+		<Text color="description">Text</Text>
+		<Text color="guide">Text</Text>
+		<div style={{ background: '#333', padding: '8px' }}>
+			<Text color="white">Text</Text>
+		</div>
 	</Story>
 </Canvas>
 
 <br />
 
-## 두께
+## size
 
-- 텍스트의 두께를 **weight** 값으로 지정할 수 있습니다.
-- default 값은 regular (400) 입니다.
-- weight = `thin` | `light` | `regular` | `medium` | `bold`
-	- thin: **100**
-	- light: **300**
-	- regular: **400**
-	- medium: **500**
-	- bold: **700**
+- `size` 속성을 이용해서 Text 컴포넌트의 크기로 설정할 수 있습니다.
 
 <Canvas>
-	<Story name="Weight">
-		<Text weight="thin">16 글씨 / thin</Text>
-		<Text weight="light">16 글씨 / light</Text>
-		<Text weight="regular">16 글씨 / regular</Text>
-		<Text weight="medium">16 글씨 / medium</Text>
-		<Text weight="bold">16 글씨 / bold</Text>
+	<Story 
+		name="size"
+		decorators={
+      [storyFn => 
+        <div style={{
+          width: '100%',
+          display: 'flex',
+					alignItems: 'center',
+          gap: '10px'
+        }}>
+          {storyFn()}
+        </div>
+      ]
+    }>
+		<Text size="xs">Text</Text>
+		<Text size="sm">Text</Text>
+		<Text size="md">Text</Text>
+		<Text size="base">Text</Text>
+		<Text size="lg">Text</Text>
+		<Text size="xl">Text</Text>
+		<Text size="xxl">Text</Text>
 	</Story>
 </Canvas>
 
 <br />
 
-## Playground
+## weight
 
-자유롭게 컨트롤 해보세요!
+- `weight` 속성을 이용해서 Text의 굵기를 조절할 수 있습니다.
+
+<Canvas>
+	<Story name="weight">
+		<Text weight="thin">Text</Text>
+		<Text weight="light">Text</Text>
+		<Text weight="regular">Text</Text>
+		<Text weight="medium">Text</Text>
+		<Text weight="bold">Text</Text>
+	</Story>
+</Canvas>
+
+<br />
+
+## playground
+
+&lt;Text /&gt; 컴포넌트를 자유롭게 컨트롤 해보세요!
 
 <Canvas>
 	<Story
-		name="Playground"
+		name="playground"
 		argTypes={{
-			onClick: {
-				table: {
-					disable: true
-				}
-			},
 			className: {
 				table: {
 					disable: true
 				}
 			},
-			type: {
+			style: {
 				table: {
 					disable: true
 				}
 			},
 			children: {
-				description: '텍스트',
+				description: 'Text 컨텐츠',
 				control: 'text'
 			}
 		}}
@@ -116,4 +141,4 @@ export const Template = args => (
 	</Story>
 </Canvas>
 
-<ArgsTable story="Playground" />
+<ArgsTable story="playground" />

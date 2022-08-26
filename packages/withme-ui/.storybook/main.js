@@ -7,7 +7,8 @@ module.exports = {
 		'../src/components/Divider/Divider.stories.mdx',
 		'../src/components/Input/Input.stories.mdx',
 		'../src/components/Icons/Icons.stories.mdx',
-		'../src/components/Spinner/Spinner.stories.mdx'
+		'../src/components/Spinner/Spinner.stories.mdx',
+		'../src/components/Text/Text.stories.mdx'
 	],
 	addons: [
 		'@storybook/addon-links',
