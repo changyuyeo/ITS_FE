@@ -100,6 +100,21 @@ import { ArrowDown } from '@with-me/icons'
 
 - 마찬가지로 width, height 속성으로 크기를 조정할 수 있습니다.
 
+```ts
+// 아래 스토리북에 정리된 아이콘 목록의 코드에서 리액트아이콘만 <ReactIcon /> 으로 가져오고 있습니다.
+// 스토리북에서 import name이 겹쳐 오류가 발생했기 때문에 임시로 import { React as ReactIcon } from '@with-me/icons' 로 사용되고 있습니다.
+// 실제로 사용하실 땐 아래에 코드처럼 사용하시면 됩니다! (리액트 아이콘만 해당됩니다!)
+import { React } from '@with-me/icons'
+
+export default () => {
+	return (
+		//...
+			<React />
+		//...
+	)
+}
+```
+
 <Canvas>
 	<Story 
     name="skills" 	
