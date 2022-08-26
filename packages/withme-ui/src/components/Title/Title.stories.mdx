@@ -1,108 +1,138 @@
 import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs'
-import Title, { TitleProps } from './Title'
-import '@with-me/styles/build/design.css'
+import Title from './Title'
+import '@with-me/style/dist/global.css'
 
 <Meta title="components/Title" component={Title} />
 
-export const Template = args => (
-	<Title {...args}>{args.children || 'Title'}</Title>
-)
+export const Template = args => <Title {...args}>{args.children || 'Title'}</Title>
 
-# 제목
+# Title
 
 &lt;Title /&gt; 컴포넌트 사용법 정리
 
+```ts
+// Title 타입 정의
+interface TitleProps {
+	color?: 'primary' | 'secondary' | 'success' | 'error' | 'defalut' | 'description' | 'guide' | 'white'; // default: 'default' 
+	size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'; // default: 'h2'
+	weight?: "medium" | "thin" | "light" | "bold" | "regular"; // default: 'medium'
+}
+```
 <br />
 
-## 색상
+## 기본 사용법
 
-- 제목의 색상을 **color** 값으로 지정할 수 있습니다.
-- default 값은 deep-gray (#222) 입니다.
-- color = `primary` | `secondary` | `danger` | `success` | `deep-gray` | `greyish` | `light-gray` | `white` 
+- `Title`컴포넌트는 기본적으로 **children**을 받습니다.
 
 <Canvas>
-	<Story name="Color">
-		<Title color="primary">primary</Title>
-		<Title color="secondary">secondary</Title>
-		<Title color="danger">danger</Title>
-		<Title color="success">success</Title>
-		<Title color="deep-gray">deepGray</Title>
-		<Title color="greyish">greyish</Title>
-		<Title color="light-gray">lightGray</Title>
-		<Title color="white">white</Title>
+	<Story name="basic">
+		<Title>Title</Title>
 	</Story>
 </Canvas>
 
 <br />
 
-## 사이즈
+## color
 
-- 제목의 사이즈를 **size** 값으로 지정할 수 있습니다.
-- default 값은 middle (2.1875rem = 35px) 입니다.
-- size = `large` | `middle` | `small`
-	- largem: **2.5rem = 40px**
-	- middle: **2.1875rem = 35px**
-	- small: **1.875rem = 30px**
+- `color` 속성을 이용해서 Title 컴포넌트의 색상을 변경할 수 있습니다.
 
 <Canvas>
-	<Story name="Size">
-		<Title size="large">40 글씨 / large</Title>
-		<Title size="middle">35 글씨 / middle</Title>
-		<Title size="small">30 글씨 / small</Title>
+	<Story 
+		name="color"
+		decorators={
+      [storyFn => 
+        <div style={{
+          width: '100%',
+          display: 'flex',
+					alignItems: 'center',
+          gap: '10px'
+        }}>
+          {storyFn()}
+        </div>
+      ]
+    }>
+		<Title color="primary">Title</Title>
+		<Title color="secondary">Title</Title>
+		<Title color="success">Title</Title>
+		<Title color="error">Title</Title>
+		<Title color="defalut">Title</Title>
+		<Title color="description">Title</Title>
+		<Title color="guide">Title</Title>
+		<div style={{ background: '#333', padding: '8px' }}>
+			<Title color="white">Title</Title>
+		</div>
 	</Story>
 </Canvas>
 
 <br />
 
-## 두께
+## size
 
-- 제목의 두께를 **weight** 값으로 지정할 수 있습니다.
-- default 값은 regular (400) 입니다.
-- weight = `thin` | `light` | `regular` | `medium` | `bold`
-	- thin: **100**
-	- light: **300**
-	- regular: **400**
-	- medium: **500**
-	- bold: **700**
+- `size` 속성을 이용해서 Title 컴포넌트의 크기로 설정할 수 있습니다.
 
 <Canvas>
-	<Story name="Weight">
-		<Title weight="thin">40 글씨 / thin</Title>
-		<Title weight="light">40 글씨 / light</Title>
-		<Title weight="regular">40 글씨 / regular</Title>
-		<Title weight="medium">40 글씨 / medium</Title>
-		<Title weight="bold">40 글씨 / bold</Title>
+	<Story 
+		name="size"
+		decorators={
+      [storyFn => 
+        <div style={{
+          width: '100%',
+          display: 'flex',
+					alignItems: 'center',
+          gap: '10px'
+        }}>
+          {storyFn()}
+        </div>
+      ]
+    }>
+		<Title size="h1">Title</Title>
+		<Title size="h2">Title</Title>
+		<Title size="h3">Title</Title>
+		<Title size="h4">Title</Title>
+		<Title size="h5">Title</Title>
+		<Title size="h6">Title</Title>
 	</Story>
 </Canvas>
 
 <br />
 
-## Playground
+## weight
 
-자유롭게 컨트롤 해보세요!
+- `weight` 속성을 이용해서 Title의 굵기를 조절할 수 있습니다.
+
+<Canvas>
+	<Story name="weight">
+		<Title weight="thin">Title</Title>
+		<Title weight="light">Title</Title>
+		<Title weight="regular">Title</Title>
+		<Title weight="medium">Title</Title>
+		<Title weight="bold">Title</Title>
+	</Story>
+</Canvas>
+
+<br />
+
+## playground
+
+&lt;Title /&gt; 컴포넌트를 자유롭게 컨트롤 해보세요!
 
 <Canvas>
 	<Story
-		name="Playground"
+		name="playground"
 		argTypes={{
-			onClick: {
-				table: {
-					disable: true
-				}
-			},
 			className: {
 				table: {
 					disable: true
 				}
 			},
-			type: {
+			style: {
 				table: {
 					disable: true
 				}
 			},
 			children: {
-				description: '텍스트',
-				control: 'text'
+				description: 'Title 컨텐츠',
+				control: 'Title'
 			}
 		}}
 	>
@@ -110,4 +140,4 @@ export const Template = args => (
 	</Story>
 </Canvas>
 
-<ArgsTable story="Playground" />
+<ArgsTable story="playground" />

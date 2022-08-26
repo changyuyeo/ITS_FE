@@ -9,10 +9,10 @@ type HeadingPropsType = DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HT
 interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
 	children: string;
 	className?: string;
-	style?: CSSProperties;
-	size?: TitleSizeType;
-	weight?: FontWeightTypes;
 	color?: TitleColorType;
+	size?: TitleSizeType;
+	style?: CSSProperties;
+	weight?: FontWeightTypes;
 }
 
 const BASE = 'wm-title' as const;
