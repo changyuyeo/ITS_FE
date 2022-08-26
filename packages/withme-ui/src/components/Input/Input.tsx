@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import {
 	CSSProperties,
 	FC,
@@ -89,7 +88,10 @@ const Input: FC<InputProps> = ({
 			/>
 			{password && (
 				<button type="button" className={`${BASE}__password-icon`} onClick={onToggleHidePassword}>
-					{hidePassword ? <OpenedEye /> : <ClosedEye />}
+					{
+						// eslint-disable-next-line @typescript-eslint/no-use-before-define
+						hidePassword ? <OpenedEye /> : <ClosedEye />
+					}
 				</button>
 			)}
 			{suffix && <div className={`${BASE}__suffix`}>{suffix}</div>}

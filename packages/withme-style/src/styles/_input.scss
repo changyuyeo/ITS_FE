@@ -62,14 +62,7 @@
 	&__prefix,
 	&__suffix {
 		@include flex-center();
-	}
-
-	&__prefix {
-		margin-right: 5px;
-	}
-
-	&__suffix {
-		margin-left: 5px;
+		margin: 0 5px;
 	}
 
 	&__password-icon {
