@@ -43,7 +43,7 @@ import '@with-me/style/dist/global.css';
 
 <br />
 
-[스토리북](https://with-me-ui.netlify.app)을 참고해서 사용하시면 됩니다!
+[스토리북](https://with-me-ui.netlify.app/?path=/docs/assets-icons--base)을 참고해서 사용하시면 됩니다!
 
 ```tsx
 import { Button } from '@with-me/design';
