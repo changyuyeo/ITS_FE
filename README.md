@@ -14,7 +14,7 @@ with me의 모든 디자인 요소를 작업하는 레포지토리 입니다.
 
 스토리북을 이용해 디자인 시스템 문서를 구축했습니다.
 <br />
-[[storybook](https://with-me-ui.netlify.app)] 바로가기 (수정 진행 중..)
+[[storybook](https://with-me-ui.netlify.app)] 바로가기
 
 <br />
 
