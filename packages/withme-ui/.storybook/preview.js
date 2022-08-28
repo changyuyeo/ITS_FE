@@ -1,10 +1,13 @@
-import React, { useMemo } from 'react'
-import { themes } from '@storybook/theming'
+import React, { useMemo } from 'react';
 
 export const parameters = {
+	viewMode: 'docs',
 	actions: { argTypesRegex: '^on[A-Z].*' },
-	docs: {
-		theme: themes.normal
+	options: {
+		showPanel: true,
+		storySort: {
+			order: ['assets', 'components']
+		}
 	},
 	previewTabs: {
 		canvas: {
@@ -13,9 +16,8 @@ export const parameters = {
 		docs: {
 			hidden: false
 		}
-	},
-	viewMode: 'docs'
-}
+	}
+};
 
 export const decorators = [
 	Story => {
@@ -26,12 +28,12 @@ export const decorators = [
 				gap: '15px'
 			}),
 			[]
-		)
+		);
 
 		return (
 			<div style={styled}>
 				<Story />
 			</div>
-		)
+		);
 	}
-]
+];
