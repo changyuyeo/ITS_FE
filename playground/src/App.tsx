@@ -1,46 +1,24 @@
-import { Container, Wrapper } from './styled';
-import {
-	ArrowDown,
-	ArrowLeft,
-	ArrowRight,
-	ArrowUp,
-	BackSpace,
-	Close,
-	Code,
-	Github,
-	Heart,
-	Like,
-	Member,
-	Members,
-	Sharing,
-	XCircle
-} from '@with-me/icons';
+import { Container } from './styled';
+import { Button, Textarea } from '@with-me/ui';
+import { ChangeEvent, useRef, useState } from 'react';
 
 const App = () => {
+	const ref = useRef<HTMLTextAreaElement>(null);
+	const [value, setValue] = useState('');
+
+	const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value);
+
+	const onClick = () => {
+		setValue('');
+		if (ref) ref.current?.focus();
+	};
+
 	return (
 		<Container>
-			<Wrapper>
-				<ArrowDown />
-				<ArrowLeft />
-				<ArrowRight />
-				<ArrowUp />
-			</Wrapper>
-			<Wrapper>
-				<BackSpace />
-				<Close />
-				<Code />
-				<Github />
-				<Heart />
-			</Wrapper>
-			<Wrapper>
-				<Like />
-				<Member />
-				<Members />
-			</Wrapper>
-			<Wrapper>
-				<Sharing />
-				<XCircle />
-			</Wrapper>
+			<Textarea value={value} onChange={onChange} />
+			<Button onClick={onClick} type="error">
+				Delete
+			</Button>
 		</Container>
 	);
 };

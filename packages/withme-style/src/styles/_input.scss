@@ -50,7 +50,6 @@
 	}
 
 	&--error {
-		--#{$prefix}input-bg-color: #{$input-error-bg-color};
 		--#{$prefix}input-border-color: #{$input-error-border-color};
 		--#{$prefix}input-outline-color: #{$input-error-outline-color};
 

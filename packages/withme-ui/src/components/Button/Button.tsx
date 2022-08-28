@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, CSSProperties, FC, ReactNode, useMemo } from 'react';
+import { ButtonHTMLAttributes, CSSProperties, FC, ReactNode, RefObject, useMemo } from 'react';
 import classNames from 'classnames';
 import type { SizeTypes, ThemeTypes } from '../../typings/props.types.d';
 import Spinner from '../Spinner';
@@ -14,6 +14,7 @@ export interface ButtonProps extends Omit<ButtonAttrType, 'type'> {
 	disabled?: boolean;
 	fullSize?: boolean;
 	htmlType?: ButtonAttrType['type'];
+	ref?: RefObject<HTMLButtonElement>;
 	icon?: ReactNode;
 	loading?: boolean;
 	outline?: boolean;
@@ -31,6 +32,7 @@ const Button: FC<ButtonProps> = ({
 	disabled = false,
 	fullSize = false,
 	htmlType = 'button',
+	ref,
 	icon,
 	loading = false,
 	outline = false,
@@ -58,6 +60,7 @@ const Button: FC<ButtonProps> = ({
 
 	return (
 		<button
+			ref={ref}
 			className={`${cx} ${className}`}
 			style={ButtonStyled}
 			type={htmlType}

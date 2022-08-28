@@ -6,6 +6,7 @@ import {
 	HTMLInputTypeAttribute,
 	InputHTMLAttributes,
 	ReactNode,
+	RefObject,
 	useCallback,
 	useMemo,
 	useState
@@ -21,6 +22,7 @@ interface InputProps extends InputAttributesType {
 	className?: string;
 	error?: boolean;
 	errorMsg?: string;
+	ref?: RefObject<HTMLInputElement>;
 	onBlur?: FocusEventHandler<HTMLInputElement>;
 	onFocus?: FocusEventHandler<HTMLInputElement>;
 	password?: boolean;
@@ -37,6 +39,7 @@ const Input: FC<InputProps> = ({
 	className = '',
 	error = false,
 	errorMsg,
+	ref,
 	onBlur,
 	onFocus,
 	password = false,
@@ -81,6 +84,7 @@ const Input: FC<InputProps> = ({
 		<div className={`${cx} ${className}`} style={inputStyled}>
 			{prefix && <div className={`${BASE}__prefix`}>{prefix}</div>}
 			<input
+				ref={ref}
 				type={password && hidePassword ? 'password' : type}
 				onBlur={onBlurHandler}
 				onFocus={onFocusHandler}
