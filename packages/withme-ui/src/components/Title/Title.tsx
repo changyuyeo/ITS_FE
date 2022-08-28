@@ -1,4 +1,4 @@
-import { CSSProperties, DetailedHTMLProps, FC, HTMLAttributes, useMemo } from 'react';
+import { CSSProperties, DetailedHTMLProps, FC, HTMLAttributes, ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
 import type { FontWeightTypes, ThemeTypes } from '../../typings/props.types';
 
@@ -7,7 +7,7 @@ type TitleColorType = keyof ThemeTypes | 'defalut' | 'description' | 'guide' | '
 type HeadingPropsType = DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
 
 interface TitleProps extends HTMLAttributes<HTMLHeadingElement> {
-	children: string;
+	children: ReactNode;
 	className?: string;
 	color?: TitleColorType;
 	size?: TitleSizeType;

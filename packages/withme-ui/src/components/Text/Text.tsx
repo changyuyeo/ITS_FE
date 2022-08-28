@@ -1,4 +1,4 @@
-import { CSSProperties, FC, HTMLAttributes } from 'react';
+import { CSSProperties, FC, HTMLAttributes, ReactNode } from 'react';
 import classNames from 'classnames';
 import type { FontWeightTypes, SizeTypes, ThemeTypes } from '../../typings/props.types.d';
 
@@ -7,7 +7,7 @@ type TextSizeType = keyof Omit<SizeTypes, 'xxxs' | 'xxs' | 'md' | 'xxxl'>;
 
 interface TextProps extends HTMLAttributes<HTMLSpanElement> {
 	className?: string;
-	children: string;
+	children: ReactNode;
 	color?: TextColorType;
 	size?: TextSizeType;
 	style?: CSSProperties;
