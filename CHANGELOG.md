@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.5.0...v0.6.0) (2022-08-28)
+
+
+### Features
+
+* 디펜더시봇 내용 추가 ([03a4c12](https://github.com/Team-WithMe/WithMe_UI/commit/03a4c1231ac91f37cce01901cd3758d66f816d41))
+* 빌드 폴더 정리 스크립트 추가 ([b9f66cd](https://github.com/Team-WithMe/WithMe_UI/commit/b9f66cd593abb28b2c281ee31bcc6b537b402b0e))
+* 스토리북 문서 커스텀 디자인 추가 ([fee90b9](https://github.com/Team-WithMe/WithMe_UI/commit/fee90b9ad4106aef7c40c984f923600df15c6a66))
+* avatar, button, icons 스토리 문서 작성 완료 ([5d7a3f1](https://github.com/Team-WithMe/WithMe_UI/commit/5d7a3f1d626900f5f3be9b1a9ab641f853abc8b7))
+* card component 스토리 문서 작성 ([a50d567](https://github.com/Team-WithMe/WithMe_UI/commit/a50d567253dcd5ae84681fa55a18b482670e265f))
+* create github dependabot.yml ([2bf9f98](https://github.com/Team-WithMe/WithMe_UI/commit/2bf9f98657c2e7f0e14c2f298f65d4fb108b2fd0))
+* spinner 컴포넌트 스토리 문서 생성 ([1d68106](https://github.com/Team-WithMe/WithMe_UI/commit/1d68106e45e7ea8f21ea54a5969ec7971f844a3d))
+
+
+
+
+
 # [0.5.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.4.1...v0.5.0) (2022-08-22)
 
 

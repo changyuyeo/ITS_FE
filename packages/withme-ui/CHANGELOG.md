@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.5.0...v0.6.0) (2022-08-28)
+
+
+### Features
+
+* 스토리북 문서 커스텀 디자인 추가 ([fee90b9](https://github.com/Team-WithMe/WithMe_UI/commit/fee90b9ad4106aef7c40c984f923600df15c6a66))
+* avatar, button, icons 스토리 문서 작성 완료 ([5d7a3f1](https://github.com/Team-WithMe/WithMe_UI/commit/5d7a3f1d626900f5f3be9b1a9ab641f853abc8b7))
+* card component 스토리 문서 작성 ([a50d567](https://github.com/Team-WithMe/WithMe_UI/commit/a50d567253dcd5ae84681fa55a18b482670e265f))
+* spinner 컴포넌트 스토리 문서 생성 ([1d68106](https://github.com/Team-WithMe/WithMe_UI/commit/1d68106e45e7ea8f21ea54a5969ec7971f844a3d))
+
+
+
+
+
 # [0.5.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.4.1...v0.5.0) (2022-08-22)
 
 **Note:** Version bump only for package @with-me/ui

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.5.0...v0.6.0) (2022-08-28)
+
+
+### Features
+
+* avatar, button, icons 스토리 문서 작성 완료 ([5d7a3f1](https://github.com/Team-WithMe/WithMe_UI/commit/5d7a3f1d626900f5f3be9b1a9ab641f853abc8b7))
+
+
+
+
+
 # [0.5.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.4.1...v0.5.0) (2022-08-22)
 
 **Note:** Version bump only for package @with-me/style
