@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/Team-WithMe/WithMe_UI/compare/v0.6.1...v0.6.2) (2022-08-28)
+
+
+### Bug Fixes
+
+* 누락된 ref 속성 추가 ([3ddb96e](https://github.com/Team-WithMe/WithMe_UI/commit/3ddb96e97419cab1ba1aeadfecc8015528baf9d3))
+
+
+
+
+
 # [0.6.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.5.0...v0.6.0) (2022-08-28)
 
 **Note:** Version bump only for package @with-me/playground

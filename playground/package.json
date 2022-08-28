@@ -1,6 +1,6 @@
 {
 	"name": "@with-me/playground",
-	"version": "0.6.0",
+	"version": "0.6.2",
 	"private": true,
 	"scripts": {
 		"dev": "vite",

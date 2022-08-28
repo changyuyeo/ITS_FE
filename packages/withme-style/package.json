@@ -2,7 +2,7 @@
 	"name": "@with-me/style",
 	"description": "withme design-system style package",
 	"author": "여찬규 <wry5533@gmail.com>",
-	"version": "0.6.0",
+	"version": "0.6.2",
 	"license": "MIT",
 	"files": [
 		"dist"
