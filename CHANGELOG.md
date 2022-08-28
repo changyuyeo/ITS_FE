@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.3](https://github.com/Team-WithMe/WithMe_UI/compare/v0.6.2...v0.6.3) (2022-08-28)
+
+
+### Bug Fixes
+
+* props 수정 ([7620f82](https://github.com/Team-WithMe/WithMe_UI/commit/7620f82339d1b3208a73625a86aa10317123fa15))
+
+
+
+
+
 ## [0.6.2](https://github.com/Team-WithMe/WithMe_UI/compare/v0.6.1...v0.6.2) (2022-08-28)
 
 

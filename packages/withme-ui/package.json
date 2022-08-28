@@ -2,7 +2,7 @@
 	"name": "@with-me/ui",
 	"description": "withme design-system ui package",
 	"author": "여찬규 <wry5533@gmail.com>",
-	"version": "0.6.2",
+	"version": "0.6.3",
 	"license": "MIT",
 	"sideEffects": false,
 	"main": "dist/index.js",
