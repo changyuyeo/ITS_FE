@@ -1,6 +1,8 @@
 import {
 	CSSProperties,
 	FC,
+	KeyboardEvent,
+	KeyboardEventHandler,
 	ReactNode,
 	TextareaHTMLAttributes,
 	useCallback,
@@ -12,6 +14,8 @@ import {
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 	autoSize?: boolean;
 	className?: string;
+	onKeyUp?: KeyboardEventHandler<HTMLTextAreaElement>;
+	onKeyDown?: KeyboardEventHandler<HTMLTextAreaElement>;
 	resize?: boolean;
 	style?: CSSProperties;
 	suffix?: ReactNode;
@@ -22,6 +26,8 @@ const BASE = 'wm-textarea' as const;
 const Textarea: FC<TextareaProps> = ({
 	autoSize = false,
 	className = '',
+	onKeyDown,
+	onKeyUp,
 	resize = false,
 	style,
 	suffix,
@@ -40,9 +46,26 @@ const Textarea: FC<TextareaProps> = ({
 		textResize();
 	}, [autoSize, textResize]);
 
+	const onKeyUpHandler = useCallback(
+		(event: KeyboardEvent<HTMLTextAreaElement>) => {
+			textResize();
+			if (onKeyUp) onKeyUp(event);
+		},
+		[onKeyUp, textResize]
+	);
+
+	const onKeyDownHandler = useCallback(
+		(event: KeyboardEvent<HTMLTextAreaElement>) => {
+			textResize();
+			if (onKeyDown) onKeyDown(event);
+		},
+		[onKeyDown, textResize]
+	);
+
 	const textareaStyled: CSSProperties = useMemo(() => {
 		const isResize: CSSProperties = !resize ? { resize: 'none', overflow: 'hidden' } : {};
 		const isSuffix: CSSProperties = suffix ? { padding: '12px 24px 12px 12px' } : {};
+
 		return { ...isResize, ...isSuffix, ...style };
 	}, [resize, style, suffix]);
 
@@ -52,8 +75,8 @@ const Textarea: FC<TextareaProps> = ({
 				ref={textareaRef}
 				className={`${BASE} ${className}`}
 				style={textareaStyled}
-				onKeyUp={textResize}
-				onKeyDown={textResize}
+				onKeyUp={onKeyUpHandler}
+				onKeyDown={onKeyDownHandler}
 				{...props}
 			/>
 			{suffix && <div className={`${BASE}__suffix`}>{suffix}</div>}

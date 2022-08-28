@@ -9,6 +9,7 @@ module.exports = {
 		'../src/components/Icons/Icons.stories.mdx',
 		'../src/components/Spinner/Spinner.stories.mdx',
 		'../src/components/Text/Text.stories.mdx',
+		'../src/components/Textarea/Textarea.stories.mdx',
 		'../src/components/Title/Title.stories.mdx'
 	],
 	addons: [
