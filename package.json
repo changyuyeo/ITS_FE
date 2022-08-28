@@ -38,7 +38,9 @@
 		"build": "yarn lerna run build",
 		"build:storybook": "yarn lerna run build:storybook",
 		"commit": "git add . && yarn git-cz",
-		"clean": "bash ./scripts/clean-modules.sh",
+		"clean": "yarn clean:dist && yarn clean:modules",
+		"clean:dist": "bash ./scripts/clean-dist.sh",
+		"clean:modules": "bash ./scripts/clean-modules.sh",
 		"prepare": "husky install",
 		"publish": "yarn lerna publish"
 	},
