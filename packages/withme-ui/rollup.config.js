@@ -3,7 +3,6 @@ import dts from 'rollup-plugin-dts';
 import multiInput from 'rollup-plugin-multi-input';
 import commonjs from '@rollup/plugin-commonjs';
 
-
 export default [
 	// tree shaking 을 위해 esm 파일들을 code splitting 하여 빌드
 	{
