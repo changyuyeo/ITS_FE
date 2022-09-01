@@ -1,45 +1,42 @@
-import { ButtonHTMLAttributes, CSSProperties, FC, ReactNode, useMemo } from 'react';
+import { ButtonHTMLAttributes, CSSProperties, forwardRef, ReactNode, useMemo } from 'react';
 import classNames from 'classnames';
 import type { SizeTypes, ThemeTypes } from '../../typings/props.types.d';
 import Spinner from '../Spinner';
 
-type ButtonAttrType = ButtonHTMLAttributes<HTMLButtonElement>;
-type ButtonSizeType = keyof Pick<SizeTypes, 'sm' | 'base' | 'lg'>;
-type ButtonShapeType = 'default' | 'circle';
-type ButtonThemeType = keyof ThemeTypes | 'gray' | 'dark';
-
-export interface ButtonProps extends Omit<ButtonAttrType, 'type'> {
+export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'> {
 	children: ReactNode;
 	className?: string;
 	disabled?: boolean;
 	fullSize?: boolean;
-	htmlType?: ButtonAttrType['type'];
+	htmlType?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
 	icon?: ReactNode;
 	loading?: boolean;
 	outline?: boolean;
-	shape?: ButtonShapeType;
-	size?: ButtonSizeType;
+	shape?: 'default' | 'circle';
+	size?: keyof Pick<SizeTypes, 'sm' | 'base' | 'lg'>;
 	style?: CSSProperties;
-	type?: ButtonThemeType;
+	type?: keyof ThemeTypes | 'gray' | 'dark';
 }
 
 const BASE = 'wm-btn' as const;
 
-const Button: FC<ButtonProps> = ({
-	children,
-	className = '',
-	disabled = false,
-	fullSize = false,
-	htmlType = 'button',
-	icon,
-	loading = false,
-	outline = false,
-	shape = 'default',
-	size = 'base',
-	style,
-	type = 'primary',
-	...props
-}) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+	const {
+		children,
+		className = '',
+		disabled = false,
+		fullSize = false,
+		htmlType = 'button',
+		icon,
+		loading = false,
+		outline = false,
+		shape = 'default',
+		size = 'base',
+		style,
+		type = 'primary',
+		...rest
+	} = props;
+
 	const cx = classNames(
 		BASE,
 		{ [`${BASE}--disabled`]: disabled },
@@ -58,11 +55,12 @@ const Button: FC<ButtonProps> = ({
 
 	return (
 		<button
+			ref={ref}
 			className={`${cx} ${className}`}
 			style={ButtonStyled}
 			type={htmlType}
 			disabled={disabled}
-			{...props}
+			{...rest}
 		>
 			{icon && <div className={prefixClassNames}>{icon}</div>}
 			{loading && (
@@ -73,6 +71,8 @@ const Button: FC<ButtonProps> = ({
 			{children}
 		</button>
 	);
-};
+});
+
+Button.displayName = 'Button';
 
 export default Button;
