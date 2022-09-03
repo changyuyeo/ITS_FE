@@ -1,12 +1,13 @@
 import {
 	CSSProperties,
-	FC,
+	forwardRef,
 	KeyboardEvent,
 	KeyboardEventHandler,
 	ReactNode,
 	TextareaHTMLAttributes,
 	useCallback,
 	useEffect,
+	useImperativeHandle,
 	useMemo,
 	useRef
 } from 'react';
@@ -23,17 +24,20 @@ interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 
 const BASE = 'wm-textarea' as const;
 
-const Textarea: FC<TextareaProps> = ({
-	autoSize = false,
-	className = '',
-	onKeyDown,
-	onKeyUp,
-	resize = false,
-	style,
-	suffix,
-	...props
-}) => {
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
+	const {
+		autoSize = false,
+		className = '',
+		onKeyDown,
+		onKeyUp,
+		resize = false,
+		style,
+		suffix,
+		...rest
+	} = props;
+
 	const textareaRef = useRef<HTMLTextAreaElement>(null);
+	useImperativeHandle(ref, () => textareaRef.current as HTMLTextAreaElement);
 
 	const textResize = useCallback(() => {
 		if (textareaRef.current && autoSize) {
@@ -77,11 +81,13 @@ const Textarea: FC<TextareaProps> = ({
 				style={textareaStyled}
 				onKeyUp={onKeyUpHandler}
 				onKeyDown={onKeyDownHandler}
-				{...props}
+				{...rest}
 			/>
 			{suffix && <div className={`${BASE}__suffix`}>{suffix}</div>}
 		</div>
 	);
-};
+});
+
+Textarea.displayName = 'Textarea';
 
 export default Textarea;

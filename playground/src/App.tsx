@@ -1,37 +1,27 @@
+import { ChangeEvent, useRef, useState } from 'react';
+import { Button, Textarea } from '@with-me/ui';
 import { Container } from './styled';
-import { Button, Input, Textarea } from '@with-me/ui';
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
 
 const App = () => {
-	// const textAreaRef = useRef<HTMLTextAreaElement>(null);
-	// const buttonRef = useRef<HTMLButtonElement>(null);
-	const inputRef = useRef<HTMLInputElement>(null);
-	const inputRef2 = useRef<HTMLInputElement>(null);
+	const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
-	// const [value, setValue] = useState('');
+	const [value, setValue] = useState('');
 
-	// const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value);
+	const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value);
 
-	// // const onClick = () => {
-	// // 	setValue('');
-	// // 	if (ref) ref.current?.focus();
-	// // };
+	const onClick = () => {
+		setValue('');
+		if (textAreaRef) textAreaRef.current?.focus();
+	};
 
-	useEffect(() => {
-		// inputRef.current?.focus();
-		inputRef2.current?.focus();
-	}, []);
+	console.log(textAreaRef);
 
 	return (
 		<Container>
-			{/* <Textarea value={value} onChange={onChange} />
-			<Button ref={buttonRef} type="error" onClick={() => console.log('ref test!')}>
+			<Textarea ref={textAreaRef} value={value} onChange={onChange} autoSize />
+			<Button type="error" onClick={onClick}>
 				Delete
 			</Button>
-			<Button onClick={() => buttonRef.current && buttonRef.current.click()}>Test</Button> */}
-
-			<Input ref={inputRef2} />
-			<Input ref={inputRef} />
 		</Container>
 	);
 };
