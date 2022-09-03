@@ -61,6 +61,7 @@
 		"typescript": "^4.7.3"
 	},
 	"peerDependencies": {
+		"@with-me/style": "^0.7.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	}

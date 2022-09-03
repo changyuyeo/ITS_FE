@@ -33,7 +33,7 @@ export default create({
 	inputBorderRadius: 4,
 
 	brandTitle: 'withme UI Storybook',
-	brandUrl: 'https://with-me-ui.netlify.app/',
+	brandUrl: 'https://with-me-ui.netlify.app/?path=/docs/assets-icons--base',
 	brandImage: logo,
 	brandTarget: '_self'
 });
