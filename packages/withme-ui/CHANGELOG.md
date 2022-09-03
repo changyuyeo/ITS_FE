@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/Team-WithMe/WithMe_UI/compare/v0.6.5...v0.7.0) (2022-09-03)
+
+
+### Features
+
+* 버튼 컴포넌트 forwardRef 적용 ([3bf43d5](https://github.com/Team-WithMe/WithMe_UI/commit/3bf43d52a0971911bfee31615c5cc217a16f6d6c))
+* input 컴포넌트 forwardRef 적용 ([3cacaa6](https://github.com/Team-WithMe/WithMe_UI/commit/3cacaa6c5174324d66acbd4e5e131c4c89429273))
+* textarea 컴포넌트 forwardRef 적용 ([55d6bd9](https://github.com/Team-WithMe/WithMe_UI/commit/55d6bd9f9effceeaa1ea36095591fa01e4b69cf0))
+
+
+
+
+
 ## [0.6.5](https://github.com/Team-WithMe/WithMe_UI/compare/v0.6.4...v0.6.5) (2022-08-29)
 
 **Note:** Version bump only for package @with-me/ui
