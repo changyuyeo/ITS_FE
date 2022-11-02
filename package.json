@@ -4,15 +4,15 @@
 	"author": "여찬규 <wry5533@gmail.com>",
 	"version": "0.0.0",
 	"license": "MIT",
-	"main": "index.js",
 	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Team-WithMe/WithMe_UI"
+	},
 	"workspaces": {
 		"packages": [
 			"packages/*",
 			"playground"
-		],
-		"nohoist": [
-			"**/classnames"
 		]
 	},
 	"config": {
@@ -35,14 +35,15 @@
 		"lint:scss": "stylelint '**/*.scss'",
 		"lint:scss-fix": "yarn lint:scss --fix",
 		"dev": "yarn lerna run dev",
-		"build": "yarn lerna run build",
+		"build": "yarn build && yarn lerna run build",
 		"build:storybook": "yarn build && yarn lerna run build:storybook",
-		"commit": "git add . && yarn git-cz",
+		"commit": "yarn git-cz",
 		"clean": "yarn clean:dist && yarn clean:modules",
 		"clean:dist": "bash ./scripts/clean-dist.sh",
 		"clean:modules": "bash ./scripts/clean-modules.sh",
 		"prepare": "husky install",
-		"publish": "yarn build && yarn lerna publish"
+		"publish": "yarn build && yarn lerna publish",
+		"update": "yarn upgrade && yarn syncyarnlock -s -k"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.0.2",
@@ -70,6 +71,7 @@
 		"stylelint-config-sass-guidelines": "^9.0.1",
 		"stylelint-order": "^5.0.0",
 		"stylelint-prettier": "^2.0.0",
+		"syncyarnlock": "^1.0.19",
 		"ts-node": "^10.9.1"
 	}
 }

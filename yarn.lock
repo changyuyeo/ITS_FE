@@ -13938,6 +13938,14 @@ synchronous-promise@^2.0.15:
   resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.15.tgz#07ca1822b9de0001f5ff73595f3d08c4f720eb8e"
   integrity sha512-k8uzYIkIVwmT+TcglpdN50pS2y1BDcUnBPK9iJeGu0Pl1lOI8pD6wtzgw91Pjpe+RxtTncw32tLxs/R0yNL2Mg==
 
+syncyarnlock@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/syncyarnlock/-/syncyarnlock-1.0.19.tgz#ec5d380ef5432e428d2828b0d086e66d579f31fb"
+  integrity sha512-9o6KHr+MfYUqBzLPiaWlZZ365XAdLYdWFFgT92gLpXaVK8Z/kjwMZMUCv9FEOItVEeZ3TFCgItzYXYdV/CVZrQ==
+  dependencies:
+    commander "^2.20.0"
+    glob "^7.1.4"
+
 table@^6.8.0:
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/table/-/table-6.8.0.tgz#87e28f14fa4321c3377ba286f07b79b281a3b3ca"
