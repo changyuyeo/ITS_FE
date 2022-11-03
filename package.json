@@ -1,77 +1,77 @@
 {
-	"name": "@with-me/design-system",
-	"description": "withme design-system monorepo",
-	"author": "여찬규 <wry5533@gmail.com>",
-	"version": "0.0.0",
-	"license": "MIT",
-	"private": true,
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Team-WithMe/WithMe_UI"
-	},
-	"workspaces": {
-		"packages": [
-			"packages/*",
-			"playground"
-		]
-	},
-	"config": {
-		"commitizen": {
-			"path": "cz-conventional-changelog"
-		}
-	},
-	"lint-staged": {
-		"**/*.scss": [
-			"yarn lint:scss-fix"
-		],
-		"**/*.{ts,tsx}": [
-			"eslint --fix",
-			"prettier --write"
-		]
-	},
-	"scripts": {
-		"lint": "yarn lerna run lint",
-		"lint:fix": "yarn lerna run lint:fix",
-		"lint:scss": "stylelint '**/*.scss'",
-		"lint:scss-fix": "yarn lint:scss --fix",
-		"dev": "yarn lerna run dev",
-		"build": "yarn build && yarn lerna run build",
-		"build:storybook": "yarn build && yarn lerna run build:storybook",
-		"commit": "yarn git-cz",
-		"clean": "yarn clean:dist && yarn clean:modules",
-		"clean:dist": "bash ./scripts/clean-dist.sh",
-		"clean:modules": "bash ./scripts/clean-modules.sh",
-		"prepare": "husky install",
-		"publish": "yarn build && yarn lerna publish",
-		"update": "yarn upgrade && yarn syncyarnlock -s -k"
-	},
-	"devDependencies": {
-		"@commitlint/cli": "^17.0.2",
-		"@commitlint/config-conventional": "^17.0.2",
-		"@typescript-eslint/eslint-plugin": "^5.30.7",
-		"@typescript-eslint/parser": "^5.30.7",
-		"commitizen": "^4.2.4",
-		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^8.20.0",
-		"eslint-config-airbnb-typescript": "^17.0.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-import": "^2.26.0",
-		"eslint-plugin-jsx-a11y": "^6.6.1",
-		"eslint-plugin-prettier": "^4.2.1",
-		"eslint-plugin-react": "^7.30.1",
-		"eslint-plugin-react-hooks": "^4.6.0",
-		"husky": "^8.0.1",
-		"lerna": "^5.1.0",
-		"lint-staged": "^13.0.0",
-		"postcss": "^8.4.14",
-		"postcss-scss": "^4.0.4",
-		"prettier": "^2.6.2",
-		"stylelint": "^14.9.0",
-		"stylelint-config-prettier": "^9.0.3",
-		"stylelint-config-sass-guidelines": "^9.0.1",
-		"stylelint-order": "^5.0.0",
-		"stylelint-prettier": "^2.0.0",
-		"syncyarnlock": "^1.0.19",
-		"ts-node": "^10.9.1"
-	}
+  "name": "@with-me/design-system",
+  "description": "with me design-system monorepo",
+  "author": "여찬규 <wry5533@gmail.com>",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Team-WithMe/WithMe_UI"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "playground"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "**/*.scss": [
+      "yarn lint:scss-fix"
+    ],
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "lint": "yarn lerna run lint",
+    "lint:fix": "yarn lerna run lint:fix",
+    "lint:scss": "stylelint '**/*.scss'",
+    "lint:scss-fix": "yarn lint:scss --fix",
+    "dev": "yarn lerna run dev",
+    "build": "yarn build && yarn lerna run build",
+    "build:storybook": "yarn build && yarn lerna run build:storybook",
+    "commit": "yarn git-cz",
+    "clean": "yarn clean:dist && yarn clean:modules",
+    "clean:dist": "bash ./scripts/clean-dist.sh",
+    "clean:modules": "bash ./scripts/clean-modules.sh",
+    "prepare": "husky install",
+    "publish": "yarn build && yarn lerna publish",
+    "update": "yarn upgrade && yarn syncyarnlock -s -k"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.2",
+    "lerna": "^5.6.2",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.19",
+    "postcss-scss": "^4.0.5",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "syncyarnlock": "^1.0.19",
+    "ts-node": "^10.9.1"
+  }
 }
