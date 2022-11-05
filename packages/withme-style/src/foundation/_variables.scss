@@ -1,87 +1,90 @@
-/* ----- CSS Varibale Prefix ----- */
-$varibale-prefix: wm- !default;
-$prefix: $varibale-prefix !default;
-/* ----- CSS Varibale Prefix End ----- */
+/* ===== CSS Variable Prefix ===== */
+$variable-prefix: wm- !default;
+$prefix: $variable-prefix !default;
+/* ===== CSS Variable Prefix End ===== */
 
-/* ----- Colors ----- */
+/* ===== Colors ===== */
 /* --- gray colors --- */
 $white: #fff !default;
 $black: #000 !default;
 
-$gray-100: #f8f9fd !default;
-$gray-200: #f5f5f5 !default;
-$gray-300: #f0f0f0 !default;
-$gray-400: #d9d9d9 !default;
-$gray-500: #bfbfbf !default;
-$gray-600: #8c8c8c !default;
-$gray-700: #595959 !default;
-$gray-800: #434343 !default;
-$gray-900: #262626 !default;
+$cool-gray-100: #fafbfc !default;
+$cool-gray-200: #f7f8f9 !default;
+$cool-gray-300: #eff2f3 !default;
+$cool-gray-400: #e7ecee !default;
+$cool-gray-500: #d8dde1 !default;
+$cool-gray-600: #cbd1d6 !default;
+$cool-gray-700: #bec3c8 !default;
+$cool-gray-800: #a9adb0 !default;
+$cool-gray-900: #8e9091 !default;
+
+$cool-gray-colors: (
+	100: $cool-gray-100,
+	200: $cool-gray-200,
+	300: $cool-gray-300,
+	400: $cool-gray-400,
+	500: $cool-gray-500,
+	600: $cool-gray-600,
+	700: $cool-gray-700,
+	800: $cool-gray-800,
+	900: $cool-gray-900
+) !default;
+
+$warm-gray-100: #eee !default;
+$warm-gray-200: #ddd !default;
+$warm-gray-300: #d2d2d2 !default;
+$warm-gray-400: #acacac !default;
+$warm-gray-500: #999 !default;
+$warm-gray-600: #777 !default;
+$warm-gray-700: #666 !default;
+$warm-gray-800: #4b4b4b !default;
+$warm-gray-900: #333 !default;
+
+$warm-gray-colors: (
+	100: $warm-gray-100,
+	200: $warm-gray-200,
+	300: $warm-gray-300,
+	400: $warm-gray-400,
+	500: $warm-gray-500,
+	600: $warm-gray-600,
+	700: $warm-gray-700,
+	800: $warm-gray-800,
+	900: $warm-gray-900
+) !default;
+
+$text-gray-100: #fafbfc !default;
+$text-gray-200: #f7f8f9 !default;
+$text-gray-300: #eff2f3 !default;
+$text-gray-400: #e7ecee !default;
+$text-gray-500: #b9bdc1 !default;
+$text-gray-600: #93999e !default;
+$text-gray-700: #64686c !default;
+$text-gray-800: #2c3137 !default;
+$text-gray-900: #0f1114 !default;
+
+$text-gray-colors: (
+	100: $text-gray-100,
+	200: $text-gray-200,
+	300: $text-gray-300,
+	400: $text-gray-400,
+	500: $text-gray-500,
+	600: $text-gray-600,
+	700: $text-gray-700,
+	800: $text-gray-800,
+	900: $text-gray-900
+) !default;
 /* --- gray colors end --- */
 
-/* --- basic colors --- */
-$red-100: #fff1f0 !default;
-$red-200: #ffccc7 !default;
-$red-300: #ffa39e !default;
-$red-400: #ff7875 !default;
-$red-500: #ff4d4f !default;
-$red-600: #f5222d !default;
-$red-700: #cf1322 !default;
-$red-800: #a8071a !default;
-$red-900: #820014 !default;
-
-$green-100: #f6ffed !default;
-$green-200: #d9f7be !default;
-$green-300: #b7eb8f !default;
-$green-400: #95de64 !default;
-$green-500: #73d13d !default;
-$green-600: #52c41a !default;
-$green-700: #389e0d !default;
-$green-800: #237804 !default;
-$green-900: #135200 !default;
-
-$bule-100: #e6f7ff !default;
-$bule-200: #bae7ff !default;
-$bule-300: #91d5ff !default;
-$bule-400: #69c0ff !default;
-$bule-500: #40a9ff !default;
-$bule-600: #1890ff !default;
-$bule-700: #096dd9 !default;
-$bule-800: #0050b3 !default;
-$bule-900: #003a8c !default;
-
-$purple: #6c5ce7 !default;
-$purple-100: tint-color($purple, 80%) !default;
-$purple-200: tint-color($purple, 60%) !default;
-$purple-300: tint-color($purple, 40%) !default;
-$purple-400: tint-color($purple, 20%) !default;
-$purple-500: $purple !default;
-$purple-600: shade-color($purple, 20%) !default;
-$purple-700: shade-color($purple, 40%) !default;
-$purple-800: shade-color($purple, 60%) !default;
-$purple-900: shade-color($purple, 80%) !default;
-/* --- basic colors end --- */
-
-/* --- body colors --- */
-$body-bg-color: var(--#{$prefix}body-bg-color, $gray-100) !default;
-$body-font-color: var(--#{$prefix}body-font-color, $gray-900) !default;
-
-$body-colors: (
-	bg-color: $body-bg-color,
-	font-color: $body-font-color
-) !default;
-/* --- body colors end --- */
-
 /* --- theme colors --- */
-$primary-100: var(--#{$prefix}primary-color-100, $purple-100) !default;
-$primary-200: var(--#{$prefix}primary-color-200, $purple-200) !default;
-$primary-300: var(--#{$prefix}primary-color-300, $purple-300) !default;
-$primary-400: var(--#{$prefix}primary-color-400, $purple-400) !default;
-$primary-500: var(--#{$prefix}primary-color-500, $purple-500) !default;
-$primary-600: var(--#{$prefix}primary-color-600, $purple-600) !default;
-$primary-700: var(--#{$prefix}primary-color-700, $purple-700) !default;
-$primary-800: var(--#{$prefix}primary-color-800, $purple-800) !default;
-$primary-900: var(--#{$prefix}primary-color-900, $purple-900) !default;
+$primary-100: var(--#{$prefix}primary-100, #e4dffd) !default;
+$primary-200: var(--#{$prefix}primary-200, #c8bffc) !default;
+$primary-300: var(--#{$prefix}primary-300, #aa9ef7) !default;
+$primary-400: var(--#{$prefix}primary-400, #9184f0) !default;
+$primary-500: var(--#{$prefix}primary-500, #6c5ce7) !default;
+$primary-600: var(--#{$prefix}primary-600, #5043c6) !default;
+$primary-700: var(--#{$prefix}primary-700, #392ea6) !default;
+$primary-800: var(--#{$prefix}primary-800, #251d85) !default;
+$primary-900: var(--#{$prefix}primary-900, #17116e) !default;
 
 $primary-colors: (
 	100: $primary-100,
@@ -95,15 +98,15 @@ $primary-colors: (
 	900: $primary-900
 ) !default;
 
-$secondary-100: var(--#{$prefix}secondary-color-100, $bule-100) !default;
-$secondary-200: var(--#{$prefix}secondary-color-200, $bule-200) !default;
-$secondary-300: var(--#{$prefix}secondary-color-300, $bule-300) !default;
-$secondary-400: var(--#{$prefix}secondary-color-400, $bule-400) !default;
-$secondary-500: var(--#{$prefix}secondary-color-500, $bule-500) !default;
-$secondary-600: var(--#{$prefix}secondary-color-600, $bule-600) !default;
-$secondary-700: var(--#{$prefix}secondary-color-700, $bule-700) !default;
-$secondary-800: var(--#{$prefix}secondary-color-800, $bule-800) !default;
-$secondary-900: var(--#{$prefix}secondary-color-900, $bule-900) !default;
+$secondary-100: var(--#{$prefix}secondary-100, #f6fdcb) !default;
+$secondary-200: var(--#{$prefix}secondary-100, #eafb98) !default;
+$secondary-300: var(--#{$prefix}secondary-100, #d8f564) !default;
+$secondary-400: var(--#{$prefix}secondary-100, #c5ec3e) !default;
+$secondary-500: var(--#{$prefix}secondary-100, #a9e004) !default;
+$secondary-600: var(--#{$prefix}secondary-100, #8cc002) !default;
+$secondary-700: var(--#{$prefix}secondary-100, #71a102) !default;
+$secondary-800: var(--#{$prefix}secondary-100, #578101) !default;
+$secondary-900: var(--#{$prefix}secondary-100, #456b00) !default;
 
 $secondary-colors: (
 	100: $secondary-100,
@@ -117,15 +120,15 @@ $secondary-colors: (
 	900: $secondary-900
 ) !default;
 
-$success-100: var(--#{$prefix}success-color-100, $green-100) !default;
-$success-200: var(--#{$prefix}success-color-200, $green-200) !default;
-$success-300: var(--#{$prefix}success-color-300, $green-300) !default;
-$success-400: var(--#{$prefix}success-color-400, $green-400) !default;
-$success-500: var(--#{$prefix}success-color-500, $green-500) !default;
-$success-600: var(--#{$prefix}success-color-600, $green-600) !default;
-$success-700: var(--#{$prefix}success-color-700, $green-700) !default;
-$success-800: var(--#{$prefix}success-color-800, $green-800) !default;
-$success-900: var(--#{$prefix}success-color-900, $green-900) !default;
+$success-100: var(--#{$prefix}success-100, #d2fcd0) !default;
+$success-200: var(--#{$prefix}success-100, #a3f9a8) !default;
+$success-300: var(--#{$prefix}success-100, #73ef86) !default;
+$success-400: var(--#{$prefix}success-100, #4fe073) !default;
+$success-500: var(--#{$prefix}success-100, #1ccc59) !default;
+$success-600: var(--#{$prefix}success-100, #14af59) !default;
+$success-700: var(--#{$prefix}success-100, #0e9256) !default;
+$success-800: var(--#{$prefix}success-100, #08764f) !default;
+$success-900: var(--#{$prefix}success-100, #056149) !default;
 
 $success-colors: (
 	100: $success-100,
@@ -139,15 +142,15 @@ $success-colors: (
 	900: $success-900
 ) !default;
 
-$error-100: var(--#{$prefix}error-color-100, $red-100) !default;
-$error-200: var(--#{$prefix}error-color-200, $red-200) !default;
-$error-300: var(--#{$prefix}error-color-300, $red-300) !default;
-$error-400: var(--#{$prefix}error-color-400, $red-400) !default;
-$error-500: var(--#{$prefix}error-color-500, $red-500) !default;
-$error-600: var(--#{$prefix}error-color-600, $red-600) !default;
-$error-700: var(--#{$prefix}error-color-700, $red-700) !default;
-$error-800: var(--#{$prefix}error-color-800, $red-800) !default;
-$error-900: var(--#{$prefix}error-color-900, $red-900) !default;
+$error-100: var(--#{$prefix}error-100, #ffe5d8) !default;
+$error-200: var(--#{$prefix}error-200, #ffc5b2) !default;
+$error-300: var(--#{$prefix}error-300, #ff9e8b) !default;
+$error-400: var(--#{$prefix}error-400, #ff796f) !default;
+$error-500: var(--#{$prefix}error-500, #ff3f42) !default;
+$error-600: var(--#{$prefix}error-600, #db2e3f) !default;
+$error-700: var(--#{$prefix}error-700, #b71f3c) !default;
+$error-800: var(--#{$prefix}error-800, #931437) !default;
+$error-900: var(--#{$prefix}error-900, #7a0c34) !default;
 
 $error-colors: (
 	100: $error-100,
@@ -161,30 +164,74 @@ $error-colors: (
 	900: $error-900
 ) !default;
 /* --- theme colors end --- */
-/* ----- Colors End ----- */
+/* ===== Colors End ===== */
 
-/* ----- Typoraphy ----- */
+/* ===== Typoraphy ===== */
 /*
  * font families
- * 1. Noto Sans: https://fonts.googleapis.com/css?family=Noto+Sans
- * 2. Noto Sans KR: https://fonts.googleapis.com/css?family=Noto+Sans+KR
+ * - Pretendard 프리텐다드
+ *	> https://cactus.tistory.com/306
+ *	> https://github.com/orioncactus/pretendard
 */
-$noto-sans: 'Noto Sans KR', sans-serif;
-$font-size: 1rem !default;
+$font-family: 'Pretendard', sans-serif !default;
 
-$fs-xs: calc(#{$font-size} * 0.75) !default; //* 12px
-$fs-sm: calc(#{$font-size} * 0.875) !default; //* 14px
-$fs-base: calc(#{$font-size} * 1) !default; //* 16px
-$fs-lg: calc(#{$font-size} * 1.125) !default; //* 18px
-$fs-xl: calc(#{$font-size} * 1.25) !default; //* 20px
-$fs-xxl: calc(#{$font-size} * 1.375) !default; //* 22px
+$font-sizes: (
+	xxxl: #{calc(var(--#{$prefix}fs-xxl) * var(--#{$prefix}fs-scale))},
+	xxl: #{calc(var(--#{$prefix}fs-xl) * var(--#{$prefix}fs-scale))},
+	xl: #{calc(var(--#{$prefix}fs-lg) * var(--#{$prefix}fs-scale))},
+	lg: #{calc(var(--#{$prefix}fs-md) * var(--#{$prefix}fs-scale))},
+	md: #{calc(var(--#{$prefix}fs-base))},
+	sm: #{calc(var(--#{$prefix}fs-md) / var(--#{$prefix}fs-scale))},
+	xs: #{calc(var(--#{$prefix}fs-sm) / var(--#{$prefix}fs-scale))},
+	xxs: #{calc(var(--#{$prefix}fs-xs) / var(--#{$prefix}fs-scale))},
+	xxxs: #{calc(var(--#{$prefix}fs-xxs) / var(--#{$prefix}fs-scale))}
+) !default;
 
-$fs-h-1: calc(#{$font-size} * 2.5) !default; //* 40px
-$fs-h-2: calc(#{$font-size} * 2) !default; //* 32px
-$fs-h-3: calc(#{$font-size} * 1.75) !default; //* 28px
-$fs-h-4: calc(#{$font-size} * 1.5) !default; //* 24px
-$fs-h-5: calc(#{$font-size} * 1.25) !default; //* 20px
-$fs-h-6: calc(#{$font-size} * 1) !default; //* 16px
+$font-heights: (
+	140: 140%,
+	150: 150%,
+	160: 160%
+) !default;
+
+// $heading-sizes: (
+// 	sm: #{calc(var(--#{$prefix}heading-md) / var(--#{$prefix}fs-scale))},
+// 	md: #{calc(var(--#{$prefix}fs-base))},
+// 	lg: #{calc(var(--#{$prefix}heading-md) * var(--#{$prefix}fs-scale))},
+// 	xl: #{calc(var(--#{$prefix}heading-lg) * var(--#{$prefix}fs-scale))},
+// 	xxl: #{calc(var(--#{$prefix}heading-xl) * var(--#{$prefix}fs-scale))},
+// 	xxxl: #{calc(var(--#{$prefix}heading-xxl) * var(--#{$prefix}fs-scale))}
+// ) !default;
+
+// $label-sizes: (
+// 	sm: #{calc(var(--#{$prefix}label-md) / var(--#{$prefix}fs-scale))},
+// 	md: #{calc(var(--#{$prefix}fs-base))},
+// 	lg: #{calc(var(--#{$prefix}label-md) * var(--#{$prefix}fs-scale))},
+// 	xl: #{calc(var(--#{$prefix}label-lg) * var(--#{$prefix}fs-scale))},
+// 	xxl: #{calc(var(--#{$prefix}label-xl) * var(--#{$prefix}fs-scale))}
+// ) !default;
+
+// $paragraph-sizes: (
+// 	sm: #{calc(var(--#{$prefix}paragraph-md) / var(--#{$prefix}fs-scale))},
+// 	md: #{calc(var(--#{$prefix}fs-base))},
+// 	lg: #{calc(var(--#{$prefix}paragraph-md) * var(--#{$prefix}fs-scale))},
+// 	xl: #{calc(var(--#{$prefix}paragraph-lg) * var(--#{$prefix}fs-scale))}
+// ) !default;
+
+// $fs-sm: calc(var(--#{$prefix}fs-base) / var(--#{$prefix}fs-scale)) !default;
+// $fs-md: calc(var(--#{$prefix}fs-base)) !default;
+// $fs-lg: calc(var(--#{$prefix}fs-base) * var(--#{$prefix}fs-scale)) !default;
+// $fs-xl: calc(var(--#{$prefix}fs-base) * var(--#{$prefix}fs-scale)) !default;
+// $fs-xxl: calc(var(--#{$prefix}fs-base) * var(--#{$prefix}fs-scale)) !default;
+// $fs-xxxl: calc(var(--#{$prefix}fs-base) * var(--#{$prefix}fs-scale)) !default;
+
+// $heading-size-list: (
+// 	sm:
+// 	md:
+// 	lg:
+// 	xl:
+// 	xxl:
+// 	xxxl:
+// ) !default;
 
 $fw-thin: 100 !default;
 $fw-light: 300 !default;
@@ -197,46 +244,46 @@ $lh-base: 1.5 !default;
 $lh-lg: 2 !default;
 
 /* --- body typography --- */
-$body-font-family: var(--#{$prefix}body-font-family, $noto-sans) !default;
-$body-font-size: var(--#{$prefix}body-font-size, $fs-base) !default;
-$body-font-weight: var(--#{$prefix}body-font-weight, $fw-regular) !default;
-$body-line-height: var(--#{$prefix}body-line-height, $lh-base) !default;
+// $body-font-family: var(--#{$prefix}body-font-family, $noto-sans) !default;
+// $body-font-size: var(--#{$prefix}body-font-size, $fs-base) !default;
+// $body-font-weight: var(--#{$prefix}body-font-weight, $fw-regular) !default;
+// $body-line-height: var(--#{$prefix}body-line-height, $lh-base) !default;
 /* --- body typography end --- */
 
 /* --- text & title component typography --- */
-$font-size-xs: var(--#{$prefix}font-size-xs, $fs-xs) !default;
-$font-size-sm: var(--#{$prefix}font-size-sm, $fs-sm) !default;
-$font-size-base: var(--#{$prefix}font-size-base, $fs-base) !default;
-$font-size-lg: var(--#{$prefix}font-size-lg, $fs-lg) !default;
-$font-size-xl: var(--#{$prefix}font-size-xl, $fs-xl) !default;
+// $font-size-xs: var(--#{$prefix}font-size-xs, $fs-xs) !default;
+// $font-size-sm: var(--#{$prefix}font-size-sm, $fs-sm) !default;
+// $font-size-base: var(--#{$prefix}font-size-base, $fs-base) !default;
+// $font-size-lg: var(--#{$prefix}font-size-lg, $fs-lg) !default;
+// $font-size-xl: var(--#{$prefix}font-size-xl, $fs-xl) !default;
 
-$font-sizes: (
-	xs: $font-size-xs,
-	sm: $font-size-sm,
-	base: $font-size-base,
-	lg: $font-size-lg,
-	xl: $font-size-xl
-) !default;
+// $font-sizes: (
+// 	xs: $font-size-xs,
+// 	sm: $font-size-sm,
+// 	base: $font-size-base,
+// 	lg: $font-size-lg,
+// 	xl: $font-size-xl
+// ) !default;
 
-$h-1-font-size: var(--#{$prefix}h-1-font-size, $fs-h-1) !default;
-$h-2-font-size: var(--#{$prefix}h-2-font-size, $fs-h-2) !default;
-$h-3-font-size: var(--#{$prefix}h-3-font-size, $fs-h-3) !default;
-$h-4-font-size: var(--#{$prefix}h-4-font-size, $fs-h-4) !default;
-$h-5-font-size: var(--#{$prefix}h-6-font-size, $fs-h-5) !default;
-$h-6-font-size: var(--#{$prefix}h-5-font-size, $fs-h-6) !default;
+// $h-1-font-size: var(--#{$prefix}h-1-font-size, $fs-h-1) !default;
+// $h-2-font-size: var(--#{$prefix}h-2-font-size, $fs-h-2) !default;
+// $h-3-font-size: var(--#{$prefix}h-3-font-size, $fs-h-3) !default;
+// $h-4-font-size: var(--#{$prefix}h-4-font-size, $fs-h-4) !default;
+// $h-5-font-size: var(--#{$prefix}h-6-font-size, $fs-h-5) !default;
+// $h-6-font-size: var(--#{$prefix}h-5-font-size, $fs-h-6) !default;
 
-$title-font-sizes: (
-	h-1: $h-1-font-size,
-	h-2: $h-2-font-size,
-	h-3: $h-3-font-size,
-	h-4: $h-4-font-size,
-	h-5: $h-5-font-size,
-	h-6: $h-6-font-size
-) !default;
+// $title-font-sizes: (
+// 	h-1: $h-1-font-size,
+// 	h-2: $h-2-font-size,
+// 	h-3: $h-3-font-size,
+// 	h-4: $h-4-font-size,
+// 	h-5: $h-5-font-size,
+// 	h-6: $h-6-font-size
+// ) !default;
 /* --- text & title component typography end --- */
-/* ----- Typoraphy End ----- */
+/* ===== Typoraphy End ===== */
 
-/* ----- Breakpoints & Spacing ----- */
+/* ===== Breakpoints & Spacing ===== */
 $breakpoints: (
 	xs: 320px,
 	sm: 375px,
@@ -257,9 +304,9 @@ $spacing: (
 	xxl: 72px,
 	xxxl: 96px
 ) !default;
-/* ----- Breakpoints & Spacing End ----- */
+/* ===== Breakpoints & Spacing End ===== */
 
-/* ----- Border Variables ----- */
+/* ===== Border Variables ===== */
 $border-widths: (
 	1: 1px,
 	2: 2px,
@@ -278,261 +325,261 @@ $border-radius-list: (
 	circle: 50%
 ) !default;
 
-$border-width: map-get($border-widths, 1) !default;
-$border-style: solid !default;
-$border-color: $gray-300 !default;
-$border-radius: map-get($border-radius-list, 'sm') !default;
-/* ----- Border Variables End ----- */
+// $border-width: map-get($border-widths, 1) !default;
+// $border-style: solid !default;
+// $border-color: $gray-300 !default;
+// $border-radius: map-get($border-radius-list, 'sm') !default;
+// /* ===== Border Variables End ===== */
 
-$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
-$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
-$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
+// $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+// $box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+// $box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
 
-$transition-base: all 0.2s ease-in-out !default;
-$transition-fade: opacity 0.15s linear !default;
+// $transition-base: all 0.2s ease-in-out !default;
+// $transition-fade: opacity 0.15s linear !default;
 
-$disabled-opacity: 0.58 !default;
+// $disabled-opacity: 0.58 !default;
 
-$cursor-list: (
-	// normal
-	'auto': auto,
-	'default': default,
-	'none': none,
-	// link and status
-	'context-menu': context-menu,
-	'help': help,
-	'pointer': pointer,
-	'progress': progress,
-	'wait': wait,
-	// select
-	'cell': cell,
-	'crosshair': crosshair,
-	'text': text,
-	'vertical-text': vertical-text,
-	'alias': alias,
-	// drag and drop
-	'copy': copy,
-	'move': move,
-	'no-drop': no-drop,
-	'not-allowed': not-allowed,
-	// zoom in and out
-	'zoom-in': zoom-in,
-	'zoom-out': zoom-out
-) !default;
+// $cursor-list: (
+// 	// normal
+// 	'auto': auto,
+// 	'default': default,
+// 	'none': none,
+// 	// link and status
+// 	'context-menu': context-menu,
+// 	'help': help,
+// 	'pointer': pointer,
+// 	'progress': progress,
+// 	'wait': wait,
+// 	// select
+// 	'cell': cell,
+// 	'crosshair': crosshair,
+// 	'text': text,
+// 	'vertical-text': vertical-text,
+// 	'alias': alias,
+// 	// drag and drop
+// 	'copy': copy,
+// 	'move': move,
+// 	'no-drop': no-drop,
+// 	'not-allowed': not-allowed,
+// 	// zoom in and out
+// 	'zoom-in': zoom-in,
+// 	'zoom-out': zoom-out
+// ) !default;
 
-/* ----- Component Styles ----- */
-/* --- avatar variables --- */
-$avatar-sizes: (
-	'lg': 40,
-	'sm': 32
-) !default;
+// /* ===== Component Styles ===== */
+// /* --- avatar variables --- */
+// $avatar-sizes: (
+// 	'lg': 40,
+// 	'sm': 32
+// ) !default;
 
-$avatar-cursor-default: map-get($cursor-list, 'default') !default;
-$avatar-cursor-click: map-get($cursor-list, 'pointer') !default;
-$avatar-transition: $transition-base !default;
+// $avatar-cursor-default: map-get($cursor-list, 'default') !default;
+// $avatar-cursor-click: map-get($cursor-list, 'pointer') !default;
+// $avatar-transition: $transition-base !default;
 
-$avatar-border-radius: 4px !default;
-$avatar-border-radius-square: map-get($border-radius-list, 'sm') !default;
-$avatar-border-radius-circle: map-get($border-radius-list, 'circle') !default;
-/* --- avatar variables end --- */
+// $avatar-border-radius: 4px !default;
+// $avatar-border-radius-square: map-get($border-radius-list, 'sm') !default;
+// $avatar-border-radius-circle: map-get($border-radius-list, 'circle') !default;
+// /* --- avatar variables end --- */
 
-/* --- button variables --- */
-$btn-theme: (
-	'primary': $primary-500,
-	'secondary': $secondary-500,
-	'success': $success-500,
-	'error': $error-500,
-	'gray': $gray-400,
-	'dark': $gray-900
-) !default;
+// /* --- button variables --- */
+// $btn-theme: (
+// 	'primary': $primary-500,
+// 	'secondary': $secondary-500,
+// 	'success': $success-500,
+// 	'error': $error-500,
+// 	'gray': $gray-400,
+// 	'dark': $gray-900
+// ) !default;
 
-$btn-theme-hover: (
-	'primary': $primary-600,
-	'secondary': $secondary-600,
-	'success': $success-600,
-	'error': $error-600,
-	'gray': $gray-500,
-	'dark': $black
-) !default;
+// $btn-theme-hover: (
+// 	'primary': $primary-600,
+// 	'secondary': $secondary-600,
+// 	'success': $success-600,
+// 	'error': $error-600,
+// 	'gray': $gray-500,
+// 	'dark': $black
+// ) !default;
 
-$btn-theme-active: (
-	'primary': $primary-700,
-	'secondary': $secondary-700,
-	'success': $success-700,
-	'error': $error-700,
-	'gray': $gray-600,
-	'dark': $black
-) !default;
+// $btn-theme-active: (
+// 	'primary': $primary-700,
+// 	'secondary': $secondary-700,
+// 	'success': $success-700,
+// 	'error': $error-700,
+// 	'gray': $gray-600,
+// 	'dark': $black
+// ) !default;
 
-$btn-theme-outline-hover: (
-	'primary': $primary-100,
-	'secondary': $secondary-100,
-	'success': $success-100,
-	'error': $error-100,
-	'gray': $gray-200,
-	'dark': $gray-400
-) !default;
+// $btn-theme-outline-hover: (
+// 	'primary': $primary-100,
+// 	'secondary': $secondary-100,
+// 	'success': $success-100,
+// 	'error': $error-100,
+// 	'gray': $gray-200,
+// 	'dark': $gray-400
+// ) !default;
 
-$btn-theme-outline-active: (
-	'primary': $primary-200,
-	'secondary': $secondary-200,
-	'success': $success-200,
-	'error': $error-200,
-	'gray': $gray-200,
-	'dark': $gray-500
-) !default;
+// $btn-theme-outline-active: (
+// 	'primary': $primary-200,
+// 	'secondary': $secondary-200,
+// 	'success': $success-200,
+// 	'error': $error-200,
+// 	'gray': $gray-200,
+// 	'dark': $gray-500
+// ) !default;
 
-$btn-paddings-x: (
-	'sm': map-get($spacing, xxs),
-	'base': map-get($spacing, xs),
-	'lg': map-get($spacing, sm)
-) !default;
+// $btn-paddings-x: (
+// 	'sm': map-get($spacing, xxs),
+// 	'base': map-get($spacing, xs),
+// 	'lg': map-get($spacing, sm)
+// ) !default;
 
-$btn-paddings-y: (
-	'sm': map-get($spacing, xxxs),
-	'base': map-get($spacing, xxs),
-	'lg': map-get($spacing, xs)
-) !default;
+// $btn-paddings-y: (
+// 	'sm': map-get($spacing, xxxs),
+// 	'base': map-get($spacing, xxs),
+// 	'lg': map-get($spacing, xs)
+// ) !default;
 
-$btn-font-sizes: (
-	'sm': $font-size-sm,
-	'base': $font-size-sm,
-	'lg': $font-size-base
-) !default;
+// $btn-font-sizes: (
+// 	'sm': $font-size-sm,
+// 	'base': $font-size-sm,
+// 	'lg': $font-size-base
+// ) !default;
 
-$btn-border-width: $border-width !default;
-$btn-border-style: $border-style !default;
-$btn-shape-list: (
-	'default': map-get($border-radius-list, sm),
-	'circle': '9999px'
-) !default;
+// $btn-border-width: $border-width !default;
+// $btn-border-style: $border-style !default;
+// $btn-shape-list: (
+// 	'default': map-get($border-radius-list, sm),
+// 	'circle': '9999px'
+// ) !default;
 
-$btn-cursor-list: (
-	'click': map-get($cursor-list, 'pointer'),
-	'disabled': map-get($cursor-list, 'not-allowed'),
-	'loading': map-get($cursor-list, 'progress')
-) !default;
+// $btn-cursor-list: (
+// 	'click': map-get($cursor-list, 'pointer'),
+// 	'disabled': map-get($cursor-list, 'not-allowed'),
+// 	'loading': map-get($cursor-list, 'progress')
+// ) !default;
 
-$btn-font-family: $noto-sans !default;
-$btn-font-weight: $fw-regular !default;
-$btn-line-height: $lh-base !default;
-$btn-box-shadow: $box-shadow !default;
-$btn-disabled-opacity: $disabled-opacity !default;
-$btn-transition: $transition-base !default;
-/* --- button variables end --- */
+// $btn-font-family: $noto-sans !default;
+// $btn-font-weight: $fw-regular !default;
+// $btn-line-height: $lh-base !default;
+// $btn-box-shadow: $box-shadow !default;
+// $btn-disabled-opacity: $disabled-opacity !default;
+// $btn-transition: $transition-base !default;
+// /* --- button variables end --- */
 
-/* --- card variables --- */
-$card-bg-color: $white !default;
-$card-bg-color-hover: $gray-100 !default;
-$card-shadow: $box-shadow !default;
-$card-transition: $transition-base !default;
-/* --- card variables end --- */
+// /* --- card variables --- */
+// $card-bg-color: $white !default;
+// $card-bg-color-hover: $gray-100 !default;
+// $card-shadow: $box-shadow !default;
+// $card-transition: $transition-base !default;
+// /* --- card variables end --- */
 
-/* --- divider variables --- */
-$divider-themes: (
-	'primary': $primary-500,
-	'secondary': $secondary-500,
-	'success': $success-500,
-	'error': $error-500,
-	'default': $gray-900,
-	'description': $gray-700,
-	'guide': $gray-500,
-	'white': $white
-) !default;
-/* --- divider variables end --- */
+// /* --- divider variables --- */
+// $divider-themes: (
+// 	'primary': $primary-500,
+// 	'secondary': $secondary-500,
+// 	'success': $success-500,
+// 	'error': $error-500,
+// 	'default': $gray-900,
+// 	'description': $gray-700,
+// 	'guide': $gray-500,
+// 	'white': $white
+// ) !default;
+// /* --- divider variables end --- */
 
-/* --- input variables --- */
-$input-sizes: (
-	sm: 24px,
-	base: 32px,
-	lg: 40px
-) !default;
+// /* --- input variables --- */
+// $input-sizes: (
+// 	sm: 24px,
+// 	base: 32px,
+// 	lg: 40px
+// ) !default;
 
-$input-bg-color: $white !default;
-$input-error-bg-color: $error-200 !default;
-$input-border-color: $gray-500 !default;
-$input-error-border-color: $error-700 !default;
-$input-error-outline-color: $error-300 !default;
-$input-primary-color: $primary-500 !default;
-$input-primary-outline-color: $primary-300 !default;
-$input-svg-fill-color: $gray-500 !default;
-$input-border-radius: 3px !default;
-$input-font-size: $fs-sm !default; // 14px
-/* --- input variables end --- */
+// $input-bg-color: $white !default;
+// $input-error-bg-color: $error-200 !default;
+// $input-border-color: $gray-500 !default;
+// $input-error-border-color: $error-700 !default;
+// $input-error-outline-color: $error-300 !default;
+// $input-primary-color: $primary-500 !default;
+// $input-primary-outline-color: $primary-300 !default;
+// $input-svg-fill-color: $gray-500 !default;
+// $input-border-radius: 3px !default;
+// $input-font-size: $fs-sm !default; // 14px
+// /* --- input variables end --- */
 
-/* --- spinner variables --- */
-$spinner-sizes: 'sm', 'base', 'lg';
+// /* --- spinner variables --- */
+// $spinner-sizes: 'sm', 'base', 'lg';
 
-$spinner-width-sm: 0.8rem !default;
-$spinner-height-sm: $spinner-width-sm !default;
-$spinner-border-width-sm: 0.125em !default;
+// $spinner-width-sm: 0.8rem !default;
+// $spinner-height-sm: $spinner-width-sm !default;
+// $spinner-border-width-sm: 0.125em !default;
 
-$spinner-width-base: 2rem !default;
-$spinner-height-base: $spinner-width-base !default;
-$spinner-border-width-base: 0.25em !default;
+// $spinner-width-base: 2rem !default;
+// $spinner-height-base: $spinner-width-base !default;
+// $spinner-border-width-base: 0.25em !default;
 
-$spinner-width-lg: 2.5rem !default;
-$spinner-height-lg: $spinner-width-lg !default;
-$spinner-border-width-lg: 0.3em !default;
+// $spinner-width-lg: 2.5rem !default;
+// $spinner-height-lg: $spinner-width-lg !default;
+// $spinner-border-width-lg: 0.3em !default;
 
-$spinner-vertical-align: -0.125em !default;
-$spinner-animation-name: spinner-circle !default;
+// $spinner-vertical-align: -0.125em !default;
+// $spinner-animation-name: spinner-circle !default;
 
-$spinner-colors: (
-	'primary': $primary-500,
-	'secondary': $secondary-500,
-	'success': $success-500,
-	'error': $error-500,
-	'white': $white
-) !default;
-/* --- spinner variables end --- */
+// $spinner-colors: (
+// 	'primary': $primary-500,
+// 	'secondary': $secondary-500,
+// 	'success': $success-500,
+// 	'error': $error-500,
+// 	'white': $white
+// ) !default;
+// /* --- spinner variables end --- */
 
-/* --- text & title variables --- */
-$text-sizes: (
-	xs: $fs-xs,
-	sm: $fs-sm,
-	base: $fs-base,
-	lg: $fs-lg,
-	xl: $fs-xl,
-	xxl: $fs-xxl
-) !default;
+// /* --- text & title variables --- */
+// $text-sizes: (
+// 	xs: $fs-xs,
+// 	sm: $fs-sm,
+// 	base: $fs-base,
+// 	lg: $fs-lg,
+// 	xl: $fs-xl,
+// 	xxl: $fs-xxl
+// ) !default;
 
-$title-sizes: (
-	h1: $fs-h-1,
-	h3: $fs-h-3,
-	h2: $fs-h-2,
-	h4: $fs-h-4,
-	h5: $fs-h-5,
-	h6: $fs-h-6
-) !default;
+// $title-sizes: (
+// 	h1: $fs-h-1,
+// 	h3: $fs-h-3,
+// 	h2: $fs-h-2,
+// 	h4: $fs-h-4,
+// 	h5: $fs-h-5,
+// 	h6: $fs-h-6
+// ) !default;
 
-$text-weights: (
-	thin: $fw-thin,
-	light: $fw-light,
-	regular: $fw-regular,
-	medium: $fw-medium,
-	bold: $fw-bold
-) !default;
+// $text-weights: (
+// 	thin: $fw-thin,
+// 	light: $fw-light,
+// 	regular: $fw-regular,
+// 	medium: $fw-medium,
+// 	bold: $fw-bold
+// ) !default;
 
-$text-themes: (
-	'primary': $primary-500,
-	'secondary': $secondary-500,
-	'success': $success-500,
-	'error': $error-500,
-	'default': $gray-900,
-	'description': $gray-700,
-	'guide': $gray-500,
-	'white': $white
-) !default;
-/* --- text & title variables end --- */
+// $text-themes: (
+// 	'primary': $primary-500,
+// 	'secondary': $secondary-500,
+// 	'success': $success-500,
+// 	'error': $error-500,
+// 	'default': $gray-900,
+// 	'description': $gray-700,
+// 	'guide': $gray-500,
+// 	'white': $white
+// ) !default;
+// /* --- text & title variables end --- */
 
-/* --- textarea variables --- */
-$textarea-font-size: $fs-sm !default;
-$textarea-border-color: $gray-500 !default;
-$textarea-primary-color: $primary-500 !default;
-$textarea-primary-outline-color: $primary-300 !default;
+// /* --- textarea variables --- */
+// $textarea-font-size: $fs-sm !default;
+// $textarea-border-color: $gray-500 !default;
+// $textarea-primary-color: $primary-500 !default;
+// $textarea-primary-outline-color: $primary-300 !default;
 
-$textarea-font-color: $body-font-color !default;
-$textarea-guide-font-color: $gray-500 !default;
-/* --- textarea variables end --- */
-/* ----- Component Styles End ----- */
+// $textarea-font-color: $body-font-color !default;
+// $textarea-guide-font-color: $gray-500 !default;
+// /* --- textarea variables end --- */
+// /* ===== Component Styles End ===== */
