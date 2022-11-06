@@ -1,0 +1,35 @@
+$typography-prefix: #{$prefix}typography;
+$typography-size-list: xxxl, xxl, xl, lg, md, sm;
+$typography-type-list: (
+	heading: 700,
+	label: 600,
+	paragraph: 400
+) !default;
+
+.#{$typography-prefix} {
+	--#{$typography-prefix}-height: var(--#{$prefix}fh-140);
+	--#{$typography-prefix}-color: $text-gray-900;
+	color: var(--#{$typography-prefix}-color);
+
+	font-size: var(--#{$typography-prefix}-size);
+	font-weight: var(--#{$typography-prefix}-weight);
+	line-height: var(--#{$typography-prefix}-height);
+
+	@each $size in $typography-size-list {
+		&--#{$size} {
+			--#{$typography-prefix}-size: var(--#{$prefix}fs-#{$size});
+		}
+	}
+
+	@each $type, $value in $typography-type-list {
+		&--#{$type} {
+			--#{$typography-prefix}-weight: #{$value};
+		}
+	}
+
+	@each $gray, $value in $text-gray-colors {
+		&--gray-#{$gray} {
+			--#{$typography-prefix}-color: #{$value};
+		}
+	}
+}

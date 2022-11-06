@@ -2,26 +2,25 @@
 @import 'foundation/all';
 @import 'base/all';
 
-body {
-	background-color: var(--#{$prefix}body-bg-color);
-	overflow-x: hidden;
+// body {
+// 	background-color: var(--#{$prefix}body-bg-color);
+// 	overflow-x: hidden;
 
-	* {
-		color: var(--#{$prefix}body-font-color);
-		font-family: var(--#{$prefix}body-font-family);
-		font-size: var(--#{$prefix}body-font-size);
-		font-weight: var(--#{$prefix}body-font-weight);
-		line-height: var(--#{$prefix}body-line-height);
-	}
-}
+// 	* {
+// 		color: var(--#{$prefix}body-font-color);
+// 		font-family: var(--#{$prefix}body-font-family);
+// 		font-size: var(--#{$prefix}body-font-size);
+// 		font-weight: var(--#{$prefix}body-font-weight);
+// 		line-height: var(--#{$prefix}body-line-height);
+// 	}
+// }
 
 //* Component Styles
-@import 'styles/avatar';
-@import 'styles/button';
-@import 'styles/card';
-@import 'styles/divider';
-@import 'styles/input';
-@import 'styles/spinner';
-@import 'styles/text';
-@import 'styles/textarea';
-@import 'styles/title';
+// @import 'styles/avatar';
+// @import 'styles/button';
+// @import 'styles/card';
+// @import 'styles/divider';
+// @import 'styles/input';
+// @import 'styles/spinner';
+// @import 'styles/textarea';
+@import 'styles/typography';
