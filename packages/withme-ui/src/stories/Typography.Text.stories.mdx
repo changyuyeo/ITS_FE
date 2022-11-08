@@ -1,0 +1,159 @@
+import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs'
+
+import Typography from '../components/Typography'
+import * as Stories from './components'
+
+<Meta 
+	title="components/Typography/Text" 
+	component={Typography.Text}
+	decorators={[
+		(Story) => (
+			<Stories.Flex flexDirection='column' gap='10px'>
+				<Story />
+			</Stories.Flex>
+		),
+  ]}
+/>
+
+export const Template = ({ children, ...args }) => <Typography.Text {...args}>{children || 'Typography'}</Typography.Text>
+
+# Typography.Text
+
+&lt;Typography.Text /&gt; 컴포넌트 사용법
+<br />
+
+## color
+
+- Text의 색상을 color 속성으로 재설정할 수 있습니다.
+- default: 'gray-900'
+
+```ts
+type RGB = `rgb(${number}, ${number}, ${number})`;
+type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
+type HEX = `#${string}`;
+
+interface TextProps {
+  color: RGB | RGBA | HEX | 'gray-100' | 'gray-200' | 'gray-300' ... | 'gray-800' | 'gray-900'
+  // ...
+}
+```
+
+<Canvas>
+	<Story name="Color">
+		<Typography.Text color="#6c5ce7">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="#a9e004">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="#1ccc59">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="#ff3f42">Paragraph / Medium</Typography.Text>
+		<br />
+		<Typography.Text color="gray-100">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="gray-200">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="gray-300">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="gray-400">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="gray-500">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="gray-600">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="gray-700">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="gray-800">Paragraph / Medium</Typography.Text>
+		<Typography.Text color="gray-900">Paragraph / Medium</Typography.Text>
+	</Story>
+</Canvas>
+
+<br />
+
+## size
+
+- Text의 크기를 size 속성을 통해 지정할 수 있습니다.
+- default: 'md'
+
+```ts
+interface TextProps {
+  size?: "xxl" | "xl" | "lg" | "md" | "sm"
+  // ...
+}
+```
+
+<Canvas>
+	<Story name="Size">
+    <Stories.Flex gap='50px'>
+      <Stories.Flex flexDirection='column' gap='10px'>
+        <Typography.Text size="xl">Paragraph / XL</Typography.Text>
+        <Typography.Text size="lg">Paragraph / Large</Typography.Text>
+        <Typography.Text size="md">Paragraph / Medium</Typography.Text>
+        <Typography.Text size="sm">Paragraph / Small</Typography.Text>
+      </Stories.Flex>
+      <Stories.Flex flexDirection='column' gap='10px'>
+        <Typography.Text size="xxl" type="label">Label / XXL</Typography.Text>
+        <Typography.Text size="xl" type="label">Label / XL</Typography.Text>
+        <Typography.Text size="lg" type="label">Label / Large</Typography.Text>
+        <Typography.Text size="md" type="label">Label / Medium</Typography.Text>
+        <Typography.Text size="sm" type="label">Label / Small</Typography.Text>
+      </Stories.Flex>
+    </Stories.Flex>
+  </Story>
+</Canvas>
+
+<br />
+
+## type
+
+- default: 'paragraph'
+
+```ts
+interface TextProps {
+	type?: 'label' | 'paragraph';
+  // ...
+}
+```
+
+<Canvas>
+	<Story name="Type">
+		<Typography.Text type="label">Label / Medium</Typography.Text>
+		<Typography.Text type="paragraph">Paragraph / Medium</Typography.Text>
+	</Story>
+</Canvas>
+
+<br />
+
+## Playground
+
+자유롭게 컨트롤 해보세요!
+
+<Canvas>
+	<Story
+		name="Playground"
+		argTypes={{
+			className: {
+				table: {
+					disable: true
+				}
+			},
+			style: {
+				table: {
+					disable: true
+				}
+			},
+			color: {
+				control: 'select',
+				options: [
+					'gray-100',
+					'gray-200',
+					'gray-300',
+					'gray-400',
+					'gray-500',
+					'gray-600',
+					'gray-700',
+					'gray-800',
+					'gray-900',
+				]
+			},
+			children: {
+				description: 'text',
+				control: 'text'
+			}
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
+
