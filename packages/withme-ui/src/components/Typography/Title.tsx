@@ -7,7 +7,7 @@ import type { HeadingProps, TitleProps } from './types';
 const Title: FC<TitleProps> = ({
 	children,
 	className: classNameProp = '',
-	color = 'gray-900',
+	color = 'gray-800',
 	level = 2,
 	size = 'md',
 	style: styleProp,
