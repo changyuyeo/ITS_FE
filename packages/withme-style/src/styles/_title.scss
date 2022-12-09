@@ -1,0 +1,23 @@
+.#{$prefix}title {
+	color: var(--#{$prefix}title-color);
+	font-size: var(--#{$prefix}title-size);
+	font-weight: var(--#{$prefix}title-weight);
+}
+
+@each $color, $value in $text-themes {
+	.#{$prefix}title--color-#{$color} {
+		--#{$prefix}title-color: #{$value};
+	}
+}
+
+@each $size, $value in $title-sizes {
+	.#{$prefix}title--size-#{$size} {
+		--#{$prefix}title-size: #{$value};
+	}
+}
+
+@each $weight, $value in $text-weights {
+	.#{$prefix}title--weight-#{$weight} {
+		--#{$prefix}title-weight: #{$value};
+	}
+}
