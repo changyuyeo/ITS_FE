@@ -7,7 +7,7 @@ import type { TextProps } from './types';
 const Text: FC<TextProps> = ({
 	children,
 	className: classNameProp = '',
-	color = 'gray-800',
+	color = 'gray-900',
 	size = 'md',
 	style: styleProp,
 	type = 'paragraph',
