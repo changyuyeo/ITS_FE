@@ -7,6 +7,3 @@ export { default as Spinner } from './components/Spinner';
 export { default as Text } from './components/Text';
 export { default as Textarea } from './components/Textarea';
 export { default as Title } from './components/Title';
-
-// dev...
-export { default as Typography } from './components/Typography';

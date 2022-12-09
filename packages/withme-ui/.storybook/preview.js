@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import '@with-me/style/dist/global.css';
 
 export const parameters = {
 	viewMode: 'docs',
