@@ -1,65 +1,34 @@
 :root {
-	/* ===== Colors CSS Variables  ===== */
+	@each $key, $value in $body-colors {
+		--#{$prefix}body-#{$key}: #{$value};
+	}
+
 	@each $key, $value in $primary-colors {
-		--#{$prefix}primary-#{$key}: #{$value};
+		--#{$prefix}primary-color-#{$key}: #{$value};
 	}
-	/* === */
+
 	@each $key, $value in $secondary-colors {
-		--#{$prefix}secondary-#{$key}: #{$value};
+		--#{$prefix}secondary-color-#{$key}: #{$value};
 	}
-	/* === */
+
 	@each $key, $value in $success-colors {
-		--#{$prefix}success-#{$key}: #{$value};
+		--#{$prefix}success-color-#{$key}: #{$value};
 	}
-	/* === */
+
 	@each $key, $value in $error-colors {
-		--#{$prefix}error-#{$key}: #{$value};
+		--#{$prefix}error-color-#{$key}: #{$value};
 	}
-	/* ===== Colors CSS Variables End  ===== */
 
-	/* ===== Typography CSS Variables  ===== */
-	--#{$prefix}fs-scale: 1.333;
-	--#{$prefix}fs-base: 1rem;
-	/* === */
+	--#{$prefix}body-font-family: #{$body-font-family};
+	--#{$prefix}body-font-size: #{$body-font-size};
+	--#{$prefix}body-font-weight: #{$body-font-weight};
+	--#{$prefix}body-line-height: #{$body-line-height};
+
 	@each $key, $value in $font-sizes {
-		--#{$prefix}fs-#{$key}: #{$value};
+		--#{$prefix}#{$key}-font-size: #{$value};
 	}
 
-	@each $key, $value in $font-heights {
-		--#{$prefix}fh-#{$key}: #{$value};
+	@each $key, $value in $title-font-sizes {
+		--#{$prefix}#{$key}-font-size: #{$value};
 	}
-	/* ===== Typography CSS Variables End  ===== */
-
-	// @each $key, $value in $body-colors {
-	// 	--#{$prefix}body-#{$key}: #{$value};
-	// }
-
-	// @each $key, $value in $primary-colors {
-	// 	--#{$prefix}primary-color-#{$key}: #{$value};
-	// }
-
-	// @each $key, $value in $secondary-colors {
-	// 	--#{$prefix}secondary-color-#{$key}: #{$value};
-	// }
-
-	// @each $key, $value in $success-colors {
-	// 	--#{$prefix}success-color-#{$key}: #{$value};
-	// }
-
-	// @each $key, $value in $error-colors {
-	// 	--#{$prefix}error-color-#{$key}: #{$value};
-	// }
-
-	// --#{$prefix}body-font-family: #{$body-font-family};
-	// --#{$prefix}body-font-size: #{$body-font-size};
-	// --#{$prefix}body-font-weight: #{$body-font-weight};
-	// --#{$prefix}body-line-height: #{$body-line-height};
-
-	// @each $key, $value in $font-sizes {
-	// 	--#{$prefix}#{$key}-font-size: #{$value};
-	// }
-
-	// @each $key, $value in $title-font-sizes {
-	// 	--#{$prefix}#{$key}-font-size: #{$value};
-	// }
 }
